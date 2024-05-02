@@ -1,0 +1,103 @@
+
+
+/* Estilos redondeados para los btn */
+
+.btn {
+    border-radius: 20px; /* Redondear los botones */
+}
+
+/* Inico Estilos para el Boton Ingresar del Login*/
+
+/* Tutorial para Este estilo https://www.youtube.com/watch?v=xnltEHWWjiM*/
+#ida{
+    position: relative;
+    background: #09f;
+    color: #fff;
+    text-decoration: none;
+    text-transform:  uppercase;
+    font-size: 0.8em;
+    font-weight: 400;
+    padding: 10px 30px;
+    transition: 0.5s;
+    text-align: center;
+    border-radius: 10px;
+}
+#ida:hover{
+    background: var(--clr);
+    color:var(--clr) ;
+    letter-spacing: 0.25em;
+    box-shadow: 0 0 35px var(--clr);
+}
+#ida:before{
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background:#080707;
+    border-radius: 10px;
+}
+#ida #idspan{
+    position: relative;
+    z-index: 1;
+}
+#ida #idi{
+    position: absolute;
+    inset: 0;
+    display: block;
+}
+#ida #idi::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 80px;
+    width: 10px;
+    height: 4px;
+    background: #0e0e0e;
+
+    transform: translate(-50%) skewX(325deg);
+    transition: 0.5s;
+}
+
+#ida:hover #idi::before{
+    width: 20px;
+    left: 20%;
+}
+#ida #idi::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    width: 10px;
+    height: 4px;
+    background: #0e0e0e;
+    transform: translate(-50%) skewX(325deg);
+    transition: 0.5s;
+}
+
+#ida:hover #idi::after{
+    width: 20px;
+    left: 80%;
+}
+
+#idbtn{
+    color: #09f;
+    background: none;
+    border: none;
+}
+
+/* Fin Estilos para el Boton Ingresar del Login*/
+/* Fin Estilos para el Login Card*/
+
+
+/* Estilos el maensaje de error de user o contraseña*/
+#mimensaje {
+    color: #FF0000; /* Color predeterminado del texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Efecto de sombra */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente */
+    font-size: 16px; /* Tamaño de fuente */
+    font-weight: bold; /* Peso de la fuente */
+    letter-spacing: 1px; /* Espaciado entre letras */
+    transition: color 0.3s; /* Transición suave de color */
+
+}
+
+

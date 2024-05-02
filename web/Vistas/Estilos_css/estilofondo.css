@@ -1,0 +1,95 @@
+
+
+/* Estilo para el fondo del body */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('Fondo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: sans-serif;
+    background-position: center;
+    background-attachment: fixed;
+
+
+}
+
+/* Estilo para los títulos h1 */
+h1 {
+    font-size: 45px; /* tamañano de la fuente*/
+    color: #040505; /* Cambia el color de letra del encabezado h1 a azul (#007bff) */
+    font-family: 'Helvetica Neue', sans-serif; /* Utiliza una fuente similar a la de Bootstrap */
+    margin-top: 50px;  /* Espacio parte Superior*/
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* Sombra del texto*/
+
+
+}
+.container {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    height: 90vh; /* Esto ayuda a que el contenido se centre verticalmente en toda la página */
+}
+
+.btn-custom {
+
+    background-color: #DBDBDB; /* Cambia este color al que desees, por ejemplo, #333 o #555 */
+    color: #000066; /* Cambia el color del texto al que desees */
+    border: none; /* Elimina el borde si lo deseas */
+    border-radius: 5px; /* Agrega bordes redondeados */
+    padding: 10px 20px; /* Ajusta el espacio interno */
+    font-size: 16px; /* Cambia el tamaño de fuente */
+    text-transform: uppercase; /* Convierte el texto en mayúsculas */
+    transition: background-color 0.3s ease; /* Agrega una transición suave al color de fondo */
+}
+
+/* Cambia el color de fondo al pasar el mouse sobre el botón */
+.btn-custom:hover {
+
+    background-color: #ADA996; /* Cambia el color de fondo al pasar el mouse */
+    border-radius: 10px;
+    border: 2px solid #000
+
+}
+
+
+       
+
+        .container {
+            margin-top: 100px;
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            background-color: #007bff;
+            border-radius: 15px 15px 0 0;
+            text-align: center;
+        }
+
+        .card-header h3 {
+            color: #fff;
+        }
+
+        .card-body {
+            padding: 30px;
+        }
+
+        .form-control {
+            border-radius: 5px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+ 

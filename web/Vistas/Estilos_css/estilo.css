@@ -1,0 +1,67 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+/* Estilos para Modal */
+.modal-dialog-centered {
+    display: flex;
+    align-items: center;
+    min-height: calc(100% - 3.5rem);
+}
+
+#cuadro{
+    /* Estilos para tu cuadro de formulario */
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: rgba(255, 255, 255, 0.8); /* el 0.6 es el grado de transparencia/* Fondo semitransparente para que la imagen de fondo sea visible */
+    padding: 20px;
+
+
+    border-radius: 10px;
+
+    background-color: #ffcc0; /* Cambia #ffcc00 por el color que desees */
+    padding: 20px; /* Ajusta el relleno según sea necesario */
+}
+
+.entrada {
+    width:320px;
+    height: 35px;
+    border-radius :6px;
+    font-family:verdana;
+    font-weight:900;
+}
+
+#boton{
+    width:320px;
+    height:35px;
+    border-radius:6px;
+    background:blue;
+    color:#ffffff;
+    font-size: 15px;
+
+}
+
+#titulo{
+
+    font-size:30px;
+    font-family:fantasy;
+
+}
+
+#subtitulo2 {
+    padding-left:107px;
+
+}
+
+#marca {
+    font-size:20px;
+    padding-left:80px;
+    font-weight:400;
+
+}
+
+.th{
+    text-align: center;
+
+
+}

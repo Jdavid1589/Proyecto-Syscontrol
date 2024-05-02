@@ -1,0 +1,186 @@
+
+*{
+    padding: 0px;
+}
+/* Estilo para el fondo del body */
+body {
+    margin: 0;
+    padding: 0px;
+    background-image: url('Fondo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: sans-serif;
+    background-position: center;
+    background-attachment: fixed;
+}
+.container {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    height: 90vh; /* Esto ayuda a que el contenido se centre verticalmente en toda la página */
+    margin-top: 100px;
+
+}
+
+/* Inico Estilos para el Login Card*/
+.card {
+    
+    padding: 0.5px;
+    border: none;
+    background: #0000ff;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+  
+}
+/*
+.card {
+    width: 300px; /* Ancho deseado 
+    height: 430px; /* Alto deseado 
+}
+
+.card-body {
+    padding: 20px; /* Ajusta el relleno según sea necesario 
+}*/
+
+
+.card-header {
+    border-radius: 15px 15px 0 0;
+    text-align: center;
+}
+
+.card-body h3 {
+    color: #09f; /* Color predeterminado del texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Efecto de sombra */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente */
+    font-size: 24px; /* Tamaño de fuente */
+    font-weight: bold; /* Peso de la fuente */
+    letter-spacing: 1px; /* Espaciado entre letras */
+    transition: color 0.3s; /* Transición suave de color */
+    margin-bottom:  25px;
+}
+.card-body h3:hover {
+    color: #00ff00; /* Color del texto al pasar el mouse */
+}
+
+.card-body label {
+    color: #09f; /* Color predeterminado del texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Efecto de sombra */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente */
+    font-size: 16px; /* Tamaño de fuente */
+    font-weight: bold; /* Peso de la fuente */
+    letter-spacing: 1px; /* Espaciado entre letras */
+    transition: color 0.3s; /* Transición suave de color */
+
+}
+/*  
+.card-body label:hover {
+    color: #1ed12d; /* Color del texto al pasar el mouse 
+}*/
+.card-body {
+    padding: auto ;
+    background: #fff;
+    border-radius: 15px;
+}
+
+.card-body section {
+    /*background:  rgba(14, 14, 14, 0.5);*/
+    padding: 15px 25px ;
+    border-radius: 10px;
+}
+
+/* Inico Estilos para el Boton Ingresar del Login*/
+
+/* Tutorial para Este estilo https://www.youtube.com/watch?v=xnltEHWWjiM*/
+a{
+    position: relative;
+    background: #09f;
+    color: #fff;
+    text-decoration: none;
+    text-transform:  uppercase;
+    font-size: 1.2em;
+    font-weight: 400;
+    padding: 10px 30px;
+    transition: 0.5s;
+    text-align: center;
+    border-radius: 10px;
+}
+a:hover{
+    background: var(--clr);
+    color:var(--clr) ;
+    letter-spacing: 0.25em;
+    box-shadow: 0 0 35px var(--clr);
+}
+a:before{
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background:#080707;
+    border-radius: 10px;
+}
+a span{
+    position: relative;
+    z-index: 1;
+}
+a i{
+    position: absolute;
+    inset: 0;
+    display: block;
+}
+a i::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 80px;
+    width: 10px;
+    height: 4px;
+    background: #0e0e0e;
+    transform: translate(-50%) skewX(325deg);
+    transition: 0.5s;
+}
+
+a:hover i::before{
+    width: 20px;
+    left: 20%;
+}
+a i::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    width: 10px;
+    height: 4px;
+    background: #0e0e0e;
+    transform: translate(-50%) skewX(325deg);
+    transition: 0.5s;
+}
+
+a:hover i::after{
+    width: 20px;
+    left: 80%;
+}
+
+a input{
+    color: #09f;
+    background: none;
+    border: none;
+}
+/* Fin Estilos para el Boton Ingresar del Login*/
+/* Fin Estilos para el Login Card*/
+
+
+/* Estilos el maensaje de error de user o contraseña*/
+#mimensaje {
+    color: #FF0000; /* Color predeterminado del texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Efecto de sombra */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente */
+    font-size: 16px; /* Tamaño de fuente */
+    font-weight: bold; /* Peso de la fuente */
+    letter-spacing: 1px; /* Espaciado entre letras */
+    transition: color 0.3s; /* Transición suave de color */
+
+}
+
+
+
+
+

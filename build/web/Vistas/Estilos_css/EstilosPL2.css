@@ -1,0 +1,246 @@
+
+/* Estilo para la barra */
+.navbar{
+    background: rgb(25, 55, 86); /*Azul Oscuro */
+    padding: 7px;
+
+}
+
+
+.error {
+    color: red;
+}
+.error-input {
+    border: 1px solid red;
+}
+#error_solidos {
+    display: none;
+}
+
+/* Ajuste del modelo de caja para todos los elementos */
+* {
+    box-sizing: border-box;
+}
+
+/* Estilo para el cuerpo del documento */
+body {
+    /* Familia de fuentes para el texto del cuerpo */
+    font-family: 'Roboto', sans-serif;
+    /* Color de fondo del cuerpo */
+    background: #E5E5E5;
+}
+
+/* Estilo para el elemento principal */
+main {
+    /* Ancho máximo del elemento principal */
+    max-width: 800px;
+    /* Ancho del elemento principal */
+    width: 90%;
+    /* Margen automático a la izquierda y derecha para centrar */
+    margin: auto;
+    /* Relleno interior del elemento principal */
+    padding: 40px;
+}
+
+/* Estilo para el formulario */
+.formulario {
+    /* Mostrar los elementos del formulario como una cuadrícula */
+    display: grid;
+    /* Distribución de columnas en la cuadrícula */
+    grid-template-columns: 1fr 1fr;
+    /* Espacio entre las celdas de la cuadrícula */
+    gap: 10px;
+}
+
+/* Estilo para las etiquetas del formulario */
+.formulario__label {
+    /* Mostrar las etiquetas como bloques */
+    display: block;
+    /* Grosor de la fuente de las etiquetas */
+    font-weight: 700;
+    /* Relleno alrededor del texto de la etiqueta */
+    padding: 10px;
+    /* Cursor al pasar sobre la etiqueta */
+    cursor: pointer;
+}
+
+
+.formulario__grupo-input {
+    position: relative;
+}
+
+.formulario__input {
+    width: 100%;
+    background: #fff;
+    border: 3px solid transparent;
+    border-radius: 3px;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 40px 0 10px;
+    transition: .3s ease all;
+}
+
+.formulario__input:focus {
+    border: 3px solid #0075FF;
+    outline: none;
+    box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+}
+
+.formulario__input-error {
+    font-size: 12px;
+    margin-bottom: 0;
+    display: none;
+}
+
+.formulario__input-error-activo {
+    display: block;
+}
+
+/* Estilo para el estado de validación del formulario */
+.formulario__validacion-estado {
+    /* Posicionamiento absoluto para ubicar el elemento en relación con su contenedor */
+    position: absolute;
+    /* Distancia desde el borde derecho del contenedor */
+    right: 10px;
+    /* Distancia desde el borde inferior del contenedor */
+    bottom: 15px;
+    /* Índice de apilamiento para controlar el orden de superposición */
+    z-index: 100;
+    /* Tamaño de la fuente */
+    font-size: 16px;
+    /* Opacidad del elemento */
+    opacity: 0;
+}
+
+
+.formulario__checkbox {
+    margin-right: 10px;
+}
+
+.formulario__grupo-terminos,
+.formulario__mensaje,
+.formulario__grupo-btn-enviar {
+    grid-column: span 2;
+}
+
+.formulario__mensaje {
+    height: 45px;
+    line-height: 45px;
+    background: #F66060;
+    padding: 0 15px;
+    border-radius: 3px;
+    display: none;
+}
+
+.formulario__mensaje-activo {
+    display: block;
+}
+
+.formulario__mensaje p {
+    margin: 0;
+}
+
+/* Estilo para el grupo de botones de enviar del formulario */
+.formulario__grupo-btn-enviar {
+    display: flex;     /* Mostrar los elementos como una fila */    
+    flex-direction: row; /* Dirección de los elementos en la fila */   
+    align-items: center;  /* Alineación vertical de los elementos en el centro */
+    justify-content: center;     /* Alineación horizontal de los elementos en el centro */
+    margin-top: 10px;     /* Margen superior de 10px */
+}
+
+/* Estilo para los elementos hijos directos del grupo de botones de enviar */
+.formulario__grupo-btn-enviar > * {
+    display: inline-block;     /* Mostrar los elementos como en línea */
+    /* Margen de 0 en la parte superior e inferior y 10px en los lados */
+    margin: 0 10px; /* opcional: añadir un espacio horizontal entre los botones */
+}
+
+
+
+
+/* Comentario: Estilo para los botones 1 */
+.formulario__btn {
+    height: 40px;  /* Altura del botón */
+    line-height: 40px;    /* Altura de la línea del texto dentro del botón */
+    width: 25%;  /* Ancho del botón */
+    background: #000;     /* Color de fondo del botón */
+    color: #fff;     /* Color del texto del botón */
+    font-weight: bold;     /* Grosor de la fuente del texto */
+    border: none;     /* Sin borde */
+    border-radius: 3px;   /* Radio del borde del botón */
+    cursor: pointer;   /* Cursor al pasar sobre el botón */
+    transition: .1s ease all;   /* Transición de todas las propiedades con duración de 0.1 segundos */
+}
+
+/* Estilo al pasar el cursor sobre el botón */
+.formulario__btn:hover {    
+    box-shadow: 3px 0px 30px rgba(163,163,163, 1); /* Sombra del botón al pasar el cursor */
+}
+
+
+/* Estilo para los Botones  */
+.formulario__btn2 {
+    height: 40px;
+    line-height: 40px;
+    width: 25%;
+    background: #0062cc;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .1s ease all;
+}
+
+.formulario__btn2:hover {
+    box-shadow: 3px 0px 30px rgba(209, 239, 59, 1);
+}
+
+.formulario__mensaje-exito {
+    font-size: 14px;
+    color: #119200;
+    display: none;
+}
+
+.formulario__mensaje-exito-activo {
+    display: block;
+}
+
+/* ----- -----  Estilos para Validacion ----- ----- */
+.formulario__grupo-correcto .formulario__validacion-estado {
+    color: #1ed12d;
+    opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__label {
+    color: #bb2929;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado {
+    color: #bb2929;
+    opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__input {
+    border: 3px solid #bb2929;
+}
+
+
+/* ----- -----  Mediaqueries ----- ----- */
+@media screen and (max-width: 800px) {
+    .formulario {
+        grid-template-columns: 1fr;
+    }
+
+    .formulario__grupo-terminos,
+    .formulario__mensaje,
+    .formulario__grupo-btn-enviar {
+        grid-column: 2;
+    }
+
+    .formulario__btn {
+        width: 100%;
+    }
+}
+

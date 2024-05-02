@@ -1,0 +1,193 @@
+
+*{
+    padding: 0px;
+
+}
+
+.dropdown-menu {
+    padding: 10px 20px; /* Ajusta el espacio interno */
+}
+.dropdown-menu a {
+    color: #000; /* Color predeterminado del texto */
+    font-family: "Tahoma";
+    font-size: 18px;
+}
+.dropdown-menu a:hover {
+    background: #cccccc;
+    color: #0000ff; /* Cambia el color al pasar el ratón */
+    font-weight: bold;
+}
+
+/* Estilo para el fondo del body */
+body {
+    margin: 0;
+    padding: 0px;
+    background-image: url('Fondo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: sans-serif;
+    background-position: center;
+    background-attachment: fixed;
+
+
+}
+
+/* Estilo para los títulos h1 */
+h1 {
+    font-size: 45px; /* tamañano de la fuente*/
+    color: #040505; /* Cambia el color de letra del encabezado h1 a azul (#007bff) */
+    font-family: 'Helvetica Neue', sans-serif; /* Utiliza una fuente similar a la de Bootstrap */
+    margin-top: 50px;  /* Espacio parte Superior*/
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* Sombra del texto*/
+
+
+}
+.container {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    height: 90vh; /* Esto ayuda a que el contenido se centre verticalmente en toda la página */
+}
+
+
+.btn-custom {
+
+    background-color: #DBDBDB; /* Cambia este color al que desees, por ejemplo, #333 o #555 */
+    color: #000066; /* Cambia el color del texto al que desees */
+    border: none; /* Elimina el borde si lo deseas */
+    border-radius: 5px; /* Agrega bordes redondeados */
+    padding: 10px 20px; /* Ajusta el espacio interno */
+    font-size: 16px; /* Cambia el tamaño de fuente */
+    text-transform: uppercase; /* Convierte el texto en mayúsculas */
+    transition: background-color 0.3s ease; /* Agrega una transición suave al color de fondo */
+}
+
+/* Cambia el color de fondo al pasar el mouse sobre el botón */
+.btn-custom:hover {
+
+    background-color: #ADA996; /* Cambia el color de fondo al pasar el mouse */
+    border-radius: 10px;
+    border: 2px solid #000
+
+}
+.container {
+    margin-top: 100px;
+}
+/* Inico Estilos para el Login Card*/
+.card {
+    padding: 0.5px;
+    border: none;
+    background: #0000ff;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.card-header {
+  
+    border-radius: 15px 15px 0 0;
+    text-align: center;
+}
+
+.card-body h3 {
+    color: #09f; /* Color predeterminado del texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Efecto de sombra */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente */
+    font-size: 24px; /* Tamaño de fuente */
+    font-weight: bold; /* Peso de la fuente */
+    letter-spacing: 1px; /* Espaciado entre letras */
+    transition: color 0.3s; /* Transición suave de color */
+}
+.card-body h3:hover {
+    color: #00ff00; /* Color del texto al pasar el mouse */
+}
+
+.card-body label {
+    color: #09f; /* Color predeterminado del texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Efecto de sombra */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente */
+    font-size: 14px; /* Tamaño de fuente */
+    font-weight: bold; /* Peso de la fuente */
+    letter-spacing: 1px; /* Espaciado entre letras */
+    transition: color 0.3s; /* Transición suave de color */
+}
+.card-body label:hover {
+    color: #1ed12d; /* Color del texto al pasar el mouse */
+}
+
+
+
+.card-body {
+    padding: auto ;
+    background: #fff;
+    border-radius: 15px;
+
+}
+
+
+
+.form-control {
+    border-radius: 5px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+.navbar{
+    background: rgb(25, 55, 86); /*Azul Oscuro */
+
+}
+
+.dropdown{
+    border-left: #0000ff;
+    margin-right:   40px;
+}
+
+
+#cuadro {
+
+    max-width: 600px;
+    margin: 50px auto;
+    /*  background-image: url('Fondo.jpg'');*/
+    background-size: cover;
+    margin-top: 200px;
+    background-position: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* Agregado sombreado al cuadro */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#cuadro h1 {
+    text-align: center;
+    color: #000066;
+    margin-top: 0;
+    font-family: 'Lucida Console', sans-serif; /* Cambiado a Arial, puedes usar otras fuentes como 'Georgia', 'Times New Roman', etc. */
+    text-shadow: 2px 2px 4px rgba(0, 255, 255, 0.9);
+    margin: 2;
+    font-weight: bold; /* Agregado negrita */
+    font-size: 50px; /* Aumentado el tamaño de letra a 28px, ajusta según tus necesidades */
+    background: none;
+}
+
+#cuadro img {
+    max-width: 150px; /* Ajusta el ancho máximo del logo según sea necesario */
+    max-height: 100px;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Estilos para el mensaje */
+#mensaje {
+    color: #a71d2a;
+    text-align: center;
+
+}
+

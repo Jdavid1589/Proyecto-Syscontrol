@@ -1,0 +1,230 @@
+
+
+/* Estilo para el formulario */
+#MYFormulario {
+
+    padding: 20px; /* Espaciado interno */
+    margin-right: 15px; /* Margen derecho */
+
+}
+
+/* Estilo para el cuerpo del documento */
+form {
+
+}
+#miform{
+    background-color: #cccccc; /* Fondo gris claro */
+    /* Familia de fuentes para el texto */
+    font-family: 'Roboto', sans-serif;
+    /* Color de fondo del cuerpo */
+    border-radius: 15px;
+}
+/* Estilo para las etiquetas (labels) con texto azul */
+label {
+    color: blue;
+}
+/* Estilo para la barra */
+.navbar{
+    background: rgb(25, 55, 86); /*Azul Oscuro */
+
+
+}
+
+.my-menu-item {
+    margin-right: 10px; /* Ajusta el margen derecho como desees */
+}
+
+.navbar-sm {
+    padding: 0.5rem 1rem; /* Ajusta los valores según tus preferencias */
+    height: 50px; /* Ajusta el valor según tus preferencias */
+    background: rgb(6, 37, 130);
+}
+/* Cambia el color de fondo del modal */
+.modal-content {
+    background-color: #f2f2f2; /* Puedes cambiar este color a tu gusto */
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+
+
+/* Estilo para el contenedor */
+.container {
+    margin-right: 20px; /* Margen de 20px en el borde derecho */
+    margin-left: 20px; /* Margen de 20px en el borde izquierdo */
+}
+
+
+/* Estilo para el formulario personalizado */
+.custom-form {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #cccccc;
+    padding: 30px;
+    /*    border-radius: 10px;*/
+}
+/* Estilo para campos inválidos en el formulario */
+.campo-invalido {
+    border: 1px solid red;
+    background-color: #ffcccc;
+}
+/* Estilo para los grupos de elementos del formulario */
+.custom-form .form-group {
+    margin-bottom: 15px;
+}
+/* Estilo para los títulos h1 */
+h1 {
+    margin: .65em 0;
+    font-size: 2em;
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    z-index: 1;
+    color: #000;
+    font-family: "arial";
+    margin-top: 90px;
+}
+/* Estilo para los select */
+select.form-control {
+    border: 2px solid #4286f4;
+    border-radius: 5px;
+}
+
+/* Estilo para el fondo del body */
+body {
+    color: #000 !important;
+    text-align: center;
+}
+
+/* Estilo para los títulos h2 y h3 */
+h2, h3 {
+    font-family: "Tu Fuente Personalizada", sans-serif;
+    color: #FF0000;
+    text-align: center;
+    line-height: 1.5;
+}
+
+
+#label-azul {
+    color: blue;
+}
+
+/* Estilo para el título personalizado */
+.custom-title {
+    font-family: "Tu Fuente Personalizada", sans-serif;
+    color: #0056b3;
+    text-align: center;
+    line-height: 1.5;
+}
+/* Estilo que el menu de la barra de abra horizontalmente  */
+.horizontal-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.horizontal-menu .nav-link {
+    margin-right: 10px;
+}
+h4{
+    color: rgb(66, 196, 66);
+    font-family: Tahoma;
+    text-align: center;
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+
+}
+.form{
+    margin-left: 40px;
+    margin-top: 60px;
+}
+.my-menu-item span {
+    color: #ccc;
+    font-size: 22px;
+}
+/* Centra el título del modal */
+.modal-title {
+    text-align: center;
+    color: #333; /* Color del texto */
+}
+/* Agrega relleno y margen a los elementos del formulario para un mejor espaciado */
+.modal-body form .form-group {
+    padding: 10px;
+    margin-bottom: 15px;
+}
+/* Estiliza los campos de entrada */
+.modal-body form .form-control {
+    background-color: #fff; /* Color de fondo del campo de entrada */
+    border: 1px solid #ccc; /* Borde del campo de entrada */
+    border-radius: 5px; /* Radio del borde del campo de entrada */
+    padding: 5px;
+    color: #333; /* Color del texto en el campo de entrada */
+}
+/* Estiliza el botón de cierre */
+.modal-content .btn-close {
+    color: #333; /* Color del botón de cierre */
+}
+
+/* Estiliza el botón de envío si tienes uno */
+.modal-body form .btn-submit {
+    background-color: #007bff; /* Color de fondo del botón de envío */
+    color: #fff; /* Color del texto del botón de envío */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Agrega un efecto al pasar el ratón por encima del botón de envío */
+.modal-body form .btn-submit:hover {
+    background-color: #0056b3; /* Nuevo color de fondo al pasar el ratón */
+}
+
+
+/* Estilo para el grupo de botones de enviar del formulario Consecutivos */
+.formulario__grupo-btn-enviar {
+    display: flex;     
+    flex-direction: row; 
+    align-items: center;  
+    justify-content: center;     
+    margin-top: 10px;     
+}
+
+/* Estilo para los elementos hijos directos del grupo de botones de enviar */
+.formulario__grupo-btn-enviar > * {
+    display: inline-block;     
+    margin: 0 1%; /* Añadir un margen del 1% del ancho total de la pantalla */
+    width: 30%; /* Establecer un ancho máximo del 30% del ancho total de la pantalla */
+}
+
+/* Aumentar la especificidad de los botones */
+.formulario__grupo-btn-enviar button,
+.formulario__grupo-btn-enviar a {
+    width: auto !important; /* Sobrescribir cualquier estilo de ancho existente */
+}
+
+
+
+/* Estilo para el formulario */
+.formulario {
+    background-color: #f2f2f2 ;/* Fondo gris claro */
+    /* Familia de fuentes para el texto */
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    
+    /* Color de fondo del cuerpo */
+    border-radius: 15px;
+
+
+    /* Espacio entre las celdas de la cuadrícula */
+    padding: 25px;
+    margin-left: 50%;
+
+    margin-bottom:   10%;
+    margin-top:    5%;
+    gap: 20px;
+}
+
+
