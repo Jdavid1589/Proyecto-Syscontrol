@@ -2,6 +2,14 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/E:/User/Documents/NetBeansProjects/SyscontrolFinal3/src/java/Persistencia/Encriptador.java</file>
+            <file>file:/E:/User/Documents/NetBeansProjects/SyscontrolFinal3/web/indexLogin.jsp</file>
+            <file>file:/E:/User/Documents/NetBeansProjects/SyscontrolFinal3/src/java/Persistencia/DaoUsuarios.java</file>
+            <file>file:/E:/User/Documents/NetBeansProjects/SyscontrolFinal3/web/Vistas/ListarUsuarios.jsp</file>
+            <file>file:/E:/User/Documents/NetBeansProjects/SyscontrolFinal3/web/index3.jsp</file>
+            <file>file:/E:/User/Documents/NetBeansProjects/SyscontrolFinal3/src/java/Controlador/SVValidar.java</file>
+            <file>file:/E:/User/Documents/NetBeansProjects/SyscontrolFinal3/src/java/Controlador/ControladorUsuarios.java</file>
+        </group>
     </open-files>
 </project-private>
