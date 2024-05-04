@@ -1,4 +1,36 @@
 
+.etiqueta_a{
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    border:none;
+    transition: border-color 0.3s;
+
+}
+.etiqueta_a:hover{
+    border: 2px solid #09f;
+    color: #000000;
+    background: white;
+    font-weight: 700;
+
+}
+
+.salir-btn {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    border:none;
+    transition: border-color 0.3s;
+
+}
+.salir-btn:hover{
+    border: 2px solid #09f;
+
+    background: rgba(25, 55, 86, 0.5); /*Azul Oscuro */
+
+}
+.btn {
+    border-radius: 20px; /* Redondear los botones */
+}
+
 
 /* Estilo para el formulario */
 #MYFormulario {
@@ -185,16 +217,16 @@ h4{
 
 /* Estilo para el grupo de botones de enviar del formulario Consecutivos */
 .formulario__grupo-btn-enviar {
-    display: flex;     
-    flex-direction: row; 
-    align-items: center;  
-    justify-content: center;     
-    margin-top: 10px;     
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
 }
 
 /* Estilo para los elementos hijos directos del grupo de botones de enviar */
 .formulario__grupo-btn-enviar > * {
-    display: inline-block;     
+    display: inline-block;
     margin: 0 1%; /* Añadir un margen del 1% del ancho total de la pantalla */
     width: 30%; /* Establecer un ancho máximo del 30% del ancho total de la pantalla */
 }
@@ -213,7 +245,7 @@ h4{
     /* Familia de fuentes para el texto */
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
-    
+
     /* Color de fondo del cuerpo */
     border-radius: 15px;
 

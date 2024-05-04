@@ -9,7 +9,7 @@
         <title>Syscontrol-MI</title>
 
         <!-- Incluye los archivos CSS de Bootstrap -->
-        <!-- Nueva Actualizacion-->
+
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
@@ -17,9 +17,10 @@
               crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-        <link href="Vistas/StyleFondo.css" rel="stylesheet" type="text/css"/>
-        <link href="Vistas/estilo4.css" rel="stylesheet" type="text/css"/>
 
+
+        <link href="Vistas/Estilos_css/StyleFondo.css" rel="stylesheet" type="text/css"/>
+        <link href="Vistas/Estilos_css/estilo4.css" rel="stylesheet" type="text/css"/>
 
     </head>
 
@@ -28,7 +29,7 @@
             <div class="col-12"> 
                 <nav class="navbar  navbar-expand-lg navbar-darkborder-3 fixed-top border-bottom " >
                     <div class="container-fluid">
-                       
+
 
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,20 +38,20 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent" >
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
-                                    <a  style="margin-left: 10px; border:none; " class="btn btn-outline-light" 
-                                        href="ControladorPL?accion=listar"  target="_blank" >Tdo Lodos</a>
+                                    <a  style="" class="btn btn-outline-light etiqueta_a" 
+                                        href="ControladorPL?accion=listar"  target="_blank" >Lodos</a>
                                 </li>
                                 <li class="nav-item" >
-                                    <a style="margin-left: 10px; border:none" class="btn btn-outline-light"
-                                       href="ControladorPs?accion=listar"  target="_blank">Tdo Seco</a>
+                                    <a style="" class="btn btn-outline-light etiqueta_a"
+                                       href="ControladorPs?accion=listar"  target="_blank">Seco</a>
                                 </li>
                                 <!--target="_blank" esto sirve para abrir una pagina independiente -->
                                 <li class="nav-item">
-                                    <a style="margin-left: 10px; border:none" class="btn btn-outline-light"
+                                    <a style="" class="btn btn-outline-light etiqueta_a"
                                        href="ControladorConsecutivo?accion=Listar2"  >Consecutivo</a>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a style="margin-left: 10px; border:none" class="btn btn-outline-light dropdown-toggle"
+                                    <a style="" class="btn btn-outline-light dropdown-toggle etiqueta_a"
                                        href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         Registros  
                                     </a>
@@ -63,7 +64,7 @@
                                         <li><hr class="dropdown-divider"></li>                           
                                         <li><a class="dropdown-item" href="ControladorRegModal?accion=listar">Otros Registro</a></li>
                                     </ul>
-                                    <a style=" border:none" class="btn btn-outline-light dropdown-toggle"
+                                    <a  class="btn btn-outline-light dropdown-toggle etiqueta_a"
                                        href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         Otros    
                                     </a>
@@ -79,7 +80,7 @@
 
                                     </ul>
                                 </li>                              
-                                <a href="Vistas/ListarEspSeco.jsp"></a>
+
                             </ul>
 
                             <div class="dropdown">
@@ -113,17 +114,7 @@
             </div>   
         </div>
         <style>
-            .salir-btn {
-                font-family: 'Roboto', sans-serif;
-
-                font-size: 12px;
-                border:none;
-
-            }
-            .btn {
-                border-radius: 20px; /* Redondear los botones */
-            }
-
+         
         </style>
 
         <!-- Contenedor principal centrado -->

@@ -9,7 +9,7 @@
 }
 .dropdown-menu a {
     color: #000; /* Color predeterminado del texto */
-    font-family: "Tahoma";
+   font-family: 'Roboto', sans-serif;
     font-size: 18px;
 }
 .dropdown-menu a:hover {
@@ -22,7 +22,7 @@
 body {
     margin: 0;
     padding: 0px;
-    background-image: url('Fondo.jpg');
+    background-image: url('../Fondo.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     font-family: sans-serif;
