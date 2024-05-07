@@ -237,9 +237,13 @@
                                        class="btn btn-sm ms-1 ">
                                         <i class="bi bi-file-pdf" style="font-size: 22px; color: red"></i> <!-- Ícono pdf más grande -->
                                     </a>
-                                    <a href="ControladorPs?accion=eliminar2&id=<%= terminadoseco.getIdControlCalidad()%>"
+                                    <%--  <a href="ControladorPs?accion=eliminar2&id=<%= terminadoseco.getIdControlCalidad()%>"
                                        class="btn btn-sm ms-1" onclick="return confirm('¿Estás seguro de que deseas eliminar este usuario?')">
                                         <i class="fas fa-trash" style="font-size: 20px; color: #00ff00"></i> <!-- Ícono de papelera -->
+                                    </a>--%>
+                                    <!-- Sweet Alert 2-->
+                                    <a href="#" class="btn  btn-sm  ms-1" onclick="eliminarLodos(<%= terminadoseco.getIdControlCalidad()%>)">
+                                        <i  id="mipapelera"class="fas fa-trash"></i> <!-- Ícono de papelera -->
                                     </a>
                                 </div>
                             </td>
@@ -279,42 +283,56 @@
                 </div>
             </div>
 
+            <script>
 
+                function eliminarLodos(id) {
+                    swal({
+                        title: "¿Estás seguro?",
+                        text: "Una vez eliminado, no podrás recuperar este reporte.",
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true
+                    }).then((willDelete) => {
+                        if (willDelete) {
+                            // Muestra el mensaje de éxito
+                            Swal.fire({
+                                position: "center", // Centra el mensaje
+                                icon: "success",
+                                title: "Reporte Eliminado con Éxito",
+                                showConfirmButton: false,
+                                timer: 1000,
+                                customClass: {
+                                    popup: 'swal2-popup-centered'
+                                }
+                            });
 
+                            // Rediriges a la URL de eliminación después de 1.5 segundos (1500 milisegundos)
+                            setTimeout(() => {
+                                window.location.href = "ControladorPs?accion=eliminar2&id=" + id;
+                            }, 1500);
+                        } else {
+                            swal("Operación cancelada.", {
+                                icon: "error",
+                                title: "Cancelado"
+                            });
+                        }
+                    });
+                }
 
-            <!-- JQuery -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" 
-                    integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" 
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            </script>
 
-            <!-- DataTable -->
-            <%-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
-             <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
-             <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
-             <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>--%>
+            <!-- Alerta Sweet Alert  -->
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> <!-- For alert-style pop-up messages -->
 
-
-            <%-- <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
-            <script src="https://cdn.datatables.net/buttons/2.3.3/js/dataTables.buttons.min.js"></script>
-            <script src="https://cdn.datatables.net/buttons/2.3.3/js/buttons.bootstrap5.min.js"></script>
-            <script src="https://cdn.datatables.net/buttons/2.3.3/js/buttons.html5.min.js"></script>
-            <script src="https://cdn.datatables.net/buttons/2.3.3/js/buttons.print.min.js"></script>--%>
-
-            <!-- Otros scripts -->
-            <%--  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> <!-- Para mensajes emergentes estilo alerta -->
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!-- Para funcionalidad AJAX -->--%>
-
-
-            <script src="./js/Funsiones2.js" type="text/javascript"></script>
-            <script src="./js/Funsiones_Varias.js" type="text/javascript"></script>
-
-            <!-- JQuery 
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!-- For AJAX functionality -->
+         
             <script
                 src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
                 integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
                 crossorigin="anonymous"
                 referrerpolicy="no-referrer"
-            ></script>-->
+            ></script>
             <!-- DataTable -->
             <script   type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
 
@@ -322,22 +340,23 @@
             <script    type="text/javascript"   src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
             <script    type="text/javascript"   src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
             <script    type="text/javascript"   src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
-
             <script    type="text/javascript"   src="https://cdn.datatables.net/buttons/2.3.3/js/dataTables.buttons.min.js"></script>
-
-
-
             <script    type="text/javascript"   src="https://cdn.datatables.net/buttons/2.3.3/js/buttons.bootstrap5.min.js"></script>
             <script    type="text/javascript"   src="https://cdn.datatables.net/buttons/2.3.3/js/buttons.html5.min.js"></script>
             <script    type="text/javascript"   src="https://cdn.datatables.net/buttons/2.3.3/js/buttons.print.min.js"></script>
 
 
+
             <!-- Bootstrap-->
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="./js/JS_PL.js" type="text/javascript"></script>      
+
 
 
             <!-- Funsiones de Datable y Funsion para agregar Campos de Humedad  a lista -->
             <script src="./js/JS_PS.js" type="text/javascript"></script>
+
+
 
 
 
@@ -370,18 +389,30 @@
                 }
                 /* Move the buttons below the table */
 
-               .dataTables_wrapper .dt-buttons {
-                      position: absolute;
-                      bottom: -50px;
-                      left: 50%;
-                      transform: translateX(-60%);
-                      margin-bottom: 20px; /* Ajusta según sea necesario */
-                  }
+                .dataTables_wrapper .dt-buttons {
+                    position: absolute;
+                    bottom: -50px;
+                    left: 50%;
+                    transform: translateX(-60%);
+                    margin-bottom: 20px; /* Ajusta según sea necesario */
+                }
 
                 /* Estilos redondeados para los btn */
 
                 .btn {
                     border-radius: 25px; /* Redondear los botones */
+                }
+                  a #mipapelera{
+                    font-size: 25px;
+                    color: #66ff66;
+                    transition: 0.3s;
+
+                }
+                a #mipapelera:hover{
+
+                    color: #FF0000;
+                    box-shadow: 3px 0px 30px rgba(246, 78, 60, 1.5);
+
                 }
 
 

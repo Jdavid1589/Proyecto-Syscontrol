@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
 
-
+        <!-- Etilos CSS -->  
         <link href="Vistas/Estilos_css/StyleFondo.css" rel="stylesheet" type="text/css"/>
         <link href="Vistas/Estilos_css/estilo4.css" rel="stylesheet" type="text/css"/>
 
@@ -65,7 +65,7 @@
                                         <li><a class="dropdown-item" href="ControladorRegModal?accion=listar">Otros Registro</a></li>
                                     </ul>
                                     <a  class="btn btn-outline-light dropdown-toggle etiqueta_a"
-                                       href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         Otros    
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -114,7 +114,7 @@
             </div>   
         </div>
         <style>
-         
+
         </style>
 
         <!-- Contenedor principal centrado -->

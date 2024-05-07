@@ -245,10 +245,14 @@
                                        class="btn  btn-sm   ms-1 "  >
                                         <i class="bi bi-file-pdf" style="font-size: 22px; color: red"></i> <!-- Ícono pdf más grande -->
                                     </a>
-                                    <a href="ControladorPL?accion=eliminar2&id=<%=terminadoseco.getIdControlCalidad()%>"
+                                    <%-- <a href="ControladorPL?accion=eliminar2&id=<%=terminadoseco.getIdControlCalidad()%>"
                                        class="btn  btn-sm  ms-1" onclick="return confirm('¿Estás seguro de que deseas eliminar este usuario?')">
                                         <i id="mipapelera" class="fas fa-trash "  ></i> <!-- Ícono de papelera -->
-                                    </a>  
+                                    </a>  --%>
+                                    <!-- Sweet Alert 2-->
+                                    <a href="#" class="btn  btn-sm  ms-1" onclick="eliminarLodos(<%= terminadoseco.getIdControlCalidad()%>)">
+                                        <i  id="mipapelera" class="fas fa-trash"></i> <!-- Ícono de papelera -->
+                                    </a>
 
                                 </div>
                             </td>
@@ -348,7 +352,7 @@
                 }
                 /* Con la propiedad bottom y letf controlo la aubicacion de la info */
                 .dataTables_paginate {
-           
+
                     bottom: -15%;
                     left:  100%;
                     margin-bottom: 5px; /* Ajusta según sea necesario */
@@ -387,13 +391,52 @@
 
 
             </style>
-            
-            <!-- JQuery -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" 
-                    integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" 
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-          
+            <script>
+
+                function eliminarLodos(id) {
+                    swal({
+                        title: "¿Estás seguro?",
+                        text: "Una vez eliminado, no podrás recuperar este reporte.",
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true
+                    }).then((willDelete) => {
+                        if (willDelete) {
+                            // Muestra el mensaje de éxito
+                            Swal.fire({
+                                position: "center", // Centra el mensaje
+                                icon: "success",
+                                title: "Reporte Eliminado con Éxito",
+                                showConfirmButton: false,
+                                timer: 1000,
+                                customClass: {
+                                    popup: 'swal2-popup-centered'
+                                }
+                            });
+
+                            // Rediriges a la URL de eliminación después de 1.5 segundos (1500 milisegundos)
+                            setTimeout(() => {
+                                window.location.href = "ControladorPL?accion=eliminar2&id=" + id;
+                            }, 1500);
+                        } else {
+                            swal("Operación cancelada.", {
+                                icon: "error",
+                                title: "Cancelado"
+                            });
+                        }
+                    });
+                }
+
+            </script>
+
+
+
+            <!-- Alerta Sweet Alert  -->
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> <!-- For alert-style pop-up messages -->
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!-- For AJAX functionality -->
 
             <!-- JQuery -->
             <script
@@ -413,6 +456,9 @@
             <script    type="text/javascript"   src="https://cdn.datatables.net/buttons/2.3.3/js/buttons.bootstrap5.min.js"></script>
             <script    type="text/javascript"   src="https://cdn.datatables.net/buttons/2.3.3/js/buttons.html5.min.js"></script>
             <script    type="text/javascript"   src="https://cdn.datatables.net/buttons/2.3.3/js/buttons.print.min.js"></script>
+
+
+
             <!-- Bootstrap-->
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
             <script src="./js/JS_PL.js" type="text/javascript"></script>      

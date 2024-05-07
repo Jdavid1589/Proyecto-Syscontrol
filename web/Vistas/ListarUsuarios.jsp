@@ -207,15 +207,15 @@
 
                                 <td>
                                     <div class="btn-group" role="group" aria-label="Acciones">
-
-                                        <a href="ControladorUsuarios?accion=eliminar&id=<%= usuarios.getIdUsuarios()%>"
+                                        
+                                        <%--  <a href="ControladorUsuarios?accion=eliminar&id=<%= usuarios.getIdUsuarios()%>"
                                            class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de que deseas eliminar este usuario?')">
                                             <i class="fas fa-trash"></i> <!-- Ícono de papelera -->
-                                        </a>
-                                        <!--Boton Eliminar Alert-->
-                                        <input type="hidden" class="idp" value="<%= usuarios.getIdUsuarios()%>">
-                                        <a href="#" class="btn btn-danger btn-sm btnDelete" data-id="<%= usuarios.getIdUsuarios()%>">
-                                            <i class="fas fa-trash"></i> 
+                                        </a>--%>
+
+                                        <!--Boton Eliminar Alert-->                                    
+                                        <a href="#" class="btn btn-danger btn-sm" onclick="eliminarUsuario(<%= usuarios.getIdUsuarios()%>)">
+                                            <i class="fas fa-trash"></i> <!-- Ícono de papelera -->
                                         </a>
 
 
@@ -242,7 +242,7 @@
     </div>
 
 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Jquery-3.5.1 sirve para ejecutar funsion dezplazamiento dentro de la tabla -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
@@ -256,9 +256,14 @@
     ></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script><%--lo de las alertas--%>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> <!-- For alert-style pop-up messages -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!-- For AJAX functionality -->
+
+
     <script src="./js/Funsiones2.js" type="text/javascript"></script>
     <script src="./js/Funsiones_Varias.js" type="text/javascript"></script>
 
@@ -267,56 +272,40 @@
 
 
     <script>
-                                               $(document).ready(function () {
-                                                   $(".btnDelete").click(function () {
-                                                       var idp = $(this).data("id");
 
-                                                       // Configurar el diálogo de confirmación SweetAlert
-                                                       swal({
-                                                           title: "¿Está seguro de eliminar Usuario?",
-                                                           text: "Una vez eliminado deberá agregar de nuevo.",
-                                                           icon: "warning",
-                                                           buttons: {
-                                                               confirmar: "Sí, Eliminar",
-                                                               cancelar: "No, Cancelar"
-                                                           },
-                                                       }).then((isConfirm) => {
-                                                           if (isConfirm) {
-                                                               eliminarRegistro(idp);
-                                                           } else {
-                                                               swal("Cancelado", "Cancelaste la eliminación", "error");
-                                                           }
-                                                       });
-                                                   });
+                                            function eliminarUsuario(id) {
+                                                swal({
+                                                    title: "¿Estás seguro?",
+                                                    text: "Una vez eliminado, no podrás recuperar este reporte.",
+                                                    icon: "warning",
+                                                    buttons: true,
+                                                    dangerMode: true
+                                                }).then((willDelete) => {
+                                                    if (willDelete) {
+                                                        // Muestra el mensaje de éxito
+                                                        Swal.fire({
+                                                            position: "center", // Centra el mensaje
+                                                            icon: "success",
+                                                            title: "Reporte Eliminado con Éxito",
+                                                            showConfirmButton: false,
+                                                            timer: 1000,
+                                                            customClass: {
+                                                                popup: 'swal2-popup-centered'
+                                                            }
+                                                        });
 
-                                                   function eliminarRegistro(idp) {
-                                                       var url = "ControladorUsuarios?accion=eliminar&id=" + idp;
-
-                                                       $.ajax({
-                                                           type: 'POST',
-                                                           url: url,
-                                                           async: true,
-                                                           success: function (response) {
-                                                               // Maneja acciones adicionales si es necesario
-                                                               console.log(response);
-
-                                                               if (response === "success") {
-                                                                   swal("Eliminado", "El Usuario se ha eliminado", "success");
-                                                                   setTimeout(function () {
-                                                                       // Redirigir a una página diferente después de una eliminación exitosa
-                                                                       window.location.href = "ControladorUsuarios?accion=listar";
-                                                                   }, 1000);
-                                                               } else {
-                                                                   swal("Error Usuario en Uso", response, "error");
-                                                               }
-                                                           },
-                                                           error: function () {
-                                                               swal("Error ", "Hubo un problema al intentar eliminar el usuario", "error ");
-                                                           }
-                                                       });
-                                                   }
-                                               });
-
+                                                        // Rediriges a la URL de eliminación después de 1.5 segundos (1500 milisegundos)
+                                                        setTimeout(() => {
+                                                            window.location.href = "ControladorUsuarios?accion=eliminar&id=" + id;
+                                                        }, 1500);
+                                                    } else {
+                                                        swal("Operación cancelada.", {
+                                                            icon: "error",
+                                                            title: "Cancelado"
+                                                        });
+                                                    }
+                                                });
+                                            }
 
     </script>
     <script>

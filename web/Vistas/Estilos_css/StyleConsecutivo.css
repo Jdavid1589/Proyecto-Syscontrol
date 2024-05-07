@@ -1,0 +1,43 @@
+
+/**** Estilos para Datatable ****/
+   #miTabla {
+        table-layout: fixed;
+        width: 100%;
+
+    }
+    .dataTables_info {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        position: absolute;
+        bottom: -10%;
+        right:  0%;
+        transform: translateX(-50%);
+        margin-bottom: 15px; /* Ajusta según sea necesario */
+        color: #09f;
+    }
+    /* Con la propiedad bottom y letf controlo l aubicacion de la info */
+    .dataTables_paginate {
+        font-family: 'Roboto', sans-serif;
+        padding: 10px  10px;
+        bottom: auto;
+        left:  auto;
+
+    }
+
+    /* CSS personalizado para DataTables */
+    .dataTables_wrapper {
+        font-family: 'Roboto', sans-serif;
+        color: green;
+    }
+    /* Alinear botones de paginación a la derecha */
+    .dataTables_paginate ul.pagination {
+        font-family: 'Roboto', sans-serif;
+        float:left;
+    }
+    .dataTables_filter {
+        float: left !important; /* Establece la barra de búsqueda a la izquierda */
+    }
+    .dataTables_info {
+        float: right !important; /* Establece la información a la izquierda */
+    }
+

@@ -90,7 +90,7 @@ h1 {
 
 .card-body h3 {
     color: #09f; /* Color predeterminado del texto */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Efecto de sombra */
+
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente */
     font-size: 24px; /* Tamaño de fuente */
     font-weight: bold; /* Peso de la fuente */
@@ -114,16 +114,12 @@ h1 {
     color: #1ed12d; /* Color del texto al pasar el mouse */
 }
 
-
-
 .card-body {
     padding: auto ;
     background: #fff;
     border-radius: 15px;
 
 }
-
-
 
 .form-control {
     border-radius: 5px;

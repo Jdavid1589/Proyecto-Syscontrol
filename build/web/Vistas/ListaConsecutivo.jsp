@@ -33,40 +33,29 @@
         <!-- DataTables Spanish Language -->
         <script src="https://cdn.datatables.net/plug-ins/1.10.24/i18n/Spanish.json"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+        <!-- Etilos CSS DataTable -->  
+        <link href="Vistas/Estilos_css/StyleConsecutivo.css" rel="stylesheet" type="text/css"/>
 
-        <!-- Incluye los archivos CSS de Bootstrap -->  
-
-        <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-...." crossorigin="anonymous" />
-        <!--link href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css" rel="stylesheet"-->
-        <link href="Vistas/css4/bootstrap.css" rel="stylesheet" type="text/css"/>
-        ¿
-        <link href="Vistas/css4/bootstrap-grid.min.css" rel="stylesheet" type="text/css"/>
 
-        <link href="Vistas/css/bootstrap.css" rel="stylesheet" type="text/css"/>
 
-        <link href="Vistas/css/bootstrap-grid.min.css" rel="stylesheet" type="text/css"/>
-        <link href="Vistas/css/bootstrap-grid.css" rel="stylesheet" type="text/css"/>
+
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
               integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
+        <!-- Etilos CSS -->  
         <link href="Vistas/Estilos_css/estilo4.css" rel="stylesheet" type="text/css"/>
         <link href="Vistas/Estilos_css/css_tablas.css" rel="stylesheet" type="text/css"/>
-
-
         <!-- Estilos para los botones  -->
         <link href="Vistas/Estilos_css/StyleBotones.css" rel="stylesheet" type="text/css"/>
 
-        <!-- 
-        Estilos para los botones Formualario 
-        Link estilos4.css
-        -->
-
-
+        <!--   Estilos para los botones Formualario 
+        -Link estilos4.css   -->
 
     </head>
-    <body>        
+    <body>    
+
         <!--Barra de Navegacion -->
         <nav class="navbar  navbar-expand-md navbar-dark border-3 fixed-top border-bottom ">
             <div class="container-fluid ">
@@ -241,15 +230,16 @@
                                 <td><%= DaoUsuarios.obtenerNombreUsuario(consecutivo.getIdUsuarios())%></td>  
                                 <td>
                                     <div class="btn-group" role="group" aria-label="Acciones">
-                                        <a href="ControladorConsecutivo?accion=eliminar&id=<%= consecutivo.getIdconsecutivo()%>"
+                                        <%-- <a href="ControladorConsecutivo?accion=eliminar&id=<%= consecutivo.getIdconsecutivo()%>"
                                            class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de que deseas eliminar este Reporte?')">
                                             <i class="fas fa-trash"></i> <!-- Ícono de papelera -->
-                                            <%--a href="#" class="btn btn-danger btn-sm" onclick="eliminarConsecutivo(<%= consecutivo.getIdconsecutivo()%>)">
-                                                <i class="fas fa-trash"></i> <!-- Ícono de papelera -->
-                                            </a--%>
-                                            <a href="ControladorConsecutivo?accion=editarConsecutivo&id=<%= consecutivo.getIdconsecutivo()%>" class="btn btn-primary btn-sm">
-                                                <i class="fas fa-pencil-alt"></i> <!-- Ícono de lápiz -->
-                                            </a>                                               
+                                        </a>--%>
+                                        <a href="#" class="btn btn-danger btn-sm" onclick="eliminarConsecutivo(<%= consecutivo.getIdconsecutivo()%>)">
+                                            <i class="fas fa-trash"></i> <!-- Ícono de papelera -->
+                                        </a>
+                                        <a href="ControladorConsecutivo?accion=editarConsecutivo&id=<%= consecutivo.getIdconsecutivo()%>" class="btn btn-primary btn-sm">
+                                            <i class="fas fa-pencil-alt"></i> <!-- Ícono de lápiz -->
+                                        </a>                                               
                                     </div>
                                 </td>
 
@@ -285,8 +275,7 @@
 <h1>${mensaje}</h1>
 </div>
 
-
-<!-- Agrega este modal al final de tu formulario -->
+<!-- Modal Calculadora-->
 <div class="modal fade" id="calculadoraModal" tabindex="-1" role="dialog" aria-labelledby="calculadoraModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -324,7 +313,6 @@
 
 
 
-
 <!-- Jquery-3.5.1 sirve para ejecutar funsion dezplazamiento dentro de la tabla -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
@@ -337,42 +325,40 @@
         crossorigin="anonymous"
 ></script>
 
-
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script><%--lo de las alertas--%>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Alerta Sweet Alert  -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> <!-- For alert-style pop-up messages -->
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!-- For AJAX functionality -->
 
 <script src="./js/FunsionConcecut.js" type="text/javascript"></script>
 
+
+
 <script>
-                        function validarFormulario() {
-                            var camposObligatorios = [
-                                "idUsuarios", "nroRemision", "idespecificaciones",
-                                "fechaCertificado", "lote", "fechaProduccion", "cantidadMaterial"
-                            ];
-                            for (var i = 0; i < camposObligatorios.length; i++) {
-                                var input = document.getElementById(camposObligatorios[i]);
-                                if (input.tagName.toLowerCase() === "select") {
-                                    validarCampoCombo(input);
-                                } else {
-                                    validarCampo(input);
-                                }
-                            }
-
-                            var camposInvalidos = camposObligatorios.some(function (campo) {
-                                var input = document.getElementById(campo);
-                                return input.classList.contains("campo-invalido");
-                            });
-                            if (camposInvalidos) {
-                                alert("Por favor, complete todos los campos obligatorios.");
-                                return false;
-                            }
-
-                            return true;
-                        }
-
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("formulario-consecutivo").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevenir el envío normal del formulario
+            
+   
+            // Entonces, mostramos la alerta de éxito
+            Swal.fire({
+                icon: "success",
+                title: "¡Consecutivo registrado exitosamente!",
+                showConfirmButton: false,
+                timer: 1500
+            });
+            
+            // Después de mostrar la alerta, podrías redirigir a otra página si es necesario
+            setTimeout(function() {
+                window.location.href = "ruta/a/tu/pagina";
+            }, 1500);
+        });
+    });
 </script>
 
 
@@ -385,82 +371,11 @@
 <!-- DataTables JS -->
 <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
-<script>
-                        $(document).ready(function () {
-                            $('#miTabla').DataTable({
-                                "paging": true, // Habilita la paginación
-                                "pageLength": 7, // Número de registros por página
-                                "language": {
-                                    "processing": "Procesando...",
-                                    "lengthMenu": "Mostrar _MENU_ registros por página",
-                                    "zeroRecords": "No se encontraron resultados",
-                                    "emptyTable": "Ningún dato disponible en esta tabla",
-                                    "info": "Mostrando _START_ a _END_ de _TOTAL_ entradas",
-                                    "infoEmpty": "Mostrando 0 a 0 de 0 entradas",
-                                    "infoFiltered": "(filtrado de un total de _MAX_ entradas)",
-                                    "search": "Buscar:",
-                                    "paginate": {
-                                        "first": "Primero",
-                                        "last": "Último",
-                                        "next": "Siguiente",
-                                        "previous": "Anterior"
-                                    },
-                                    "aria": {
-                                        "sortAscending": ": Activar para ordenar la columna ascendente",
-                                        "sortDescending": ": Activar para ordenar la columna descendente"
-                                    }
-                                },
-                                "scrollX": true // Habilita el desplazamiento horizontal
-                            });
-                        });
-</script>
+<!-- JS Funsiones Validar y DataTable -->
+<script src="./js/JS_Consecutivo.js" type="text/javascript"></script>
 
 
 
-<style>
-    #miTabla {
-        table-layout: fixed;
-        width: 100%;
-
-    }
-    .dataTables_info {
-        font-family: 'Roboto', sans-serif;
-        font-weight: 700;
-        position: absolute;
-        bottom: -10%;
-        right:  0%;
-        transform: translateX(-50%);
-        margin-bottom: 15px; /* Ajusta según sea necesario */
-        color: #09f;
-    }
-    /* Con la propiedad bottom y letf controlo l aubicacion de la info */
-    .dataTables_paginate {
-        font-family: 'Roboto', sans-serif;
-        padding: 10px  10px;
-        bottom: auto;
-        left:  auto;
-
-    }
-
-    /* CSS personalizado para DataTables */
-    .dataTables_wrapper {
-        font-family: 'Roboto', sans-serif;
-        color: green;
-    }
-    /* Alinear botones de paginación a la derecha */
-    .dataTables_paginate ul.pagination {
-        font-family: 'Roboto', sans-serif;
-        float:left;
-    }
-    .dataTables_filter {
-        float: left !important; /* Establece la barra de búsqueda a la izquierda */
-    }
-    .dataTables_info {
-        float: right !important; /* Establece la información a la izquierda */
-    }
-
-
-</style>
 
 
 
