@@ -157,7 +157,7 @@ function validarFormulario() {
             icon: "success",
             title: "Reporte Eliminado con Éxito",
             showConfirmButton: false,
-            timer: 3000,
+            timer: 6000,
             customClass: {
                 popup: 'swal2-popup-centered'
             }

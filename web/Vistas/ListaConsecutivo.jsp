@@ -177,7 +177,7 @@
                     </div>
 
                     <!-- Grupo: Botones -->                 
-                    <div class="formulario__grupo formulario__grupo-btn-enviar">       
+                    <%--    <div class="formulario__grupo formulario__grupo-btn-enviar">       
                         <button    type="submit" name="accion" value="RegistrarConsecutivo"   class="btn btn-success" >
                             Registrar   
                             <i class="fas fa-save " style="color: #000;"></i>
@@ -190,10 +190,28 @@
                             Cancelar  
                             <i class="bi bi-x-lg"></i>
                         </a>
-                    </div> 
+                    </div> --%>
+
+                    <!-- Grupo: Botones -->
+                    <fieldset class="formulario__grupo-btn-enviar">
+                        <button type="submit" name="accion" value="RegistrarConsecutivo" class="btn btn-success">
+                            Registrar
+                            <i class="fas fa-save" style="color: #000;"></i>
+                        </button>
+                        <button type="submit" name="accion" value="actualizar" class="btn btn-warning">
+                            Actualizar
+                            <i class="bi bi-arrow-repeat"></i>
+                        </button>
+                        <a href="ControladorConsecutivo?accion=Listar2" class="btn btn-secondary">
+                            Cancelar
+                            <i class="bi bi-x-lg"></i>
+                        </a>
+                    </fieldset>
 
                 </form>
+
             </div> 
+
             <!-- Inicio Tabla Listar -->                  
             <div class="col-sm-8 mb-4 mt-5 sticky-top">
                 <h4>CONSECUTIVO</h4> 
@@ -338,27 +356,32 @@
 <script src="./js/FunsionConcecut.js" type="text/javascript"></script>
 
 
-
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        document.getElementById("formulario-consecutivo").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevenir el envío normal del formulario
-            
-   
-            // Entonces, mostramos la alerta de éxito
-            Swal.fire({
-                icon: "success",
-                title: "¡Consecutivo registrado exitosamente!",
-                showConfirmButton: false,
-                timer: 1500
-            });
-            
-            // Después de mostrar la alerta, podrías redirigir a otra página si es necesario
-            setTimeout(function() {
-                window.location.href = "ruta/a/tu/pagina";
-            }, 1500);
-        });
-    });
+                        const form = document.getElementById('consecutivo-form');
+
+                        form.addEventListener('submit', (e) => {
+                        e.preventDefault();
+                                if (validarFormulario()) {
+                        fetch('ControladorConsecutivo', {
+                        method: 'POST',
+                                body: new FormData(form)
+                        })
+                                .then((response) => response.json())
+                                .then((data) => {
+                                if (data.success) {
+                                Swal.fire({
+                                title: 'Éxito',
+                                        text: 'El consecutivo se ha registrado con éxito',
+                                        icon: 'success',
+                                        confirmButtonText: 'Cerrar'
+                                });
+                                } else {
+                                Swal.fire({
+                                title: 'Error',
+                                        text: 'Ha ocurrido un error al registrar el consecutivo',
+                                        icon: 'error',
+                                        confirmButtonText: 'Cerrar'
+
 </script>
 
 

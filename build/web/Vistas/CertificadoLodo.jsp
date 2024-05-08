@@ -53,7 +53,7 @@
         %>
 
         <!--Barra de Navegacion -->
-        <nav class="navbar  navbar-expand-lg navbar-dark bg-primary border-3 fixed-top border-bottom " id="menu">
+       <nav class="navbar  navbar-expand-md navbar-dark border-3 fixed-top border-bottom ">
             <div class="container-fluid ">
                 <a class="navbar-brand  " href="#"></a>
                 <img src="./Vistas/Imagenes/MI.jpg" alt="Logo" style="float: left; width: 90px;" />

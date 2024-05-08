@@ -1,29 +1,46 @@
 .etiqueta_a {
-   
+
     font-family: 'Roboto', sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     border: none;
-    transition: border-color 0.3s, background-color 0.3s; /* Agregar transición para background-color */
+    transition: border-color 0.3s, background-color 0.5s; /* Agregar transición para background-color y border */
 }
 .etiqueta_a:hover {
-    border: 2px solid #09f;
-    color: white;
-    background: rgba(25, 55, 86, 0.5); /* Azul Oscuro */
-    font-weight: 700;
+    
+    color: #28a745;
+    background: rgba(15, 132, 249, 0.4); /*Azul Oscuro */
+    font-weight: 500;
 }
 
 
 .salir-btn {
+
     font-family: 'Roboto', sans-serif;
-    font-size: 12px;
+    font-size: 14px;
     border:none;
     transition: border-color 0.3s;
 
 }
-.salir-btn:hover{
-    border: 2px solid #09f;
+.salir-btn:hover{   
 
-    background: rgba(25, 55, 86, 0.5); /*Azul Oscuro */
+   color: #28a745;
+    background: rgba(15, 132, 249, 0.4); /*Azul Oscuro */
+    font-weight: 400;
+
+}
+.ingreso {
+    padding: 1px 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    border: none;
+    transition: border-color 0.3s, background-color 0.5s; /* Agregar transición para background-color y border */
+
+}
+.ingreso:hover{
+    border: 2px solid rgba(0, 153, 255,0.7);
+
+    background: white;
+    font-weight: 700;
 
 }
 .btn {
@@ -54,7 +71,7 @@ label {
 /* Estilo para la barra */
 .navbar{
     background: rgb(25, 55, 86); /*Azul Oscuro */
-    padding: 15px;
+  
 }
 
 .my-menu-item {
@@ -65,7 +82,7 @@ label {
     padding: 0.5rem 1rem; /* Ajusta los valores según tus preferencias */
     height: 50px; /* Ajusta el valor según tus preferencias */
     background: rgb(6, 37, 130);
-      padding: 15px;
+    padding: 15px;
 }
 
 /* Cambia el color de fondo del modal */
@@ -160,9 +177,13 @@ h4{
     text-align: center;
     margin-top: 30px;
     font-weight: bold;
-    font-size: 20px;
-    border: 2px solid #ccc;
+    font-size: 22px;
+   
+
     border-radius: 10px;
+    
+    
+   
 
 }
 .form{

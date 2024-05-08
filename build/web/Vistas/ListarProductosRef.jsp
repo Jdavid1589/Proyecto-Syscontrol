@@ -59,8 +59,8 @@
         <link href="Vistas/css/bootstrap-grid.css" rel="stylesheet" type="text/css"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
               integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-       
-         <link href="Vistas/Estilos_css/estilo4.css" rel="stylesheet" type="text/css"/>
+
+        <link href="Vistas/Estilos_css/estilo4.css" rel="stylesheet" type="text/css"/>
         <link href="Vistas/Estilos_css/css_tablas.css" rel="stylesheet" type="text/css"/>
 
 
@@ -84,7 +84,7 @@
                         <li class="nav-item">
                             <a class="nav-link active my-menu-item"  aria-current="page" href="##">
                                 <span>
-                                     REFERENCIAS 
+                                    REFERENCIAS 
                                 </span>
                             </a>
                         </li>
@@ -143,10 +143,8 @@
                     <thead >
                         <tr>
                             <th>ID</th>
-                            <th>Producto</th>                                                              
-                            <th>Tipo</th> 
-
-
+                            <th>REFERENCIA</th>                                                              
+                            <th>TIPO</th>
                             <th>ACCIONES</th>
                         </tr>
                     </thead>
@@ -290,7 +288,7 @@
             integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
             crossorigin="anonymous"
     ></script>
-         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>  
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>  
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -314,10 +312,28 @@
                                            $(document).ready(function () {
                                                $('#miTabla').DataTable({
                                                    "paging": true, // Habilita la paginación
-                                                   "pageLength": 5, // Número de registros por página
+                                                   "pageLength": 7, // Número de registros por página
                                                    "language": {
-                                                       "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Spanish.json"
-                                                   }
+                                                       "processing": "Procesando...",
+                                                       "lengthMenu": "Mostrar _MENU_ registros por página",
+                                                       "zeroRecords": "No se encontraron resultados",
+                                                       "emptyTable": "Ningún dato disponible en esta tabla",
+                                                       "info": "Mostrando _START_ a _END_ de _TOTAL_ entradas",
+                                                       "infoEmpty": "Mostrando 0 a 0 de 0 entradas",
+                                                       "infoFiltered": "(filtrado de un total de _MAX_ entradas)",
+                                                       "search": "Buscar:",
+                                                       "paginate": {
+                                                           "first": "Primero",
+                                                           "last": "Último",
+                                                           "next": "Siguiente",
+                                                           "previous": "Anterior"
+                                                       },
+                                                       "aria": {
+                                                           "sortAscending": ": Activar para ordenar la columna ascendente",
+                                                           "sortDescending": ": Activar para ordenar la columna descendente"
+                                                       }
+                                                   },
+                                                   "scrollX": false // Habilita el desplazamiento horizontal
                                                });
                                            });
     </script>
@@ -328,13 +344,14 @@
             font-family: 'Roboto', sans-serif;
 
             color:blue;
+            font-weight: 700;
 
         }
-/* Estilos redondeados para los btn */
+        /* Estilos redondeados para los btn */
 
-            .btn {
-                border-radius: 20px; /* Redondear los botones */
-            }
+        .btn {
+            border-radius: 20px; /* Redondear los botones */
+        }
 
 
 

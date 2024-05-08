@@ -134,10 +134,7 @@ h1 {
 .btn-primary:hover {
     background-color: #0056b3;
 }
-.navbar{
-    background: rgb(25, 55, 86); /*Azul Oscuro */
 
-}
 
 .dropdown{
     border-left: #0000ff;
@@ -151,7 +148,7 @@ h1 {
     margin: 50px auto;
     /*  background-image: url('Fondo.jpg'');*/
     background-size: cover;
-    margin-top: 200px;
+    margin-top: 300px;
     background-position: center;
     padding: 20px;
     border-radius: 10px;

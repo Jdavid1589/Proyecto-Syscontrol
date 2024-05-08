@@ -71,7 +71,7 @@
 
 
         <!--Barra de Navegacion -->
-        <nav class="navbar  navbar-expand-md navbar-dark bg-primary border-3 fixed-top border-bottom " id="menu">
+          <nav class="navbar  navbar-expand-md navbar-dark border-3 fixed-top border-bottom ">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#"></a>
                 <img src="./Vistas/Imagenes/MI.jpg" alt="Logo" style="float: left; width: 90px;" />
@@ -96,7 +96,7 @@
 
                         <li class="nav-item ">
                             <a class="nav-link active my-menu-item" aria-current="page" href="./index3.jsp"><b>
-                                    <span style="margin-left: 10px; border:none" class=" btn btn-outline-light ">
+                                     <span  style="margin-left: 10px; border:none; font-size: 16px" class="btn btn-outline-light">
                                         <i class="bi bi-arrow-left-square-fill text-dark"></i> <b> Inicio </b>
                                     </span>
                             </a>
@@ -107,7 +107,7 @@
                                     <i class="bi bi-plus-circle"></i> <b>Añadir</b> </span>
                             </a>--%>
                             <a class="nav-link active" aria-current="page"        href="ControladorPs?accion=listar">
-                                <span  style="margin-left: 10px; border:none" class=" btn btn-outline-light ">
+                                 <span  style="margin-left: 10px; border:none; font-size: 16px" class="btn btn-outline-light">
                                     <i class="bi bi-arrow-left-square-fill text-dark"></i> <b>Producto Seco</b> </span>
                             </a>
                         </li>

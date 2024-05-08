@@ -32,15 +32,6 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
-        <!--link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
-              integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-              crossorigin="anonymous"-->
-        <!--link rel="stylesheet" href="@sweetalert2/themes/dark/dark.css">
-        <script src="sweetalert2/dist/sweetalert2.min.js"></script-->
-
-        <!--script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script-->
-
         <link href="Vistas/Estilos_css/estilo4.css" rel="stylesheet" type="text/css"/>
         <link href="Vistas/Estilos_css/css_tablas.css" rel="stylesheet" type="text/css"/>
 
@@ -60,133 +51,127 @@
 
         <main>
 
-        <!--Barra de Navegacion -->
-        <nav class="navbar  navbar-expand-md navbar-dark border-3 fixed-top border-bottom ">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#"></a>
-                <img src="./Vistas/Imagenes/MI.jpg" alt="Logo" style="float: left; width: 90px;" />
-                <button 
-                    class="navbar-toggler" type="button" data-bs-toggle="collapse" 
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse  " id="navbarSupportedContent">
+            <!--Barra de Navegacion -->
+            <nav class="navbar  navbar-expand-md navbar-dark border-3 fixed-top border-bottom ">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"></a>
+                    <img src="./Vistas/Imagenes/MI.jpg" alt="Logo" style="float: left; width: 90px;" />
+                    <button 
+                        class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse  " id="navbarSupportedContent">
 
 
-                    <ul class="navbar-nav ml-3 me-auto">  
-                        <form class="navbar-nav ms-auto ml-auto" role="search">
-                            <input class="form-control " type="search" name="txtbuscar" placeholder="Buscar Empresa, Nombres" aria-label="Buscar">
-                            <button  type="submit" name="accion" value="buscar" style="background:  rgb(212, 173, 17)" class="btn btn-warning ml-1">Buscar</button>
-                        </form>
+                        <ul class="navbar-nav ml-3 me-auto">  
+                            <form class="navbar-nav ms-auto ml-auto" role="search">
+                                <input class="form-control " type="search" name="txtbuscar" placeholder="Buscar Empresa, Nombres" aria-label="Buscar">
+                                <button  type="submit" name="accion" value="buscar" style="background:  rgb(212, 173, 17)" class="btn btn-warning ml-1">Buscar</button>
+                            </form>
 
-                    </ul>
-                    <ul class="navbar-nav mx-auto text-center" >   
-                        <li class="nav-item" >
-                            <a class="nav-link active my-menu-item"  aria-current="page" href="##">
-                                <span >
-                                    LISTA  DE CLIENTES
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-
-                    <ul class="navbar-nav mb-3 mb-lg-0 float-start ">   
-
-                        <li class="nav-item ">
-                        <a class="nav-link active"  aria-current="page" href="./index3.jsp"><b>
-                                    <span style="margin-left: 10px; border:none" class=" btn btn-outline-light ">
-                                        <i class="bi bi-arrow-left-square-fill text-dark"></i> <b> Inicio </b>
+                        </ul>
+                        <ul class="navbar-nav mx-auto text-center" >   
+                            <li class="nav-item" >
+                                <a class="nav-link active my-menu-item"  aria-current="page" href="##">
+                                    <span >
+                                        LISTA  DE CLIENTES
                                     </span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link active" aria-current="page" href="ControladorClientes?accion=add">
-                                <span  style="margin-left: 10px; border:none" class=" btn btn-outline-light ">
-                                    <i class="bi bi-plus-circle"></i> <b>Añadir</b> </span>
-                            </a>
-                        </li>
+                                </a>
+                            </li>
+                        </ul>
 
-                    </ul>
+                        <ul class="navbar-nav mb-3 mb-lg-0 float-start ">   
+
+                            <li class="nav-item ">
+                                <a class="nav-link active"  aria-current="page" href="./index3.jsp"><b>
+                                        <span style="margin-left: 10px; border:none" class=" btn btn-outline-light ">
+                                            <i class="bi bi-arrow-left-square-fill text-dark"></i> <b> Inicio </b>
+                                        </span>
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link active" aria-current="page" href="ControladorClientes?accion=add">
+                                    <span  style="margin-left: 10px; border:none" class=" btn btn-outline-light ">
+                                        <i class="bi bi-plus-circle"></i> <b>Añadir</b> </span>
+                                </a>
+                            </li>
+
+                        </ul>
 
 
+                    </div>
                 </div>
-            </div>
-        </nav>
-        <!--Barra de Navegacion -->
+            </nav>
+            <!--Barra de Navegacion -->
 
-        <div class="col-sm-12 mb-4 sticky-top" style="margin-top: 60px">
-            <br>
+            <div class="col-sm-12 mb-4 sticky-top" style="margin-top: 60px">
+                <br>
 
-            <%-- <h1 class="text-primary elegant-font text-center"><b style="font-size: 26px; text-align: center">LISTA CLIENTES</b></h1> --%>
-            <div class=" table-container ml-3 md-3 table-responsive" >
-                <table id="miTabla" class="table table-striped table-hover sticky-top">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Empresa</th>                       
-                            <th>Nombres</th>
-                            <th>Tipo_Doc</th>
-                            <th># Docum</th>
-                            <th>Direccion</th>
-                            <th>Correo</th>
-                            <th>Telefono</th>                           
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <%
-                            List<Clientes> Lista = (List<Clientes>) request.getAttribute("listaClientes");
-                            for (Clientes clientes : Lista) {%>
-                        <tr>
-                            <td><%= clientes.getIdclientes()%></td>
-                            <td><%= clientes.getRazon_Social()%></td>  
-                            <td><%= clientes.getNombres_apellidos()%></td>
-                            <td><%= DaoDocumento.obtenerTipoDocumento(clientes.getIdDocumento())%></td>                           
-                            <td><%= clientes.getNumero_Documento()%></td>
-                            <td><%= clientes.getDireccion()%></td>                           
-                            <td><%= clientes.getCorreo()%></td>
-                            <td><%= clientes.getNumero_Telefono()%></td> 
+                <div class=" table-container ml-3 md-3 table-responsive" >
+                    <table id="miTabla" class="table table-striped table-hover sticky-top">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Empresa</th>                       
+                                <th>Nombres</th>
+                                <th>Tipo_Doc</th>
+                                <th># Docum</th>
+                                <th>Direccion</th>
+                                <th>Correo</th>
+                                <th>Telefono</th>                           
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <%
+                                List<Clientes> Lista = (List<Clientes>) request.getAttribute("listaClientes");
+                                for (Clientes clientes : Lista) {%>
+                            <tr>
+                                <td><%= clientes.getIdclientes()%></td>
+                                <td><%= clientes.getRazon_Social()%></td>  
+                                <td><%= clientes.getNombres_apellidos()%></td>
+                                <td><%= DaoDocumento.obtenerTipoDocumento(clientes.getIdDocumento())%></td>                           
+                                <td><%= clientes.getNumero_Documento()%></td>
+                                <td><%= clientes.getDireccion()%></td>                           
+                                <td><%= clientes.getCorreo()%></td>
+                                <td><%= clientes.getNumero_Telefono()%></td> 
 
 
-                            <td>
-                                <div class="btn-group" role="group" aria-label="Acciones">
+                                <td>
+                                    <div class="btn-group" role="group" aria-label="Acciones">
 
-                                    <a href="ControladorClientes?accion=eliminar&id=<%= clientes.getIdclientes()%>"
-                                       class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de que deseas eliminar este usuario?')">
-                                        <i class="fas fa-trash"></i> <!-- Ícono de papelera -->
-
-                                        <!--Boton Eliminar Alert-->
-                                        <!--input type="hidden" class="idp" value="<--%= clientes.getIdclientes()%>">
-                                        <a href="#" class="btn btnDelete btn-danger btn-sm" data-id="<--%= clientes.getIdclientes()%>">
-                                            <i class="fas fa-trash"></i> 
-                                        </a-->
-
-                                        <a href="#" class="btn btn-danger btn-sm" onclick="eliminarCliente(<%= clientes.getIdclientes()%>)">
+                                        <a href="ControladorClientes?accion=eliminar&id=<%= clientes.getIdclientes()%>"
+                                           class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de que deseas eliminar este usuario?')">
                                             <i class="fas fa-trash"></i> <!-- Ícono de papelera -->
-                                        </a>
 
-                                        <a href="ControladorClientes?accion=editarclientes&id=<%= clientes.getIdclientes()%>" class="btn btn-primary btn-sm">
-                                            <i class="fas fa-pencil-alt"></i> <!-- Ícono de lápiz -->
-                                        </a>
-                                </div>
-                            </td>
 
-                        </tr>
-                        <% }%>
-                    </tbody>
-                </table>
+                                            <a href="#" class="btn btn-danger btn-sm" onclick="eliminarCliente(<%= clientes.getIdclientes()%>)">    
+                                                <i class="fas fa-trash"></i> <!-- Ícono de papelera -->
+                                            </a>
+
+                                            <a href="ControladorClientes?accion=editarclientes&id=<%= clientes.getIdclientes()%>" class="btn btn-primary btn-sm">
+                                                <i class="fas fa-pencil-alt"></i> <!-- Ícono de lápiz -->
+                                            </a>
+                                    </div>
+                                </td>
+
+                            </tr>
+                            <% }%>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="form-group text-center mt-2">
+                    <a href="ControladorClientes?accion=listar" class="btn btn-primary"> 
+                        <i class="fas fa-list"></i> Listar</a>
+                    <a href="./index3.jsp" class="btn "  style="background:  rgb(212, 173, 17)">
+                        <i class="bi bi-arrow-left-square-fill text-dark"></i> Inicio</a>
+                </div>
+                <h1>${mensaje}</h1>
             </div>
-            <div class="form-group text-center mt-2">
-                <a href="ControladorClientes?accion=listar" class="btn btn-primary"> 
-                    <i class="fas fa-list"></i> Listar</a>
-                <a href="./index3.jsp" class="btn "  style="background:  rgb(212, 173, 17)">
-                    <i class="bi bi-arrow-left-square-fill text-dark"></i> Inicio</a>
-            </div>
-            <h1>${mensaje}</h1>
-        </div>
 
-</main>
+        </main>
 
         <!-- Jquery-3.5.1 sirve para ejecutar funsion dezplazamiento dentro de la tabla -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -219,15 +204,33 @@
         <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
 
         <script>
-                                            $(document).ready(function () {
-                                                $('#miTabla').DataTable({
-                                                    "paging": true, // Habilita la paginación
-                                                    "pageLength": 5, // Número de registros por página
-                                                    "language": {
-                                                        "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Spanish.json"
-                                                    }
+                                                $(document).ready(function () {
+                                                    $('#miTabla').DataTable({
+                                                        "paging": true, // Habilita la paginación
+                                                        "pageLength": 7, // Número de registros por página
+                                                        "language": {
+                                                            "processing": "Procesando...",
+                                                            "lengthMenu": "Mostrar _MENU_ registros por página",
+                                                            "zeroRecords": "No se encontraron resultados",
+                                                            "emptyTable": "Ningún dato disponible en esta tabla",
+                                                            "info": "Mostrando _START_ a _END_ de _TOTAL_ entradas",
+                                                            "infoEmpty": "Mostrando 0 a 0 de 0 entradas",
+                                                            "infoFiltered": "(filtrado de un total de _MAX_ entradas)",
+                                                            "search": "Buscar:",
+                                                            "paginate": {
+                                                                "first": "Primero",
+                                                                "last": "Último",
+                                                                "next": "Siguiente",
+                                                                "previous": "Anterior"
+                                                            },
+                                                            "aria": {
+                                                                "sortAscending": ": Activar para ordenar la columna ascendente",
+                                                                "sortDescending": ": Activar para ordenar la columna descendente"
+                                                            }
+                                                        },
+                                                        "scrollX": false // Habilita el desplazamiento horizontal
+                                                    });
                                                 });
-                                            });
         </script>
 
         <style>

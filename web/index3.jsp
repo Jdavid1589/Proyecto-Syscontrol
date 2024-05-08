@@ -84,9 +84,9 @@
                             </ul>
 
                             <div class="dropdown">
-                                <button style="border: none;" class="btn btn-sm btn-outline-light dropdown-toggle" 
+                                <button  style="border: none;" class="btn btn-sm btn-outline-light dropdown-toggle " 
                                         type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    ${usuario.getNombres_apellido()} Ingreso
+                                    ${usuario.getNombres_apellido()} Ingresó 
                                 </button>
                                 <ul class="dropdown-menu text-center" class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li>
@@ -94,7 +94,7 @@
                                             <img src="Vistas/img/user.png" alt="40" width="40"/>
                                         </a>
                                     </li>
-                                    <li><a class="dropdown-item" style="text-transform: uppercase; font-size: 16px;">${usuario.getUsuario()}</a></li>
+                                    <li><a class="dropdown-item" style="text-transform: uppercase; font-size: 14px;">${usuario.getUsuario()}</a></li>
                                     <li><a class="dropdown-item" style="text-transform: uppercase;">${usuario.getCorreo()}</a></li>
                                     <li><hr class="dropdown-divider"></li>
                                     <form action="SVValidar" method="POST">
@@ -105,7 +105,7 @@
                             <form action="SVValidar" method="POST">
                                 <div class="ml-2">
                                     <!-- Botón de cierre de sesión -->              
-                                    <button class="btn btn-outline-danger my-btn salir-btn" name="accion" value="Salir">Cerrar Sesión</button>
+                                    <button class="btn btn-outline-danger my-btn salir-btn " name="accion" value="Salir">Cerrar Sesión</button>
                                 </div>
                             </form>
                         </div>
@@ -120,7 +120,7 @@
         <!-- Contenedor principal centrado -->
 
         <div class="row">
-            <div class="col-md-12 mx-auto d-flex justify-content-center">
+            <div class="col-md-12">
                 <div id="cuadro">
                     <img src="Vistas/Imagenes/MI.jpg" alt=""/>
                     <h1 >BIENVENIDOS A SYSCONTROL MI</h1>
