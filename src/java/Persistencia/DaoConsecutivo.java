@@ -257,6 +257,33 @@ public class DaoConsecutivo {
         }
         return false;
     }
+    
+    
+    public static boolean canDelete(int idconsecutivo) {
+    try (Connection con = dao.conectar();
+         PreparedStatement ps = con.prepareStatement("SELECT COUNT(*) FROM controlcalidad WHERE idconsecutivo =?")) {
+        ps.setInt(1, idconsecutivo);
+        ResultSet rs = ps.executeQuery();
+        rs.next();
+        return rs.getInt(1) == 0;
+    } catch (SQLException e) {
+        e.printStackTrace(); // Maneja las excepciones de mejor manera, por ejemplo, lanzando una excepción personalizada.
+        return false;
+    }
+}
+
+public static boolean eliminar2(int idconsecutivo) {
+    try (Connection con = dao.conectar();
+         PreparedStatement ps = con.prepareStatement("DELETE FROM consecutivo WHERE idconsecutivo =?")) {
+        ps.setInt(1, idconsecutivo);
+        return ps.executeUpdate() > 0;
+    } catch (SQLException e) {
+        e.printStackTrace(); // Maneja las excepciones de mejor manera, por ejemplo, lanzando una excepción personalizada.
+        return false;
+    }
+}
+    
+    
 
     public static List<Consecutivo> buscarConsecutivo(String texto) {
         List<Consecutivo> listaconsecutivo = new ArrayList<>();

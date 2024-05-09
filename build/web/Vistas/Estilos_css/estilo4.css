@@ -1,3 +1,9 @@
+
+.id-error {
+    font-weight: bold;
+    color: red;
+}
+
 .etiqueta_a {
 
     font-family: 'Roboto', sans-serif;
@@ -19,6 +25,7 @@
     font-size: 14px;
     border:none;
     transition: border-color 0.3s;
+   
 
 }
 .salir-btn:hover{   
@@ -28,21 +35,37 @@
     font-weight: 400;
 
 }
-.ingreso {
-    padding: 1px 20px;
+.input-field {
+  color: #09f;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  border: none;
+  transition: background-color 0.5s;
+}
+
+.input-field:hover,
+.input-field:focus {
+     color: #28a745;
+  background-color: rgba(15, 132, 249, 0.4); /* Dark Blue */
+
+}
+
+  /* Estilos para dropdown-menu   Select*/
+.dropdown-menu {
+
+  transition: background-color 0.5s;
+}
+.dropdown-menu .dropdown-item:focus,
+.dropdown-menu .dropdown-item:hover {
+
+  background-color: rgba(15, 132, 249, 0.4); /* Dark Blue */
+  border-radius: 45px;
     font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    border: none;
-    transition: border-color 0.3s, background-color 0.5s; /* Agregar transición para background-color y border */
 
 }
-.ingreso:hover{
-    border: 2px solid rgba(0, 153, 255,0.7);
 
-    background: white;
-    font-weight: 700;
 
-}
+
 .btn {
     border-radius: 20px; /* Redondear los botones */
 }

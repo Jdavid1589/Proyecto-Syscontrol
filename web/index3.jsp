@@ -45,6 +45,11 @@
                                     <a style="" class="btn btn-outline-light etiqueta_a"
                                        href="ControladorPs?accion=listar"  target="_blank">Seco</a>
                                 </li>
+                                <li class="nav-item" >
+                                    <a style="" class="btn btn-outline-light etiqueta_a"
+                                       href="index4.jsp"  target="_blank">Index4</a>
+                                </li>
+                               
                                 <!--target="_blank" esto sirve para abrir una pagina independiente -->
                                 <li class="nav-item">
                                     <a style="" class="btn btn-outline-light etiqueta_a"
@@ -84,7 +89,7 @@
                             </ul>
 
                             <div class="dropdown">
-                                <button  style="border: none;" class="btn btn-sm btn-outline-light dropdown-toggle " 
+                                <button   class="btn btn-sm btn-outline-light dropdown-toggle  input-field" 
                                         type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     ${usuario.getNombres_apellido()} Ingresó 
                                 </button>

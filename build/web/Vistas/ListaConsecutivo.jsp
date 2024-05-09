@@ -67,14 +67,14 @@
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse  " id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-3 me-auto">  
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <%--  <ul class="navbar-nav ml-3 me-auto">  
                         <form class="navbar-nav ms-auto ml-auto" role="search">
                             <input class="form-control " type="search" name="txtbuscar" placeholder="Buscar Remis, Consec" aria-label="Buscar">
                             <button  type="submit" name="accion" value="buscar" class="btn btn-warning ml-1">Buscar</button>
                         </form>
-                    </ul>
-                    <ul class="navbar-nav mb-3 mb-lg-0 float-start ">   
+                    </ul>--%>
+                    <ul class="navbar-nav mb-3 mb-lg-0 float-start ms-auto">   
                         <li class="nav-item ">
                             <a class="nav-link active my-menu-item" aria-current="page" href="./index3.jsp"><b>
                                     <span  style="margin-left: 10px; border:none; font-size: 16px" class="btn btn-outline-light">
@@ -84,7 +84,7 @@
                         </li>
                     </ul>
 
-                    <span onclick="location.reload()" class="btn  btn-outline-light text-center" style="font-size: 20px; color: #ffcd39; margin-left: 25px; border:none">
+                    <span onclick="location.reload()" class="btn  btn-outline-light  " style="font-size: 20px; color: #ffcd39; margin-left: 25px; border:none">
                         <i class="bi bi-arrow-clockwise"></i>
                     </span>
                 </div>
@@ -102,12 +102,6 @@
                         <div class="col-md-6 ">
 
                             <div class="form-group text-left">
-                                <label for="nroRemision"  class="text-left"># Remision</label>
-                                <input type="text" class="form-control" value="${Consec.getNroRemision()}"  id="nroRemision" name="nroRemision" 
-                                       placeholder="Ingrese ">
-                            </div>
-
-                            <div class="form-group text-left">
                                 <label for="idespecificaciones"> Referencia-Cliente</label>
                                 <select class="form-control"   style="border: 2px solid #ffdf7e;"  id="idespecificaciones"  value="${Consec.getIdEspecificaciones()}" name="idespecificaciones"   >
                                     <option value="0" >Seleccione Referencia</option>
@@ -117,6 +111,12 @@
                                     <% }
                                         } %>
                                 </select>
+                            </div>                            
+
+                            <div class="form-group text-left">
+                                <label for="nroRemision"  class="text-left"># Remision</label>
+                                <input type="text" class="form-control" value="${Consec.getNroRemision()}"  id="nroRemision" name="nroRemision" 
+                                       placeholder="Ingrese ">
                             </div>
 
                             <div class="form-group text-left">
@@ -126,11 +126,10 @@
                             </div>
 
                             <!-- Etiquetas Flotantes -->
-                            <!--     <div class="form-floating">                             
+                            <%--  <div class="form-floating">                             
                                  <input type="text" class="form-control" id="lote" placeholder="lote">
                                  <label for="lote">Lote</label>
-                             </div> -->
-
+                             </div> --%>
 
                         </div>
                         <div class="col-md-6">  
@@ -147,6 +146,7 @@
                                        placeholder="Ingrese Fecha">
                             </div>
 
+                            <!-- Grupo: Auxiliar -->
                             <div class="form-group text-left">
                                 <label for="idUsuarios"> Auxiliar</label>
                                 <select class="form-control" id="idUsuarios" style="border: 2px solid #ffdf7e;" 
@@ -160,7 +160,7 @@
                                 </select>
                             </div>
 
-                            <!-- Agrega este campo de entrada específico -->
+                            <!-- Campo de entrada para abrir modal -->
                             <div class="form-group text-left">
                                 <label for="cantidadMaterial">Cant Material</label>
                                 <div class="input-group">
@@ -176,21 +176,7 @@
                         </div>
                     </div>
 
-                    <!-- Grupo: Botones -->                 
-                    <%--    <div class="formulario__grupo formulario__grupo-btn-enviar">       
-                        <button    type="submit" name="accion" value="RegistrarConsecutivo"   class="btn btn-success" >
-                            Registrar   
-                            <i class="fas fa-save " style="color: #000;"></i>
-                        </button> 
-                        <button  type ="submit" name="accion" value="actualizar"    class="btn btn-warning" >
-                            Actualizar  
-                            <i class="bi bi-arrow-repeat"></i>
-                        </button>
-                        <a href="ControladorConsecutivo?accion=Listar2" class="btn  btn-secondary">
-                            Cancelar  
-                            <i class="bi bi-x-lg"></i>
-                        </a>
-                    </div> --%>
+
 
                     <!-- Grupo: Botones -->
                     <fieldset class="formulario__grupo-btn-enviar">
@@ -255,6 +241,7 @@
                                         <a href="#" class="btn btn-danger btn-sm" onclick="eliminarConsecutivo(<%= consecutivo.getIdconsecutivo()%>)">
                                             <i class="fas fa-trash"></i> <!-- Ícono de papelera -->
                                         </a>
+
                                         <a href="ControladorConsecutivo?accion=editarConsecutivo&id=<%= consecutivo.getIdconsecutivo()%>" class="btn btn-primary btn-sm">
                                             <i class="fas fa-pencil-alt"></i> <!-- Ícono de lápiz -->
                                         </a>                                               
@@ -290,8 +277,9 @@
     </div>
 </div>
 
+<%--
 <h1>${mensaje}</h1>
-</div>
+</div>--%>
 
 <!-- Modal Calculadora-->
 <div class="modal fade" id="calculadoraModal" tabindex="-1" role="dialog" aria-labelledby="calculadoraModalLabel" aria-hidden="true">
@@ -356,33 +344,6 @@
 <script src="./js/FunsionConcecut.js" type="text/javascript"></script>
 
 
-<script>
-                        const form = document.getElementById('consecutivo-form');
-
-                        form.addEventListener('submit', (e) => {
-                        e.preventDefault();
-                                if (validarFormulario()) {
-                        fetch('ControladorConsecutivo', {
-                        method: 'POST',
-                                body: new FormData(form)
-                        })
-                                .then((response) => response.json())
-                                .then((data) => {
-                                if (data.success) {
-                                Swal.fire({
-                                title: 'Éxito',
-                                        text: 'El consecutivo se ha registrado con éxito',
-                                        icon: 'success',
-                                        confirmButtonText: 'Cerrar'
-                                });
-                                } else {
-                                Swal.fire({
-                                title: 'Error',
-                                        text: 'Ha ocurrido un error al registrar el consecutivo',
-                                        icon: 'error',
-                                        confirmButtonText: 'Cerrar'
-
-</script>
 
 
 
