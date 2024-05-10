@@ -32,3 +32,5 @@ window.addEventListener("resize", function () {
         side_menu.classList.add("menu__side_move");
     }
 });
+
+

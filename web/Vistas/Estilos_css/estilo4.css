@@ -12,7 +12,7 @@
     transition: border-color 0.3s, background-color 0.5s; /* Agregar transición para background-color y border */
 }
 .etiqueta_a:hover {
-    
+
     color: #28a745;
     background: rgba(15, 132, 249, 0.4); /*Azul Oscuro */
     font-weight: 500;
@@ -25,41 +25,42 @@
     font-size: 14px;
     border:none;
     transition: border-color 0.3s;
-   
+
 
 }
-.salir-btn:hover{   
+.salir-btn:hover{
 
-   color: #28a745;
+    color: #28a745;
     background: rgba(15, 132, 249, 0.4); /*Azul Oscuro */
     font-weight: 400;
 
 }
+
 .input-field {
-  color: #09f;
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-  border: none;
-  transition: background-color 0.5s;
+    color: #09f;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    border: none;
+    transition: background-color 0.5s;
 }
 
 .input-field:hover,
 .input-field:focus {
-     color: #28a745;
-  background-color: rgba(15, 132, 249, 0.4); /* Dark Blue */
+    color: #28a745;
+    background-color: rgba(15, 132, 249, 0.4); /* Dark Blue */
 
 }
 
-  /* Estilos para dropdown-menu   Select*/
+/* Estilos para dropdown-menu   Select*/
 .dropdown-menu {
 
-  transition: background-color 0.5s;
+    transition: background-color 0.5s;
 }
 .dropdown-menu .dropdown-item:focus,
 .dropdown-menu .dropdown-item:hover {
 
-  background-color: rgba(15, 132, 249, 0.4); /* Dark Blue */
-  border-radius: 45px;
+    background-color: rgba(15, 132, 249, 0.4); /* Dark Blue */
+    border-radius: 45px;
     font-family: 'Roboto', sans-serif;
 
 }
@@ -94,7 +95,7 @@ label {
 /* Estilo para la barra */
 .navbar{
     background: rgb(25, 55, 86); /*Azul Oscuro */
-  
+
 }
 
 .my-menu-item {
@@ -150,7 +151,7 @@ h1 {
     background-color: #ffffff;
     z-index: 1;
     color: #000;
-    font-family: "arial";
+    font-family: 'Open Sans', sans-serif;
     margin-top: 90px;
 }
 /* Estilo para los select */
@@ -167,7 +168,7 @@ body {
 
 /* Estilo para los títulos h2 y h3 */
 h2, h3 {
-    font-family: "Tu Fuente Personalizada", sans-serif;
+    font-family: 'Open Sans', sans-serif;
     color: #FF0000;
     text-align: center;
     line-height: 1.5;
@@ -180,7 +181,7 @@ h2, h3 {
 
 /* Estilo para el título personalizado */
 .custom-title {
-    font-family: "Tu Fuente Personalizada", sans-serif;
+    font-family: 'Open Sans', sans-serif;
     color: #0056b3;
     text-align: center;
     line-height: 1.5;
@@ -201,12 +202,8 @@ h4{
     margin-top: 30px;
     font-weight: bold;
     font-size: 22px;
-   
 
     border-radius: 10px;
-    
-    
-   
 
 }
 .form{
@@ -286,10 +283,8 @@ h4{
     /* Familia de fuentes para el texto */
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
-
     /* Color de fondo del cuerpo */
     border-radius: 15px;
-
 
     /* Espacio entre las celdas de la cuadrícula */
     padding: 25px;
