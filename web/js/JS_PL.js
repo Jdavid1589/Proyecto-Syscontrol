@@ -30,23 +30,23 @@ $(document).ready(function () {
                 }
             }
         ],
-        lengthMenu: [5,10, 15, 20, 100],
+        lengthMenu: [ 10, 15, 20, 100],
         columnDefs: [
             {className: 'centered', targets: '_all'}, // Aplica la clase 'centered' a todas las columnas
             {orderable: false, targets: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]},
             {searchable: false, targets: [0, 1, 3, 4, 5, 6, 7, 8, 9, 10, 11]}
         ],
-        pageLength: 5,
+        pageLength: 6,
         destroy: true,
         language: {
             processing: 'Procesando...',
-            lengthMenu: 'Mostrar _MENU_ registros por página',
-            zeroRecords: 'No se encontraron resultados',
-            emptyTable: 'Ningún dato disponible en esta tabla',
-            info: 'Mostrando _START_ a _END_ de _TOTAL_ entradas',
-            infoEmpty: 'Mostrando 0 a 0 de 0 entradas',
-            infoFiltered: '(filtrado de un total de _MAX_ entradas)',
-            search: 'Buscar:',
+            "lengthMenu": "<span style='color: #09f; font-size: 18px;   '>Mostrar _MENU_ Registros </span>",
+            "zeroRecords": "No se Encontraron Resultados",
+            "emptyTable": "Ningún dato disponible en esta tabla",
+            "info": "<span style='color: #09f; font-size: 18px;'>Mostrando _START_ a _END_ de _TOTAL_ Entradas</span>",
+            "infoEmpty": "<span style='color: #09f; font-size: 18px;'>Mostrando 0 a 0 de 0 Entradas</span>",
+            "infoFiltered": "<span style='color: purple; font-size: 14px;'>(filtrado de un total de _MAX_ entradas)</span>",
+            "search": "<span style='color: #09f; font-size: 18px; border-bottom: 2px  solid #ccc;'>Buscar:</span>",
             paginate: {
                 first: 'Primero',
                 last: 'Último',

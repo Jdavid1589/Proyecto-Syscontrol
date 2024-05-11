@@ -13,9 +13,10 @@
     font-size: 18px;
 }
 .dropdown-menu a:hover {
-    background: #cccccc;
+    background: #0000ff;
     color: #0000ff; /* Cambia el color al pasar el ratón */
     font-weight: bold;
+ 
 }
 
 /* Estilo para el fondo del body */
@@ -90,7 +91,6 @@ h1 {
 
 .card-body h3 {
     color: #09f; /* Color predeterminado del texto */
-
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente */
     font-size: 24px; /* Tamaño de fuente */
     font-weight: bold; /* Peso de la fuente */
@@ -181,6 +181,11 @@ h1 {
 #mensaje {
     color: #a71d2a;
     text-align: center;
-
 }
+ 
+@media (max-width: 768px) {
+    span {
+        font-size: 14px;
+    }
+    }
 

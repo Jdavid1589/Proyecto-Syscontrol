@@ -65,8 +65,6 @@
 
 }
 
-
-
 .btn {
     border-radius: 20px; /* Redondear los botones */
 }
@@ -74,10 +72,8 @@
 
 /* Estilo para el formulario */
 #MYFormulario {
-
     padding: 20px; /* Espaciado interno */
     margin-right: 15px; /* Margen derecho */
-
 }
 
 
@@ -87,14 +83,19 @@
     font-family: 'Roboto', sans-serif;
     /* Color de fondo del cuerpo */
     border-radius: 15px;
+   
 }
 /* Estilo para las etiquetas (labels) con texto azul */
 label {
     color: blue;
 }
+
 /* Estilo para la barra */
 .navbar{
     background: rgb(25, 55, 86); /*Azul Oscuro */
+
+    padding: 15px 20px;
+    
 
 }
 
@@ -116,8 +117,6 @@ label {
     border-radius: 10px;
 }
 
-
-
 /* Estilo para el contenedor */
 .container {
     margin-right: 20px; /* Margen de 20px en el borde derecho */
@@ -131,7 +130,7 @@ label {
     margin: 0 auto;
     background-color: #cccccc;
     padding: 30px;
-    /*    border-radius: 10px;*/
+
 }
 /* Estilo para campos inválidos en el formulario */
 .campo-invalido {
@@ -142,6 +141,7 @@ label {
 .custom-form .form-group {
     margin-bottom: 15px;
 }
+
 /* Estilo para los títulos h1 */
 h1 {
     margin: .65em 0;
@@ -172,6 +172,7 @@ h2, h3 {
     color: #FF0000;
     text-align: center;
     line-height: 1.5;
+    
 }
 
 
@@ -185,6 +186,7 @@ h2, h3 {
     color: #0056b3;
     text-align: center;
     line-height: 1.5;
+   
 }
 /* Estilo que el menu de la barra de abra horizontalmente  */
 .horizontal-menu {
@@ -285,7 +287,6 @@ h4{
     font-weight: bold;
     /* Color de fondo del cuerpo */
     border-radius: 15px;
-
     /* Espacio entre las celdas de la cuadrícula */
     padding: 25px;
     margin-left: 50%;
@@ -294,5 +295,11 @@ h4{
     margin-top:    5%;
     gap: 20px;
 }
+ 
+@media (max-width: 768px) {
+    span {
+        font-size: 14px;
+    }
+    }
 
 

@@ -7,7 +7,8 @@ $(document).ready(function () {
         "pageLength": 7, // Número de registros por página
         "language": {
             "processing": "Procesando...",
-            "lengthMenu": "Mostrar _MENU_ registros por página",
+            //"lengthMenu": "<span style='color: #09f; font-size: 18px;  position: absolute;  margin-left: -300px; '>Mostrar _MENU_ Registros </span>", // CIU
+            "lengthMenu": "<span style='color: #09f; font-size: 18px; position: absolute; left: 50%; transform: translateX(-110%);'>Mostrar _MENU_ Registros</span>",
             "zeroRecords": "No se encontraron resultados",
             "emptyTable": "Ningún dato disponible en esta tabla",
             "info": "Mostrando _START_ a _END_ de _TOTAL_ entradas",
@@ -162,7 +163,7 @@ function validarFormulario() {
                 popup: 'swal2-popup-centered'
             }
         });
-        
+
         return true;
     } else {
         Swal.fire({
@@ -176,14 +177,14 @@ function validarFormulario() {
 
 
 function eliminarConsecutivo(id) {
-    
+
     // Verificar si el registro se puede eliminar
     if (!canDeleteConsecutivo(id)) {
         // Mensaje de error si el mensaje esta en uso
         Swal.fire({
             position: "center",
-            icon: "error",          
-            title: '<span class="id-error"> <strong>' + 'El Registro con ID: ' + id + '</strong></span>'+' No se puede eliminar,  porque está en uso',
+            icon: "error",
+            title: '<span class="id-error"> <strong>' + 'El Registro con ID: ' + id + '</strong></span>' + ' No se puede eliminar,  porque está en uso',
             showConfirmButton: false,
             timer: 2500
         });
@@ -226,42 +227,42 @@ function canDeleteConsecutivo(id) {
         url: "ControladorConsecutivo?accion=canDelete&id=" + id,
         type: "GET",
         async: false
-        // aca se recibe la respuesta del servidor (ControladorConsecutivo?accion=canDelete) y esta se alamacena 
+                // aca se recibe la respuesta del servidor (ControladorConsecutivo?accion=canDelete) y esta se alamacena 
     }).responseText.trim() === "true";
 }
 
 
 /*
-function eliminarConsecutivo2(id) {
-    swal({
-        title: "¿Estás seguro?",
-        text: "Una vez eliminado, no podrás recuperar este reporte.",
-        icon: "warning",
-        buttons: true,
-        dangerMode: true
-    }).then((willDelete) => {
-        if (willDelete) {
-            // Muestra el mensaje de éxito
-            Swal.fire({
-                position: "center", // Centra el mensaje
-                icon: "success",
-                title: "Reporte Eliminado con Éxito",
-                showConfirmButton: false,
-             
-            });
-
-            // Rediriges a la URL de eliminación después de 1.5 segundos (1500 milisegundos)
-            setTimeout(() => {
-                window.location.href = "ControladorConsecutivo?accion=eliminar2&id=" + id;
-            }, 1500);
-        } else {
-            swal("Operación cancelada.", {
-                icon: "error",
-                title: "Cancelado"
-            });
-        }
-    });
-}*/
+ function eliminarConsecutivo2(id) {
+ swal({
+ title: "¿Estás seguro?",
+ text: "Una vez eliminado, no podrás recuperar este reporte.",
+ icon: "warning",
+ buttons: true,
+ dangerMode: true
+ }).then((willDelete) => {
+ if (willDelete) {
+ // Muestra el mensaje de éxito
+ Swal.fire({
+ position: "center", // Centra el mensaje
+ icon: "success",
+ title: "Reporte Eliminado con Éxito",
+ showConfirmButton: false,
+ 
+ });
+ 
+ // Rediriges a la URL de eliminación después de 1.5 segundos (1500 milisegundos)
+ setTimeout(() => {
+ window.location.href = "ControladorConsecutivo?accion=eliminar2&id=" + id;
+ }, 1500);
+ } else {
+ swal("Operación cancelada.", {
+ icon: "error",
+ title: "Cancelado"
+ });
+ }
+ });
+ }*/
 
 
 

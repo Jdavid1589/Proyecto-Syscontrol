@@ -112,10 +112,7 @@
                                     <i class="fas fa-plus"></i></span>
                             </a>
                         </li>
-
                     </ul>
-
-
                 </div>
             </div>
         </nav>
@@ -128,12 +125,12 @@
                 background-color: #ffcccc; /* Cambia el fondo a un tono rojo claro */
             }
         </style>
-
+        <br > 
         <div class="col-12">   
             <br >    
-            <div class=" mt-5 mx-auto">
+            <div class=" mt-5 ">
                 <a href="ControladorPs?accion=add" 
-                   class="btn btn-warning text-primary ml-3 mb-2 float-start"
+                   class="btn btn-warning text-primary  mb-2 float-start"
                    title="Agregar Nuevo"> <!-- Agrega el atributo title -->
                     <i class="fas fa-plus"></i>
                 </a>
@@ -257,18 +254,7 @@
                 </div>
 
 
-                <!<!-- Boton para ira al inicio de la tabla -->
-                <div class="form-group mt-3 mb-2  mg-2 ml-3 float-start"> 
-                    <button id="btnInicio" class="btn  btn-sm btn-primary " title="Primeara Fila">
-                        <i class="bi bi-arrow-up-square "></i>
-
-                    </button>
-                </div>
-                <div class="form-group  float-start ml-1 mt-3 mb-2  mg-2"> 
-                    <button id="btnFinal" class="btn  btn-sm btn-primary " title="Ultima Fila">
-                        <i class="bi bi-arrow-down-square"></i>
-                    </button>
-                </div>
+              
 
                 <div class="form-group text-right  ml-1 mt-3 mb-2  mg-2">
                     <a href="ControladorProductoSeco?accion=listar" class="btn btn-success ml-2"
@@ -349,9 +335,7 @@
 
             <!-- Bootstrap-->
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-            <script src="./js/JS_PL.js" type="text/javascript"></script>      
-
-
+            <script src="./js/JS_PL.js" type="text/javascript"></script>    
 
             <!-- Funsiones de Datable y Funsion para agregar Campos de Humedad  a lista -->
             <script src="./js/JS_PS.js" type="text/javascript"></script>
@@ -368,14 +352,9 @@
 
                 }
                 .dataTables_info {
-                    font-family: 'Roboto', sans-serif;
-                    font-weight: 700;
-                    position: absolute;
-                    bottom: -10%;
-                    left: 30%;
-                    transform: translateX(-50%);
-                    margin-bottom: 15px; /* Ajusta según sea necesario */
-                    color: red;
+              margin-top:  25px;
+              font-weight: 700;
+                   
                 }
 
                 /* Con la propiedad bottom y letf controlo l aubicacion de la info */

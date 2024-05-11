@@ -20,15 +20,11 @@
 
         <link href="Vistas/Estilos_css/estilo4.css" rel="stylesheet" type="text/css"/>
 
-
-
         <!-- Estilos para los botones  -->
         <link href="Vistas/Estilos_css/StyleBotones.css" rel="stylesheet" type="text/css"/>
-
         <!-- 
         Estilos para los botones Formualario 
-        Link estilos4.css
-        -->
+        Link estilos4.css        -->
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
@@ -101,8 +97,6 @@
         <div class="container-fluid">
             <div class="col-sm-8 mb-4">
                 <br>
-
-
 
                 <form  class="formulario" action="ControladorClientes" method="post" class="custom-form">
 
@@ -210,76 +204,7 @@
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script><%--lo de las alertas--%>
 
         <script src="./js/FuncionCondicionales.js" type="text/javascript"></script>
-        <!--script>
-   function mostrarAlerta() {
-        try {
-            console.log("Función mostrarAlerta ejecutada");
-
-            const result = await Swal.fire({
-                title: "¿Estás seguro?",
-                text: "Deseas Registrar este Cliente.",
-                icon: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#3085d6",
-                cancelButtonColor: "#d33",
-                confirmButtonText: "Sí, registrar",
-                cancelButtonText: "Cancelar"
-            });
-
-            if (result.isConfirmed) {
-                console.log("Usuario confirmó la acción");
-                await enviarSolicitudAlControlador();
-                await mostrarAlertaRegistroExitoso();
-                redirigirUsuario();
-            } else {
-                console.log("Usuario canceló la acción");
-            }
-        } catch (error) {
-            manejarErrores(error);
-        }
-    }
-
-    async function enviarSolicitudAlControlador() {
-        try {
-            console.log("Enviando solicitud al controlador");
-
-            const form = document.getElementById('miFormulario');
-            const formData = new FormData(form);
-
-            const response = await fetch("ControladorClientes?accion=registrar",
-           /* window.location.href = "ControladorClientes?accion=listar";*/{
-                method: 'POST',
-                body: formData,
-            });
-
-            if (!response.ok) {
-                throw new Error('Error al enviar la solicitud al controlador');
-            }
-        } catch (error) {
-            manejarErrores(error);
-        }
-    }
-
-function mostrarAlertaRegistroExitoso() {
-        console.log("Mostrando alerta de registro exitoso");
-
-        await Swal.fire({
-            title: "Buen trabajo!",
-            text: "Registro Exitoso!",
-            icon: "success",
-            confirmButtonText: "OK",
-        });
-    }
-
-    function redirigirUsuario() {
-        console.log("Redirigiendo al usuario");
-        window.location.href = "ControladorClientes?accion=listar";
-    }
-
-    function manejarErrores(error) {
-        console.error(error);
-    }
-</script-->
+     
 
 
     </body>

@@ -1,9 +1,6 @@
 package Modelo;
 
-/**
- *
- * @author Juan David
- */
+
 public class Usuarios {
 
     private int idUsuarios;

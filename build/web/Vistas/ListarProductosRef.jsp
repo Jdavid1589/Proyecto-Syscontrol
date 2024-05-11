@@ -7,25 +7,17 @@
 <%@page import="Modelo.Clientes"%>
 <%@page import="Persistencia.DaoClientes"%>
 <%@page import="Modelo.Productos"%>
-
 <%@page import="java.util.List"%>
 <%@page import="Persistencia.DaoProductoSeco"%>
-
 <%@page import="java.util.List"%>
 <%@page import="Persistencia.DaoPerfil"%>
 <%@page import="Persistencia.DaoDocumento"%>
 <%@page import="Persistencia.DaoProductos"%>
-
 <%@page import="Persistencia.DaoSeguimientos"%>
 <%@page import="Persistencia.DaoUsuarios"%>
 <%@page import="Modelo.Usuarios"%>
 
-
-
-
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
 
 <!DOCTYPE html>
 <html>
@@ -34,7 +26,7 @@
         <title>Lista-Productos</title>
 
 
-        <%--title>Tabla con Bootstrap y DataTables</title--%>
+
         <!-- Bootstrap CSS -->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
         <!-- DataTables CSS -->
@@ -49,19 +41,16 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-...." crossorigin="anonymous" />
         <!--link href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css" rel="stylesheet"-->
-        <link href="Vistas/css4/bootstrap.css" rel="stylesheet" type="text/css"/>
-        <link href="Vistascss4/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <link href="Vistas/css4/bootstrap-grid.min.css" rel="stylesheet" type="text/css"/>
 
-        <link href="Vistas/css/bootstrap.css" rel="stylesheet" type="text/css"/>
-        <link href="Vistas/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>  
-        <link href="Vistas/css/bootstrap-grid.min.css" rel="stylesheet" type="text/css"/>
-        <link href="Vistas/css/bootstrap-grid.css" rel="stylesheet" type="text/css"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
               integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
+        <!-- Etilos CSS -->  
         <link href="Vistas/Estilos_css/estilo4.css" rel="stylesheet" type="text/css"/>
         <link href="Vistas/Estilos_css/css_tablas.css" rel="stylesheet" type="text/css"/>
+        <!-- Estilos para los botones  -->
+        <link href="Vistas/Estilos_css/StyleBotones.css" rel="stylesheet" type="text/css"/>
+
 
 
     </head>
@@ -112,7 +101,7 @@
                 </div>
             </div>
         </nav>
-
+        <br>
         <!--Barra de Navegacion -->
 
         <style>
@@ -120,22 +109,82 @@
                 border: 1px solid red; /* Cambia el borde a rojo para resaltar el campo */
                 background-color: #ffcccc; /* Cambia el fondo a un tono rojo claro */
             }
+
+
+            /**** Estilos para Datatable ****/
+            #miTabla {
+                font-family: 'Roboto', sans-serif;
+                table-layout: fixed;
+                width: 100%;
+                color: #8fd19e;
+
+            }
+            #miTabla td {
+                font-family: 'Roboto', sans-serif;
+                font-size:  14px;
+
+            }
+            .dataTables_info {
+                font-family: 'Roboto', sans-serif;
+                font-weight: 700;
+                position: absolute;
+                margin-bottom: 15px; /* Ajusta según sea necesario */
+                color: #09f;
+            }
+
+            /* Con la propiedad bottom y letf controlo la ubicación de la info */
+            .dataTables_paginate {
+                font-family: 'Roboto', sans-serif;
+                color: #09f;
+                bottom: auto;
+                left: auto;
+
+            }
+
+            /* CSS personalizado para DataTables */
+            .dataTables_wrapper {
+                font-family: 'Roboto', sans-serif;
+                float: left;
+                color: #09f;
+                font-weight: 700;
+                padding: 0;
+                bottom: auto;
+                right:  0; /* Cambiado a 0 para que quede pegado al borde izquierdo */
+            }
+
+            /* Cambiar el nombre de la paginación */
+            .dataTables_paginate span a {
+                font-family: 'Roboto', sans-serif;
+                /* Aquí puedes personalizar el texto de la paginación */
+
+            }
+
+            /* Estilos redondeados para los btn */
+            .btn {
+                border-radius: 20px; /* Redondear los botones */
+            }
+
+            /* Alinear botones de paginación a la derecha */
+            /*  .dataTables_paginate ul.pagination {
+                  font-family: 'Roboto', sans-serif;
+                  float:left;
+              }
+              .dataTables_filter {
+                  float: left !important; /* Establece la barra de búsqueda a la izquierda */
+            /*   }
+               .dataTables_info {
+                   float: right !important; /* Establece la información a la izquierda */
+            /*   }*/
+
         </style>
 
         <div class="col-12"> 
-            <hr> 
-
-            <hr class="mt-3">    
-            <!--h1 class="mt-3">lodos</h1-->
-            <div class=" mt-5 mx-auto">
+            <br>            
+            <div class=" mt-5">
                 <span  class=" btn btn-warning   text-primary ml-3 mb-2 float-start" data-toggle="modal" data-target="#registroReferencia">
                     <i class="fas fa-plus"></i> 
                 </span>
 
-                <%--   <a href="ControladorProductos?accion=add" 
-                   class=" btn btn-warning text-primary ml-3 mb-2 float-start">           
-                    <i class="fas fa-plus"></i>
-                </a>--%>
             </div>
 
             <div class=" table-container ml-3 md-3 table-responsive" >
@@ -157,24 +206,17 @@
                             <td><%= productos.getNombres_Productos()%></td>   
                             <td><%= DaoTipoProducto.obtenerNombreTipoProd(productos.getTipoProducto_idtipoProducto())%></td>                          
 
-
-
-
                             <td>
                                 <div class="btn-group" role="group" aria-label="Acciones">
                                     <a href="ControladorProductos?accion=eliminar2&id=<%= productos.getIdProductos()%>"
                                        class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de Eliminar Producto?')">
                                         <i class="fas fa-trash"></i> <!-- Ícono de papelera -->
                                     </a>
-
                                     <a href="ControladorProductos?accion=editarProducto&id=<%= productos.getIdProductos()%>" class="btn btn-primary btn-sm">
                                         <i class="fas fa-pencil-alt"></i> <!-- Ícono de lápiz -->
                                     </a>
-
-
                                 </div>
                             </td>
-
                         </tr>
                         <% }%>
                     </tbody>
@@ -183,8 +225,8 @@
         </div>
 
 
-        <!<!-- Boton para ira al inicio de la tabla -->
-        <div class="form-group mt-3 mb-2  mg-2 ml-3 float-start"> 
+        <!-- Boton para ira al inicio de la tabla -->
+        <%--   <div class="form-group mt-3 mb-2  mg-2 ml-3 float-start"> 
             <button id="btnInicio" class="btn  btn-sm btn-primary ">
                 <i class="bi bi-arrow-up-square "></i>
 
@@ -194,7 +236,7 @@
             <button id="btnFinal" class="btn  btn-sm btn-primary ">
                 <i class="bi bi-arrow-down-square"></i>
             </button>
-        </div>
+        </div>--%>
 
         <div class="form-group text-right  ml-1 mt-3 mb-2  mg-2">
             <a href="ControladorProductos?accion=listar" class="btn btn-success ml-2">
@@ -297,7 +339,7 @@
     <script src="./js/Funsiones2.js" type="text/javascript"></script>
     <script src="./js/Funsiones_Varias.js" type="text/javascript"></script>
 
-    <script src="./js/EliminarProducto.js" type="text/javascript"></script>
+
 
 
     <!-- jQuery -->
@@ -309,19 +351,20 @@
     <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
 
     <script>
+
                                            $(document).ready(function () {
                                                $('#miTabla').DataTable({
-                                                   "paging": true, // Habilita la paginación
-                                                   "pageLength": 7, // Número de registros por página
+                                                   "paging": true,
+                                                   "pageLength": 7,
                                                    "language": {
-                                                       "processing": "Procesando...",
-                                                       "lengthMenu": "Mostrar _MENU_ registros por página",
-                                                       "zeroRecords": "No se encontraron resultados",
+                                                       "processing": "<span style='color: blue; font-size: 16px;'>Procesando...</span>",
+                                                       "lengthMenu": "<span style='color: #09f; font-size: 18px;  position: absolute;  margin-left: -450px; '>Mostrar _MENU_ Registros </span>",
+                                                       "zeroRecords": "No se Encontraron Resultados",
                                                        "emptyTable": "Ningún dato disponible en esta tabla",
-                                                       "info": "Mostrando _START_ a _END_ de _TOTAL_ entradas",
-                                                       "infoEmpty": "Mostrando 0 a 0 de 0 entradas",
-                                                       "infoFiltered": "(filtrado de un total de _MAX_ entradas)",
-                                                       "search": "Buscar:",
+                                                       "info": "<span style='color: #09f; font-size: 18px;'>Mostrando _START_ a _END_ de _TOTAL_ entradas</span>",
+                                                       "infoEmpty": "<span style='color: #09f; font-size: 18px;'>Mostrando 0 a 0 de 0 entradas</span>",
+                                                       "infoFiltered": "<span style='color: purple; font-size: 14px;'>(filtrado de un total de _MAX_ entradas)</span>",
+                                                       "search": "<span style='color: #09f; font-size: 18px;'>Buscar:</span>",
                                                        "paginate": {
                                                            "first": "Primero",
                                                            "last": "Último",
@@ -333,29 +376,14 @@
                                                            "sortDescending": ": Activar para ordenar la columna descendente"
                                                        }
                                                    },
-                                                   "scrollX": false // Habilita el desplazamiento horizontal
+                                                   "scrollX": false
                                                });
                                            });
+
     </script>
 
-    <style>
-        /* CSS personalizado para DataTables */
-        .dataTables_wrapper {
-            font-family: 'Roboto', sans-serif;
-
-            color:blue;
-            font-weight: 700;
-
-        }
-        /* Estilos redondeados para los btn */
-
-        .btn {
-            border-radius: 20px; /* Redondear los botones */
-        }
 
 
-
-    </style>
 
 
 

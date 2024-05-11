@@ -70,12 +70,12 @@
                                     </span>
                             </a>
                         </li>
-                        <li class="nav-item ">
+                        <%-- <li class="nav-item ">
                             <a class="nav-link active" aria-current="page" href="ControladorUsuarios?accion=add">
                                 <span  style="margin-left: 10px; border:none" class="btn btn-outline-light">
                                     <i class="bi bi-plus-circle"></i> <b> Añadir </b> </span>
                             </a>
-                        </li>
+                        </li>--%>
 
                     </ul>
 
@@ -85,13 +85,13 @@
         </nav>
         <!--Barra de Navegacion -->
 
-        <div class="row ">            
+               <div class="row " style=" padding: 15px 0; ">                   
 
             <div class="card col-sm-4 mb-4  mt-5 sticky-top">
 
                 <h4>FORMULARIO DE REGISTRO</h4> 
 
-                <form action="ControladorUsuarios" method="POST" autocomplete="off" class="custom-form">
+                <form id="miform" action="ControladorUsuarios" method="POST" autocomplete="off" class="custom-form">
 
                     <div class="row">
                         <div class="col-md-6 ">
@@ -174,7 +174,7 @@
                 </form>
             </div>   
 
-            <div class="col-sm-8 mb-4 mt-5 ">
+            <div class="col-sm-8 mb-4 mt-5  ">
                 <h4>LISTA USUARIOS</h4> 
 
                 <div class=" table-container ml-3 md-3 table-responsive" >

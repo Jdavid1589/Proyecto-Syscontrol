@@ -120,20 +120,12 @@
                 background-color: #ffcccc; /* Cambia el fondo a un tono rojo claro */
             }
         </style>
-
+        <br> 
         <div class="col-12"> 
-            <br> 
-
-            <!--h1 class="mt-3">lodos</h1-->
-            <%--  <div class=" mt-5 mx-auto">
-                <a href="ControladorPL?accion=add" 
-                   class=" btn btn-warning text-primary ml-3 mb-2 float-start">           
-                    <i class="fas fa-plus"></i>
-                </a>
-            </div>--%>
-            <div class=" mt-5 mx-auto">
+            <div class=" mt-5 ">
+                <br> 
                 <a href="ControladorPL?accion=add2" 
-                   class=" btn btn-primary text-warning ml-3 mb-2 float-start">           
+                   class=" btn btn-primary text-warning  mb-2 float-start">           
                     <i class="fas fa-plus"></i>
                 </a>
             </div>
@@ -310,25 +302,11 @@
                     </tfoot>
                 </table>
 
-                <div  class="dataTable_bottom">  
+                <div class="dataTable_bottom">
                     <div class="dataTables_info"></div>
                     <div class="dataTables_paginate"></div>
                 </div>
 
-
-
-                <!-- Boton para ira al inicio de la tabla -->
-                <div class="form-group mt-3 mb-2  mg-2 ml-3 float-start"> 
-                    <button id="btnInicio" class="btn  btn-sm btn-primary ">
-                        <i class="bi bi-arrow-up-square "></i>
-
-                    </button>
-                </div>
-                <div class="form-group  float-start ml-1 mt-3 mb-2  mg-2"> 
-                    <button id="btnFinal" class="btn  btn-sm btn-primary ">
-                        <i class="bi bi-arrow-down-square"></i>
-                    </button>
-                </div>
 
                 <div class="form-group text-right  ml-1 mt-3 mb-2  mg-2">
                     <a href="ControladorProductoSeco?accion=listar" class="btn btn-success ml-2">
@@ -344,11 +322,9 @@
             <!-- Styles particular para Lista Lodos-->
             <style>
                 .dataTables_info {
-                    position: absolute;
-                    bottom: -13%;
-                    left: 30%;
-                    transform: translateX(-50%);
-                    margin-bottom: 15px; /* Ajusta según sea necesario */
+                    margin-top:  25px;
+                    font-weight: 700;
+
                 }
                 /* Con la propiedad bottom y letf controlo la aubicacion de la info */
                 .dataTables_paginate {
@@ -360,13 +336,13 @@
 
                 /* Move the buttons below the table */
 
-                /*  .dataTables_wrapper .dt-buttons {
-                      position: absolute;
-                      bottom: -50px;
-                      left: 50%;
-                      transform: translateX(-60%);
-                      margin-bottom: 20px; /* Ajusta según sea necesario 
-                  }*/
+                .dataTables_wrapper .dt-buttons {
+                    position: absolute;
+                    bottom: -50px;
+                    left: 50%;
+                    transform: translateX(-60%);
+                    margin-bottom: 20px; /* Ajusta según sea necesario */
+                }
 
                 /* Estilos redondeados para los btn */
 
