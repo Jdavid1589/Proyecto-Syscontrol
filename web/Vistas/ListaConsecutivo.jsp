@@ -93,7 +93,7 @@
         <div class="row " style=" padding: 15px 0; ">            
             <div class="card col-sm-4 mb-4  mt-5 " >
                 <h4>FORMULARIO DE REGISTRO</h4> 
-    
+
                 <!-- Inicio de Formulario -->
                 <form id="miform" action="ControladorConsecutivo" autocomplete="off" method="POST" onsubmit="return validarFormulario();"  class="custom-form">         
                     <div class="row">
@@ -339,10 +339,6 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!-- For AJAX functionality -->
 
-<script src="./js/FunsionConcecut.js" type="text/javascript"></script>
-
-
-
 
 
 <!-- Link para estilizar la tablas  -->
@@ -355,11 +351,7 @@
 <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
 <!-- JS Funsiones Validar y DataTable -->
 <script src="./js/JS_Consecutivo.js" type="text/javascript"></script>
-
-
-
-
-
+<%--<script src="./js/FunsionConcecut.js" type="text/javascript"></script>--%>
 
 </body>
 </html>

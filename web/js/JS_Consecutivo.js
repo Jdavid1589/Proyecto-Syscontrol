@@ -36,7 +36,7 @@ $(document).ready(function () {
 
 function validarFormulario() {
     var camposObligatorios = [
-        "idUsuarios", "nroRemision", "idespecificaciones",
+        "idUsuarios", "nroRemision",  "idespecificaciones", "lote",
         "fechaCertificado", "lote", "fechaProduccion", "cantidadMaterial"
     ];
     for (var i = 0; i < camposObligatorios.length; i++) {
@@ -114,8 +114,6 @@ function calcular(operacion) {
 
 /*-------------------------------------------------------------*/
 
-
-
 function validarCampo(input) {
     var valor = input.value.trim();
     input.classList.toggle("campo-invalido", valor === "");
@@ -132,7 +130,7 @@ function validarCampoCombo(input) {
 
 function validarFormulario() {
     var camposObligatorios = [
-        "idUsuarios", "nroRemision",
+        "idUsuarios", "nroRemision", "idespecificaciones", "lote",
         "fechaCertificado", "fechaProduccion", "cantidadMaterial"
     ];
 

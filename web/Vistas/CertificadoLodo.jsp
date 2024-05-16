@@ -34,12 +34,15 @@
 <html>
     <head>
         <meta charset="UTF-8">
-      
+
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
               integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-            <link href="Vistas/Estilos_css/estilo4.css" rel="stylesheet" type="text/css"/>
+        <!-- Etilos CSS -->  
+        <link href="Vistas/Estilos_css/estilo4.css" rel="stylesheet" type="text/css"/>
+
+
 
 
         <title>Editar_PS</title>
@@ -53,7 +56,7 @@
         %>
 
         <!--Barra de Navegacion -->
-       <nav class="navbar  navbar-expand-md navbar-dark border-3 fixed-top border-bottom ">
+        <nav class="navbar  navbar-expand-md navbar-dark border-3 fixed-top border-bottom ">
             <div class="container-fluid ">
                 <a class="navbar-brand  " href="#"></a>
                 <img src="./Vistas/Imagenes/MI.jpg" alt="Logo" style="float: left; width: 90px;" />
@@ -66,12 +69,11 @@
                 </button>
                 <div class="collapse navbar-collapse  " id="navbarSupportedContent">  
 
-                    <ul class="navbar-nav mx-auto">   
-                        <li class="nav-item">
+                    <ul class="navbar-nav mx-auto text-center" >   
+                        <li class="nav-item" >
                             <a class="nav-link active my-menu-item"  aria-current="page" href="##">
-                                <span class="text-dark elegant-font"" 
-                                      style="font-size: 30px; color: darkblue;">
-                                    <b>  REFERENCIAS   </b>
+                                <span >
+                                    Datos Certificado de Calidad
                                 </span>
                             </a>
                         </li>
@@ -92,13 +94,23 @@
                             </a>
                         </li>
                     </ul>
-                    <span onclick="location.reload()" class="btn btn-primary text-center" style="font-size: 2em;">
-                        <i class="bi bi-arrow-clockwise"></i>
-                    </span>
+
 
                 </div>
             </div>
         </nav>
+        <style>
+            #h4_{
+                color: rgb(66, 196, 66);
+                font-family: Tahoma;
+                text-align: center;
+                margin-top: -20px;
+                font-weight: bold;
+                font-size: 22px;
+                border-radius: 10px;
+
+            }
+        </style>
 
         <!--Barra de Navegacion -->
 
@@ -106,23 +118,12 @@
 
 
         <div class="container-fluid col-md-12 mt-5 mg-2">  
-            <hr>
-
-
-            <div class="row mt-5">  
-                <h4 class="text-primary  text-center elegant-font">
-
-                    <b > CERTIFICADO CALIDAD LODOS</b></h4>
-
-                <div class="card col-md-5 mb-4 my-2  mb-4 ms-4 mx-5 sticky-top ">
-
-
-
+            <br>
+            <div class="row mt-2">  
+                <div class="card col-md-5 my-3 mb-4 mt-2 sticky-top ">
                     <%--  Formulario   --%>
-
                     <form id="MYFormulario" action="ControladorReporteLodo" method="POST" class="custom-form">
-
-                        <h4 class="text-primary text-center elegant-font"><b style="color:  #00008B">CONTROL CALIDAD </b></h4> 
+                        <h4  id="h4_" class="text-primary text-center elegant-font">TERMINADO</h4> 
 
                         <div class="row"  >
                             <div class="col-md-6">     
@@ -230,8 +231,6 @@
                                     <input type="text" class="form-control" id="idConsecutivo" readonly="" value="<%=controlLodo.getIdConsecutivo()%>"
                                            name="idConsecutivo" placeholder="Ingrese Dato">
                                 </div>
-
-
                             </div>
                         </div>
                 </div>
@@ -245,9 +244,9 @@
 
                     <% for (Consecutivo consecutivo : listaConsecutivos) {%>
 
-                    <div class="row"  style="background: #ffcccc">
-                        <h4 class="text-black text-center elegant-font">
-                            <b> CONSECUTIVO</b></h4>
+                    <div class="row mt-2">  
+
+                        <h4  id="h4_2" class="text-primary text-center elegant-font">CONSECUTIVO</h4> 
 
                         <div class="col-md-6">
 
@@ -270,15 +269,16 @@
                                        value="<%=consecutivo.getIdconsecutivo()%>"
                                        name="numCertificado" placeholder="Ingrese Dato">
                             </div>
-
-                        </div>
-                        <div class="col-md-6">
-
                             <div class="form-group text-left">
                                 <label for="abs_Aceite"> Num Remision</label>
                                 <input readonly="" type="text" class="form-control" id="AA" value="<%=consecutivo.getNroRemision()%>"
                                        name="numRemision" placeholder="Ingrese Dato">
                             </div>
+
+
+                        </div>
+                        <div class="col-md-6">
+
                             <div class="form-group text-left">
                                 <label for="CantidadSacos"> Cant Kg </label>
                                 <input readonly="" type="text" class="form-control" id="AA" value="<%=consecutivo.getCantidadMaterial()%>"
@@ -329,8 +329,8 @@
                     <br>
 
                     <%-- ********** Especificaciones **************** --%>
-                    
-                    
+
+
                     <div class="form-group text-left">     
 
                         <div   class="col-6 ">                     
@@ -351,6 +351,11 @@
 
                     <h4 class="text-primary text-center elegant-font">
                         <b style="color: #000; background: #ffdf7e">ESPECIFICACIONES</b></h4>
+                    <hr>
+                    <!-- Titulo 2 -->
+
+                    <p style="background: #ffdf7e; font-size: 14px; padding: 5px;">En este espacio se carga la información de Especificaciones.</p>
+
 
                     <% for (EspecificacionesLodos especificaciones : listaEsp) {%>
 
@@ -358,101 +363,101 @@
                         <div  class="col-md-6" >
 
                             <div class="form-group text-left">
-                                <label for="variableEsp1" class="text-left"><b style="color: #28a745;">Variable # 1</b></label>
-                                <input  type="text" class="form-control" id="variableEsp1" name="variableEsp1" value="<%=especificaciones.getVariableEsp1()%>"   
-                                        placeholder="Ingrese Variable">
+                                <label style="display: none;" for="variableEsp1" class="text-left"><b style="color: #28a745;">Variable # 1</b></label>
+                                <input type="hidden" type="text" class="form-control" id="variableEsp1" name="variableEsp1" value="<%=especificaciones.getVariableEsp1()%>"   
+                                       placeholder="Ingrese Variable">
                             </div> 
                             <div class="form-group text-left">
-                                <label for="rango1" class="text-left">Rango # 1</label>
-                                <input type="text" class="form-control" id="rango1" name="rango1" value="<%=especificaciones.getRango1()%>"
+                                <label style="display: none;" for="rango1" class="text-left">Rango # 1</label>
+                                <input type="hidden" type="text" class="form-control" id="rango1" name="rango1" value="<%=especificaciones.getRango1()%>"
                                        placeholder="Ingrese Rango">
                             </div>   
 
                             <div class="form-group text-left">
-                                <label for="metodo1" class="text-left">Metodo # 1 </label>
-                                <input type="text" class="form-control" id="metodo1" name="metodo1" value="<%=especificaciones.getMetodo1()%>"
+                                <label style="display: none;" for="metodo1" class="text-left">Metodo # 1 </label>
+                                <input type="hidden" type="text" class="form-control" id="metodo1" name="metodo1" value="<%=especificaciones.getMetodo1()%>"
                                        placeholder="Ingrese Rango">
                             </div>        
 
                             <div class="form-group text-left">
-                                <label for="variableEsp2" class="text-left"><b style="color: #28a745;">Variable # 2</b></label>
-                                <input type="text" class="form-control" id="variableEsp2" name="variableEsp2" value="<%=especificaciones.getVariableEsp2()%>" 
-                                       placeholder="Ingrese Variable">
+                                <label style="display: none;" for="variableEsp2" class="text-left"><b style="color: #28a745;">Variable # 2</b></label>
+                                <input  type="hidden" type="text" class="form-control" id="variableEsp2" name="variableEsp2" value="<%=especificaciones.getVariableEsp2()%>" 
+                                        placeholder="Ingrese Variable">
                             </div> 
                             <div class="form-group text-left">
-                                <label for="rango2" class="text-left">Rango # 2</label>
-                                <input type="text" class="form-control" id="rango2" name="rango2" value="<%=especificaciones.getRango2()%>"
+                                <label style="display: none;" for="rango2" class="text-left">Rango # 2</label>
+                                <input type="hidden" type="text" class="form-control" id="rango2" name="rango2" value="<%=especificaciones.getRango2()%>"
                                        placeholder="Ingrese Rango">
                             </div> 
                             <div class="form-group text-left">
-                                <label for="metodo2" class="text-left">Metodo # 2 </label>
-                                <input type="text" class="form-control" id="metodo2" name="metodo2" value="<%=especificaciones.getMetodo2()%>"
+                                <label style="display: none;" for="metodo2" class="text-left">Metodo # 2 </label>
+                                <input type="hidden" type="text" class="form-control" id="metodo2" name="metodo2" value="<%=especificaciones.getMetodo2()%>"
                                        placeholder="Ingrese Rango">
                             </div>    
 
                             <div class="form-group text-left">
-                                <label for="variableEsp3" class="text-left"><b style="color: #28a745;">Variable # 3</b></label>
-                                <input type="text" class="form-control" id="variableEsp3" name="variableEsp3" value="<%=especificaciones.getVariableEsp3()%>"
+                                <label style="display: none;" for="variableEsp3" class="text-left"><b style="color: #28a745;">Variable # 3</b></label>
+                                <input type="hidden" type="text" class="form-control" id="variableEsp3" name="variableEsp3" value="<%=especificaciones.getVariableEsp3()%>"
                                        placeholder="Ingrese Variable">
                             </div> 
                             <div class="form-group text-left">
-                                <label for="rango3" class="text-left">Rango # 3</label>
-                                <input type="text" class="form-control" id="rango3" name="rango3" value="<%=especificaciones.getRango3()%>"
+                                <label style="display: none;" for="rango3" class="text-left">Rango # 3</label>
+                                <input type="hidden" type="text" class="form-control" id="rango3" name="rango3" value="<%=especificaciones.getRango3()%>"
                                        placeholder="Ingrese Rango">
                             </div> 
                             <div class="form-group text-left">
-                                <label for="metodo3" class="text-left">Metodo # 3 </label>
-                                <input type="text" class="form-control" id="metodo3" name="metodo3" value="<%=especificaciones.getMetodo3()%>"
+                                <label  style="display: none;" for="metodo3" class="text-left">Metodo # 3 </label>
+                                <input type="hidden" type="text" class="form-control" id="metodo3" name="metodo3" value="<%=especificaciones.getMetodo3()%>"
                                        placeholder="Ingrese Rango">
                             </div>       
 
                             <div class="form-group text-left">
-                                <label for="variableEsp4" class="text-left"><b style="color: #28a745;">Variable # 4</b></label>
-                                <input type="text" class="form-control" id="variableEsp4" name="variableEsp4" value="<%=especificaciones.getVariableEsp4()%>"
+                                <label style="display: none;" for="variableEsp4" class="text-left"><b style="color: #28a745;">Variable # 4</b></label>
+                                <input type="hidden" type="text" class="form-control" id="variableEsp4" name="variableEsp4" value="<%=especificaciones.getVariableEsp4()%>"
                                        placeholder="Ingrese Variable">
                             </div> 
 
                             <div class="form-group text-left">
-                                <label for="rango4" class="text-left">Rango # 4</label>
-                                <input type="text" class="form-control" id="rango4" name="rango4" value="<%=especificaciones.getRango4()%>"
+                                <label style="display: none;" for="rango4" class="text-left">Rango # 4</label>
+                                <input type="hidden" type="text" class="form-control" id="rango4" name="rango4" value="<%=especificaciones.getRango4()%>"
                                        placeholder="Ingrese Rango">
                             </div> 
                             <div class="form-group text-left">
-                                <label for="metodo4" class="text-left">Metodo # 4 </label>
-                                <input type="text" class="form-control" id="metodo4" name="metodo4" value="<%=especificaciones.getMetodo4()%>"
+                                <label style="display: none;" for="metodo4" class="text-left">Metodo # 4 </label>
+                                <input type="hidden" type="text" class="form-control" id="metodo4" name="metodo4" value="<%=especificaciones.getMetodo4()%>"
                                        placeholder="Ingrese Rango">
                             </div>       
 
                             <div class="form-group text-left">
-                                <label for="variableEsp5" class="text-left"><b style="color: #28a745;">Variable # 5</b></label>
-                                <input type="text" class="form-control" id="variableEsp5" name="variableEsp5" value="<%=especificaciones.getVariableEsp5()%>"
+                                <label  style="display: none;" for="variableEsp5" class="text-left"><b style="color: #28a745;">Variable # 5</b></label>
+                                <input type="hidden" type="text" class="form-control" id="variableEsp5" name="variableEsp5" value="<%=especificaciones.getVariableEsp5()%>"
                                        placeholder="Ingrese Variable">
                             </div> 
                             <div class="form-group text-left">
-                                <label for="rango5" class="text-left">Rango # 5</label>
-                                <input type="text" class="form-control" id="rango5" name="rango5" value="<%=especificaciones.getRango5()%>"
+                                <label style="display: none;" for="rango5" class="text-left">Rango # 5</label>
+                                <input type="hidden" type="text" class="form-control" id="rango5" name="rango5" value="<%=especificaciones.getRango5()%>"
                                        placeholder="Ingrese Rango">
                             </div> 
 
                             <div class="form-group text-left">
-                                <label for="metodo5" class="text-left">Metodo # 5 </label>
-                                <input type="text" class="form-control" id="metodo5" name="metodo5" value="<%=especificaciones.getMetodo5()%>"
+                                <label style="display: none;" for="metodo5" class="text-left">Metodo # 5 </label>
+                                <input type="hidden" type="text" class="form-control" id="metodo5" name="metodo5" value="<%=especificaciones.getMetodo5()%>"
                                        placeholder="Ingrese Rango">
                             </div>      
                             <div class="form-group text-left">
-                                <label for="variableEsp6" class="text-left"><b style="color: #28a745;">Variable # 6</b></label>
-                                <input type="text" class="form-control" id="variableEsp6" name="variableEsp6" value="<%=especificaciones.getVariableEsp6()%>"
+                                <label style="display: none;" for="variableEsp6" class="text-left"><b style="color: #28a745;">Variable # 6</b></label>
+                                <input type="hidden" type="text" class="form-control" id="variableEsp6" name="variableEsp6" value="<%=especificaciones.getVariableEsp6()%>"
                                        placeholder="Ingrese Variable">
                             </div> 
                             <div class="form-group text-left">
-                                <label for="rango6" class="text-left">Rango # 6</label>
-                                <input type="text" class="form-control" id="rango6" name="rango6" value="<%=especificaciones.getRango6()%>"
+                                <label style="display: none;" for="rango6" class="text-left">Rango # 6</label>
+                                <input type="hidden" type="text" class="form-control" id="rango6" name="rango6" value="<%=especificaciones.getRango6()%>"
                                        placeholder="Ingrese Rango">
                             </div> 
 
                             <div class="form-group text-left">
-                                <label for="metodo6" class="text-left">Metodo # 6 </label>
-                                <input type="text" class="form-control" id="metodo6" name="metodo6" value="<%=especificaciones.getMetodo6()%>"
+                                <label style="display: none;" for="metodo6" class="text-left">Metodo # 6 </label>
+                                <input type="hidden" type="text" class="form-control" id="metodo6" name="metodo6" value="<%=especificaciones.getMetodo6()%>"
                                        placeholder="Ingrese Rango">
                             </div>       
                         </div>
@@ -464,88 +469,88 @@
 
 
                             <div class="form-group text-left">
-                                <label for="variableEsp7" class="text-left"><b style="color: #28a745;">Variable # 7</b></label>
-                                <input type="text" class="form-control" id="variableEsp7" name="variableEsp7" value="<%=especificaciones.getVariableEsp7()%>"
-                                       placeholder="Ingrese Variable">
+                                <label style="display: none;" for="variableEsp7" class="text-left"><b style="color: #28a745;">Variable # 7</b></label>
+                                <input  type="hidden"  type="text" class="form-control" id="variableEsp7" name="variableEsp7" value="<%=especificaciones.getVariableEsp7()%>"
+                                        placeholder="Ingrese Variable">
                             </div> 
                             <div class="form-group text-left">
-                                <label for="rango7" class="text-left">Rango # 7</label>
-                                <input type="text" class="form-control" id="rango7" name="rango7" value="<%=especificaciones.getRango7()%>"
+                                <label style="display: none;" for="rango7" class="text-left">Rango # 7</label>
+                                <input type="hidden" type="text" class="form-control" id="rango7" name="rango7" value="<%=especificaciones.getRango7()%>"
                                        placeholder="Ingrese Rango">
                             </div> 
                             <div class="form-group text-left">
-                                <label for="metodo7" class="text-left">Metodo # 7 </label>
-                                <input type="text" class="form-control" id="metodo7" name="metodo7" value="<%=especificaciones.getMetodo7()%>"
-                                       placeholder="Ingrese Rango">
-                            </div>   
-
-                            <div class="form-group text-left">
-                                <label for="variableEsp8" class="text-left"><b style="color: #28a745;">Variable # 8</b></label>
-                                <input type="text" class="form-control" id="variableEsp8" name="variableEsp8" value="<%=especificaciones.getVariableEsp8()%>"
-                                       placeholder="Ingrese Variable">
-                            </div> 
-                            <div class="form-group text-left">
-                                <label for="rango8" class="text-left">Rango # 8</label>
-                                <input type="text" class="form-control" id="rango8" name="rango8" value="<%=especificaciones.getRango8()%>"  
-                                       placeholder="Ingrese Rango">
-                            </div> 
-
-                            <div class="form-group text-left">
-                                <label for="metodo8" class="text-left">Metodo # 8 </label>
-                                <input type="text" class="form-control" id="metodo8" name="metodo8" value="<%=especificaciones.getMetodo8()%>"
-                                       placeholder="Ingrese Rango">
-                            </div>   
-                            <div class="form-group text-left">
-                                <label for="variableEsp9" class="text-left"><b style="color: #28a745;">Variable # 9</b></label>
-                                <input type="text" class="form-control" id="variableEsp9" name="variableEsp9" value="<%=especificaciones.getVariableEsp9()%>"
-                                       placeholder="Ingrese Variable">
-                            </div> 
-                            <div class="form-group text-left">
-                                <label for="rango9" class="text-left">Rango # 9</label>
-                                <input type="text" class="form-control" id="rango9" name="rango9" value="<%=especificaciones.getRango9()%>"  
-                                       placeholder="Ingrese Rango">
-                            </div> 
-                            <div class="form-group text-left">
-                                <label for="metodo9" class="text-left">Metodo # 9 </label>
-                                <input type="text" class="form-control" id="metodo9" name="metodo9" value="<%=especificaciones.getMetodo9()%>"
+                                <label style="display: none;"  for="metodo7" class="text-left">Metodo # 7 </label>
+                                <input type="hidden"  type="text" class="form-control" id="metodo7" name="metodo7" value="<%=especificaciones.getMetodo7()%>"
                                        placeholder="Ingrese Rango">
                             </div>   
 
                             <div class="form-group text-left">
-                                <label for="variableEsp10" class="text-left"><b style="color: #28a745;">Variable # 10</b></label>
-                                <input type="text" class="form-control" id="variableEsp10" name="variableEsp10" value="<%=especificaciones.getVariableEsp10()%>"
+                                <label style="display: none;" for="variableEsp8" class="text-left"><b style="color: #28a745;">Variable # 8</b></label>
+                                <input type="hidden" type="hidden" type="text" class="form-control" id="variableEsp8" name="variableEsp8" value="<%=especificaciones.getVariableEsp8()%>"
                                        placeholder="Ingrese Variable">
                             </div> 
                             <div class="form-group text-left">
-                                <label for="rango10" class="text-left">Rango # 10</label>
-                                <input type="text" class="form-control" id="rango10" name="rango10" value="<%=especificaciones.getRango10()%>"  
+                                <label style="display: none;" for="rango8" class="text-left">Rango # 8</label>
+                                <input type="hidden" type="text" class="form-control" id="rango8" name="rango8" value="<%=especificaciones.getRango8()%>"  
                                        placeholder="Ingrese Rango">
                             </div> 
 
                             <div class="form-group text-left">
-                                <label for="metodo10" class="text-left">Metodo # 10 </label>
-                                <input type="text" class="form-control" id="metodo10" name="metodo10" value="<%=especificaciones.getMetodo10()%>"
+                                <label style="display: none;" for="metodo8" class="text-left">Metodo # 8 </label>
+                                <input type="hidden" type="text" class="form-control" id="metodo8" name="metodo8" value="<%=especificaciones.getMetodo8()%>"
                                        placeholder="Ingrese Rango">
                             </div>   
                             <div class="form-group text-left">
-                                <label for="variableEsp11" class="text-left"><b style="color: #28a745;">Variable # 11</b></label>
-                                <input type="text" class="form-control" id="variableEsp11" name="variableEsp11" value="<%=especificaciones.getVariableEsp11()%>"
+                                <label style="display: none;" for="variableEsp9" class="text-left"><b style="color: #28a745;">Variable # 9</b></label>
+                                <input type="hidden" type="text" class="form-control" id="variableEsp9" name="variableEsp9" value="<%=especificaciones.getVariableEsp9()%>"
                                        placeholder="Ingrese Variable">
                             </div> 
                             <div class="form-group text-left">
-                                <label for="rango11" class="text-left">Rango # 11</label>
-                                <input type="text" class="form-control" id="rango11" name="rango11" value="<%=especificaciones.getRango11()%>"  
+                                <label style="display: none;" for="rango9" class="text-left">Rango # 9</label>
+                                <input type="hidden" type="text" class="form-control" id="rango9" name="rango9" value="<%=especificaciones.getRango9()%>"  
                                        placeholder="Ingrese Rango">
                             </div> 
                             <div class="form-group text-left">
-                                <label for="metodo11" class="text-left">Metodo # 11 </label>
-                                <input type="text" class="form-control" id="metodo11" name="metodo11" value="<%=especificaciones.getMetodo11()%>"
+                                <label  style="display: none;" for="metodo9" class="text-left">Metodo # 9 </label>
+                                <input type="hidden"< type="text" class="form-control" id="metodo9" name="metodo9" value="<%=especificaciones.getMetodo9()%>"
+                                       placeholder="Ingrese Rango">
+                            </div>   
+
+                            <div class="form-group text-left">
+                                <label style="display: none;" for="variableEsp10" class="text-left"><b style="color: #28a745;">Variable # 10</b></label>
+                                <input type="hidden" type="text" class="form-control" id="variableEsp10" name="variableEsp10" value="<%=especificaciones.getVariableEsp10()%>"
+                                       placeholder="Ingrese Variable">
+                            </div> 
+                            <div class="form-group text-left">
+                                <label style="display: none;" for="rango10" class="text-left">Rango # 10</label>
+                                <input type="hidden" type="text" class="form-control" id="rango10" name="rango10" value="<%=especificaciones.getRango10()%>"  
+                                       placeholder="Ingrese Rango">
+                            </div> 
+
+                            <div class="form-group text-left">
+                                <label style="display: none;" for="metodo10" class="text-left">Metodo # 10 </label>
+                                <input type="hidden" type="text" class="form-control" id="metodo10" name="metodo10" value="<%=especificaciones.getMetodo10()%>"
+                                       placeholder="Ingrese Rango">
+                            </div>   
+                            <div class="form-group text-left">
+                                <label style="display: none;" for="variableEsp11" class="text-left"><b style="color: #28a745;">Variable # 11</b></label>
+                                <input type="hidden"  type="text" class="form-control" id="variableEsp11" name="variableEsp11" value="<%=especificaciones.getVariableEsp11()%>"
+                                       placeholder="Ingrese Variable">
+                            </div> 
+                            <div class="form-group text-left">
+                                <label style="display: none;" for="rango11" class="text-left">Rango # 11</label>
+                                <input type="hidden" type="text" class="form-control" id="rango11" name="rango11" value="<%=especificaciones.getRango11()%>"  
+                                       placeholder="Ingrese Rango">
+                            </div> 
+                            <div class="form-group text-left">
+                                <label style="display: none;" for="metodo11" class="text-left">Metodo # 11 </label>
+                                <input type="hidden"  type="text" class="form-control" id="metodo11" name="metodo11" value="<%=especificaciones.getMetodo11()%>"
                                        placeholder="Ingrese Rango">
                             </div>       
                         </div>
                     </div>
                     <% }%>
-                 
+
                 </div>
 
                 </form>
@@ -638,8 +643,8 @@
                 integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
                 crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-                crossorigin="anonymous"></script>
+              integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
                 integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>

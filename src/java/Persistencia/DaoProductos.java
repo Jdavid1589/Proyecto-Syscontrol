@@ -22,7 +22,6 @@ public class DaoProductos {
     public static boolean registrar(Productos productos) {
 
         try {
-
             con = dao.conectar();
             String sql = "INSERT INTO productos(nombres_Productos, idTipoProducto)"
                     + "VALUES (?, ?);";

@@ -3,17 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/jdposada/Documents/NetBeansProjects/SyscontrolMI/web/Vistas/ListarProductoLodo.jsp</file>
-            <file>file:/C:/Users/jdposada/Documents/NetBeansProjects/SyscontrolMI/web/Vistas/ListarProductosRef.jsp</file>
-            <file>file:/C:/Users/jdposada/Documents/NetBeansProjects/SyscontrolMI/web/Vistas/ListaConsecutivo.jsp</file>
-            <file>file:/C:/Users/jdposada/Documents/NetBeansProjects/SyscontrolMI/web/js/JS_Consecutivo.js</file>
-            <file>file:/C:/Users/jdposada/Documents/NetBeansProjects/SyscontrolMI/web/js/JS_PL.js</file>
-            <file>file:/C:/Users/jdposada/Documents/NetBeansProjects/SyscontrolMI/web/Vistas/Estilos_css/StyleFondo.css</file>
-            <file>file:/C:/Users/jdposada/Documents/NetBeansProjects/SyscontrolMI/web/Vistas/ListarUsuarios.jsp</file>
-            <file>file:/C:/Users/jdposada/Documents/NetBeansProjects/SyscontrolMI/web/Vistas/Registro_Clientes.jsp</file>
-            <file>file:/C:/Users/jdposada/Documents/NetBeansProjects/SyscontrolMI/web/js/JS_PS.js</file>
-            <file>file:/C:/Users/jdposada/Documents/NetBeansProjects/SyscontrolMI/web/Vistas/Estilos_css/estilo4.css</file>
-            <file>file:/C:/Users/jdposada/Documents/NetBeansProjects/SyscontrolMI/web/Vistas/Listarproductoseco.jsp</file>
+            <file>file:/E:/User/Documents/NetBeansProjects/SyscontrolFinal3/web/Vistas/ListaConsecutivo.jsp</file>
+            <file>file:/E:/User/Documents/NetBeansProjects/SyscontrolFinal3/test/TestGrabarUsuario.java</file>
+            <file>file:/E:/User/Documents/NetBeansProjects/SyscontrolFinal3/test/TestUser.java</file>
+            <file>file:/E:/User/Documents/NetBeansProjects/SyscontrolFinal3/test/Persistencia/DaoProductosNGTest.java</file>
+            <file>file:/E:/User/Documents/NetBeansProjects/SyscontrolFinal3/web/js/JS_Consecutivo.js</file>
         </group>
     </open-files>
 </project-private>

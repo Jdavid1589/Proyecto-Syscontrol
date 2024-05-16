@@ -1,6 +1,6 @@
 function validarFormulario() {
     var camposObligatorios = [
-        "idUsuarios", "nroRemision",
+        "idUsuarios", "nroRemision",  "idespecificaciones", "lote",
         "fechaCertificado", "fechaProduccion", "cantidadMaterial"
     ];
 
