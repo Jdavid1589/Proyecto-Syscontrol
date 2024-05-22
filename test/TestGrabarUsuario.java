@@ -7,10 +7,10 @@ import org.testng.annotations.Test;
 
 public class TestGrabarUsuario {    
  
-    private DaoUsuarios daoUsuarios; // Suponiendo que tengas una clase UsuariosDAO que contiene el método listar()
+    private DaoUsuarios daoUsuarios; 
 
     public TestGrabarUsuario() {
-        daoUsuarios = new DaoUsuarios(); // Instancia de tu DAO
+        daoUsuarios = new DaoUsuarios(); 
     }    
 
    @Test
@@ -18,7 +18,7 @@ public class TestGrabarUsuario {
         Usuarios usuario = new Usuarios();
         usuario.setNombres_apellido("Test Juan");
         usuario.setNumero_Telefono("1234");
-        usuario.setCorreo("correo@example3.com");
+        usuario.setCorreo("correo@example44.com");
         usuario.setUsuario("jd");
         usuario.setClave("cc3");
         usuario.setPerfil_idperfil(1); // Id de perfil válido

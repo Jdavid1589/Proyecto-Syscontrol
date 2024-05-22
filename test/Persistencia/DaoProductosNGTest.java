@@ -20,7 +20,7 @@ public class DaoProductosNGTest {
         // Crea un objeto Productos válido para pasar al método registrar
         Productos productos = new Productos();
         // Asigna valores a los campos del objeto Productos
-        productos.setNombres_Productos("Nombre del producto");
+        productos.setNombres_Productos("Caolin 2");
         productos.setTipoProducto_idtipoProducto(1);
 
         // Establece el resultado esperado como verdadero, ya que se espera que el registro sea exitoso

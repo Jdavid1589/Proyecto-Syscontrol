@@ -1,11 +1,14 @@
 
-
 package Persistencia;
 
 import java.sql.Connection;
+
+
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.logging.Level;
+
+
 import java.util.logging.Logger;
 
 public class Conexion {
@@ -31,51 +34,6 @@ public class Conexion {
     }
     }
 
-   /* public static void main(String[] args) {
-        Conexion dao = new Conexion();
-        dao.conectar();
-    }
-    
-    
-    /*
-public class Conexion {
-    private static final String DATABASE_NAME = "syscontrol4";
-    private static final String URL = "jdbc:mysql://localhost:3306/";
-    private static final String USERNAME = "root";
-    private static final String PASSWORD = "jdproot123456";
-    private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
-    private static Connection connection = null;
-
-    // Método privado para crear la conexión
-    private static Connection createConnection() throws ClassNotFoundException, SQLException {
-        Class.forName(DRIVER);
-        return DriverManager.getConnection(URL + DATABASE_NAME, USERNAME, PASSWORD);
-    }
-
-    // Método público para obtener la conexión
-    public static synchronized Connection getConnection() {
-        try {
-            if (connection == null || connection.isClosed()) {
-                connection = createConnection();
-            }
-        } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return connection;
-    }
-
-    // Método para cerrar la conexión
-    public static void closeConnection() {
-        if (connection != null) {
-            try {
-                connection.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-    }
-}
-*/
 
 
 
