@@ -38,6 +38,7 @@
 
 .input-field {
     color: #09f;
+    
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     border: none;
@@ -80,7 +81,9 @@
 #miform{
     background-color: #cccccc; /* Fondo gris claro */
     /* Familia de fuentes para el texto */
-    font-family: 'Roboto', sans-serif;
+   /* font-family: 'Roboto', sans-serif;*/
+    font-family: 'Roboto', Aptos Narrow;
+    font-weight: bold;
     /* Color de fondo del cuerpo */
     border-radius: 15px;
    

@@ -15,23 +15,22 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
-        <link href="Vistas/Estilos_css/estilo4.css" rel="stylesheet" type="text/css"/>
-
-        <!-- Estilos para los botones  -->
-        <link href="Vistas/Estilos_css/StyleBotones.css" rel="stylesheet" type="text/css"/>
-        <!-- 
-        Estilos para los botones Formualario 
-        Link estilos4.css        -->
-
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
+        <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+
+        <link href="Vistas/Estilos_css/EstilosPL2.css" rel="stylesheet" type="text/css"/>
+
 
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
         <title>Clientes</title>   
+
+
 
     </head>
     <body>
@@ -73,114 +72,92 @@
 
         </nav>
 
-        <style>
+        <main>
 
-            .formulario h1{
+            <div class="container-fluid text-center" style="position: relative; top: -22px;">
 
-            
-                margin-bottom:  40px;
-                margin-top:   0px;
-                background: none;
+                <div class="row">
+                    <div class="col-md-12 mx-auto">
+                        <br>
+                        <h4 class="text-primary elegant-font mt-5" style="font-weight: bold; font-size: 30px;">REGISTRAR CLIENTES</h4>
 
-                color: #09f;
-                font-size: 36px;
-                font-weight: bold;
-                text-align: center;
-                    font-family: 'Roboto', sans-serif;
-                font-weight: bold;
-               
-            }
-        </style>
-
-        <!--Barra de Navegacion -->
-
-        <div class="container-fluid">
-            <div class="col-sm-8 mb-4">
-                <br>
-
-                <form  class="formulario" action="ControladorClientes" method="post" class="custom-form">
-
-                    <h1> REGISTRO CLIENTE</h1>
-
-                    <div class="Container centrado">
-                        <div class="row">
-                            <div class="col-md-6 ">
-
-                                <div class="form-group text-left">
-                                    <label for="razonSocial" class="text-left">Cliente</label>
-                                    <input type="text" class="form-control" id="razonSocial" name="razonSocial" 
-                                           placeholder="Ingrese Empreza">
-                                </div>                           
-
-                                <div class="form-group text-left">
-                                    <label for="nombres">Nombres</label>
-                                    <input type="text" class="form-control" id="nombres" name="nombres" 
-                                           placeholder="Ingrese Nombres">
-                                </div>
-
-                                <div class="form-group text-left">
-                                    <label for="idDocumento"> Tipo_Doc</label>
-                                    <select class="form-control" id="idDocumento" name="idDocumento">
-                                        <option value="0">Seleccione Cliente</option>
-                                        <%
-                                            for (Documento documento : DaoDocumento.listar()) {
-                                                if (documento != null) {
-                                        %>
-                                        <option  value="<%=documento.getIdDocumento()%>"><%=documento.getTipo_documento()%></option>
-                                        <%
-                                                }
-                                            }
-                                        %>
-                                    </select>
-                                </div>
-                                <div class="form-group text-left">
-                                    <label for="numDocumento"># Documento</label>
-                                    <input type="text" class="form-control" id="numDocumento" name="numDocumento" 
-                                           placeholder="Ingrese Docum">
-                                </div>
-
-                            </div>
-                            <div class="col-md-6"> 
-
-                                <div class="form-group text-left">
-                                    <label for="direccion">Direccion</label>
-                                    <input type="text" class="form-control" id="direccion" name="direccion" 
-                                           placeholder="Ingrese direccion">
-                                </div>
-
-                                <div class="form-group text-left">
-                                    <label for="numTelefono">Telefono</label>
-                                    <input type="text" class="form-control" id="numTelefono" name="numTelefono" 
-                                           placeholder="Ingrese Telefono">
-                                </div>
-
-                                <div class="form-group text-left">
-                                    <label for="correo">Correo</label>
-                                    <input type="email" class="form-control" id="correo" name="correo"
-                                           placeholder="Ingrese Correo">
-                                </div>
-
-
-                            </div>
-                        </div>
                     </div>
+                </div>
+            </div>
+            <!--Barra de Navegacion -->
+           
 
-                    <div class="formulario__grupo formulario__grupo-btn-enviar">     
+            <form  class="formulario" id="formulario"  action="ControladorClientes" method="post" class="custom-form">
 
-                        <button    type="submit" name="accion" value="registrar"   class="btn btn-success" >
-                            Registrar   
-                            <i class="fas fa-save " style="color: #000;"></i>
-                        </button> 
 
-                        <!--button type="button" onclick="mostrarAlerta()" class="btn btn-outline-primary">
-                            <i class="fas fa-save"></i> Guardar Registro
-                        </button-->
+                <!-- Grupo: Cliente -->
+                <div class="formulario__grupo" id="grupo__cliente">
+                    <label class="formulario__label"  for="razonSocial" >CLIENTE</label>
+                    <input style="text-transform: uppercase" type="text" class="form-control" id="razonSocial" name="razonSocial" 
+                           placeholder="Ingrese Empreza">
+                </div>                           
 
-                    </div>    
-                </form>
+                <!-- Grupo: Nombres -->
+                <div class="formulario__grupo" id="grupo__cliente">
+                    <label class="formulario__label" for="nombres">Nombres</label>
+                    <input style="text-transform: uppercase" type="text" class="form-control" id="nombres" name="nombres" 
+                           placeholder="Ingrese Nombres">
+                </div>
 
-            </div> 
-        </div> 
+                <!-- Grupo: Nombres -->
+                <div class="formulario__grupo" id="grupo__tipodoc">
+                    <label class="formulario__label" for="idDocumento"> Tipo_Doc</label>
+                    <select  class="formulario__input" style="border: 2px solid #ffdf7e;" id="idDocumento" name="idDocumento">
+                        <option value="0">SELECCIONE CLIENTE</option>
+                        <%  for (Documento documento : DaoDocumento.listar()) {
+                                if (documento != null) {%>
+                        <option  value="<%=documento.getIdDocumento()%>"><%=documento.getTipo_documento()%></option>
+                        <% }
+                            }%>
+                    </select>
+                </div>
+                <!-- Grupo: Documento -->
+                <div class="formulario__grupo" id="grupo__documento">
+                    <label class="formulario__label" for="numDocumento"># Documento</label>
+                    <input type="text" class="form-control" id="numDocumento" name="numDocumento" 
+                           placeholder="Ingrese Docum">
+                </div>
+
+                <!-- Grupo: Direccion -->
+                <div class="formulario__grupo" id="grupo__direccion">               
+                    <label class="formulario__label"  for="direccion">Direccion</label>
+                    <input type="text" class="form-control" id="direccion" name="direccion" 
+                           placeholder="Ingrese direccion">
+                </div>
+
+                <!-- Grupo: Telefono -->
+                <div class="formulario__grupo" id="grupo__telefono">           
+                    <label  class="formulario__label" for="numTelefono">Telefono</label>
+                    <input type="text" class="form-control" id="numTelefono" name="numTelefono" 
+                           placeholder="Ingrese Telefono">
+                </div>
+
+                <!-- Grupo: Correo -->
+                <div class="formulario__grupo" id="grupo__correo">           
+                    <label class="formulario__label" for="correo">Correo</label>
+                    <input  type="email" class="form-control" id="correo" name="correo"
+                           placeholder="Ingrese Correo">
+                </div>
+
+                <div class="formulario__grupo formulario__grupo-btn-enviar">
+                    <button  class="formulario__btn" type="submit" name="accion" value="registrar" >
+                        <i class="fas fa-save "></i> AGREGAR
+                    </button>
+                    <button  class="formulario__btn_cancelar" >
+                        <a  href="ControladorClientes?accion=listar" > 
+                            <i class="fas fa-times dan"></i> CANCELAR</a>
+                    </button>
+                </div> 
+
+
+                </div>    
+            </form>
+        </main>
 
 
 
@@ -204,7 +181,7 @@
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script><%--lo de las alertas--%>
 
         <script src="./js/FuncionCondicionales.js" type="text/javascript"></script>
-     
+
 
 
     </body>

@@ -50,7 +50,10 @@ main {
     grid-template-columns: 1fr 1fr;
     /* Espacio entre las celdas de la cuadrícula */
     gap: 10px;
+
+
 }
+
 
 /* Estilo para las etiquetas del formulario */
 .formulario__label {
@@ -142,8 +145,8 @@ main {
 
 /* Estilo para el grupo de botones de enviar del formulario */
 .formulario__grupo-btn-enviar {
-    display: flex;     /* Mostrar los elementos como una fila */    
-    flex-direction: row; /* Dirección de los elementos en la fila */   
+    display: flex;     /* Mostrar los elementos como una fila */
+    flex-direction: row; /* Dirección de los elementos en la fila */
     align-items: center;  /* Alineación vertical de los elementos en el centro */
     justify-content: center;     /* Alineación horizontal de los elementos en el centro */
     margin-top: 10px;     /* Margen superior de 10px */
@@ -172,9 +175,27 @@ main {
     cursor: pointer;   /* Cursor al pasar sobre el botón */
     transition: .1s ease all;   /* Transición de todas las propiedades con duración de 0.1 segundos */
 }
+/* Comentario: Estilo para los botones 1 */
+.formulario__btn_cancelar {
+    height: 40px;  /* Altura del botón */
+    line-height: 40px;    /* Altura de la línea del texto dentro del botón */
+    width: 25%;  /* Ancho del botón */
+    background: #999999;     /* Color de fondo del botón */
+    color: #fff;     /* Color del texto del botón */
+    font-weight: bold;     /* Grosor de la fuente del texto */
+    border: none;     /* Sin borde */
+    border-radius: 3px;   /* Radio del borde del botón */
+    cursor: pointer;   /* Cursor al pasar sobre el botón */
+    transition: .1s ease all;   /* Transición de todas las propiedades con duración de 0.1 segundos */
+}
+/* Comentario: Estilo para los botones 1 */
+.formulario__btn_cancelar a {
+    color: #fff;     /* Color del texto del botón */
+    font-weight: bold;     /* Grosor de la fuente del texto */
+}
 
 /* Estilo al pasar el cursor sobre el botón */
-.formulario__btn:hover {    
+.formulario__btn:hover {
     box-shadow: 3px 0px 30px rgba(163,163,163, 1); /* Sombra del botón al pasar el cursor */
 }
 

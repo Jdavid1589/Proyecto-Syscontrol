@@ -31,7 +31,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Calidad-Tdo Seco</title>
+        
+        <title>Calidad-Tdo Lodo</title>
+        
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
@@ -81,9 +83,6 @@
             </div>
 
         </nav>
-
-
-
         <main>
 
 
@@ -124,6 +123,7 @@
                         <% }%>
                     </select>
                 </div> 
+                    
                 <!-- Grupo: Auxiliar -->
                 <div class="formulario__grupo" id="grupo__Usuario">
                     <label  class="formulario__label" for="idUsuarios"> Auxiliar</label>
@@ -371,9 +371,6 @@
                     </div>
                     
                 </div>
-
-
-
 
                 <div class="formulario__grupo formulario__grupo-btn-enviar">
                     <button type="submit" name="accion" value="registrar3"  class="formulario__btn">Registrar</button>   

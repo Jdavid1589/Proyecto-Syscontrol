@@ -205,7 +205,6 @@
                             <tr>
                                 <th>Consecutivo</th>
                                 <th>#.Remision</th>   
-
                                 <th>Referencia</th>
                                 <th>Lote</th>
                                 <th>Fecha</th>
@@ -251,25 +250,7 @@
                         </tbody>
                     </table>
                 </div>
-                <%--
-    <!-- Boton para ira al inicio de la tabla -->
-    <div class="form-group mt-3 mb-2  mg-2 ml-3 float-start"> 
-        <button id="btnInicio" class="btn  btn-sm btn-primary ">
-            <i class="bi bi-arrow-up-square "></i>
-
-                    </button>
-                </div>
-                <div class="form-group  float-start ml-1 mt-3 mb-2  mg-2"> 
-                    <button id="btnFinal" class="btn  btn-sm btn-primary ">
-                        <i class="bi bi-arrow-down-square"></i>
-                    </button>
-                </div>
-       <div class="form-group text-center" style="border: none; margin-top: -45px;">
-    <a href="ControladorConsecutivo?accion=Listar2" class="btn btn-primary"> 
-        <i class="fas fa-list"></i> Listar</a>
-    <!--a href="./index3.jsp" class="btn btn-warning">
-        <i class="bi bi-arrow-left-square-fill text-dark"></i> Inicio</a-->
-</div>--%>
+                
             </div>
         </div>
     </div>
@@ -351,7 +332,7 @@
 <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
 <!-- JS Funsiones Validar y DataTable -->
 <script src="./js/JS_Consecutivo.js" type="text/javascript"></script>
-<%--<script src="./js/FunsionConcecut.js" type="text/javascript"></script>--%>
+
 
 </body>
 </html>

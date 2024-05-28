@@ -17,15 +17,24 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
         <!--link href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css" rel="stylesheet"-->
 
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-...." crossorigin="anonymous" />
         <link href="Vistas/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>  
+
         <!-- Link to Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <!-- Link to Font Awesome CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>   
 
+
+        <!-- Etilos CSS -->  
         <link href="Vistas/Estilos_css/estilo4.css" rel="stylesheet" type="text/css"/>
         <link href="Vistas/Estilos_css/css_tablas.css" rel="stylesheet" type="text/css"/>
+        <link href="Vistas/Estilos_css/EstilosPL2.css" rel="stylesheet" type="text/css"/>
+
+
 
     </head>
     <body>  
@@ -70,6 +79,13 @@
                                     </span>
                             </a>
                         </li>
+                        <li class="nav-item ">
+                            <a class="nav-link active"  aria-current="page" href="ControladorUsuarios?accion=listar""><b>
+                                    <span  style="margin-left: 10px; border:none" class="btn btn-outline-light">
+                                        <i class="bi bi-arrow-left-square-fill text-dark"></i> <b> Listar </b>
+                                    </span>
+                            </a>
+                        </li>
                         <%-- <li class="nav-item ">
                             <a class="nav-link active" aria-current="page" href="ControladorUsuarios?accion=add">
                                 <span  style="margin-left: 10px; border:none" class="btn btn-outline-light">
@@ -85,52 +101,77 @@
         </nav>
         <!--Barra de Navegacion -->
 
-               <div class="row " style=" padding: 15px 0; ">                   
+        <div class="row " style=" padding: 15px 0; ">                   
 
             <div class="card col-sm-4 mb-4  mt-5 sticky-top">
 
                 <h4>FORMULARIO DE REGISTRO</h4> 
 
-                <form id="miform" action="ControladorUsuarios" method="POST" autocomplete="off" class="custom-form">
+                <form id="miform"  action="ControladorUsuarios" method="POST" autocomplete="off" onsubmit="return validarFormulario();" class="custom-form">
 
                     <div class="row">
                         <div class="col-md-6 ">
 
-                            <div class="form-group text-left">
-                                <label for="nombres" class="text-left">Nombres</label>
-                                <input type="text" class="form-control" value="${User.getNombres_apellido()}"  id="nombres" name="nombres_apellido" placeholder="Ingrese Nombres">
+                            <!-- Grupo: Nombres -->
+                            <div class="formulario__grupo" id="grupo__tNombres">
+                                <label class="formulario__label" for="nombres" >Nombres</label>
+                                <input type="text" class="form-control" 
+                                       value="${User.getNombres_apellido()}"  
+                                       id="nombres" 
+                                       name="nombres_apellido"
+                                       placeholder="Ingrese Nombres">
                             </div>                           
 
-                            <div class="form-group text-left">
-                                <label for="telefono"># Teléfono</label>
-                                <input type="text" class="form-control" id="telefono" value="${User.getNumero_Telefono()}" name="numeroTelefono" placeholder="Ingrese Telefono">
+                            <!-- Grupo: Telefono -->
+                            <div class="formulario__grupo" id="grupo__telefono">
+                                <label class="formulario__label" for="telefono"># Teléfono</label>
+                                <input type="text" class="form-control"
+                                       value="${User.getNumero_Telefono()}" 
+                                       id="telefono" 
+                                       name="numeroTelefono"
+                                       placeholder="Ingrese Telefono">
                             </div>
 
-                            <div class="form-group text-left">
-                                <label for="correo">Correo</label>
-                                <input type="email" class="form-control" id="correo" 
+                            <!-- Grupo: Correo -->
+                             <div class="formulario__grupo" id="grupo__telefono">
+                                <label class="formulario__label" for="correo">Correo</label>
+                                <input type="email" class="form-control" 
+                                       id="correo" 
                                        value="${User.getCorreo()}" 
-                                       name="correo" placeholder="Ingrese Correo">
+                                       name="correo" 
+                                       placeholder="Ingrese Correo">
                             </div>
 
                         </div>
                         <div class="col-md-6">        
 
-                            <div class="form-group text-left">
-                                <label for="usuario">Usuario</label>
-                                <input type="text" class="form-control" id="usuario" value="${User.getUsuario()}" name="usuario" placeholder="Ingrese Usuario">
+                            <!-- Grupo: User -->
+                             <div class="formulario__grupo" id="grupo__telefono">
+                                <label class="formulario__label" for="usuario">Usuario</label>
+                                <input type="text" class="form-control"
+                                       id="usuario" 
+                                       value="${User.getUsuario()}" 
+                                       name="usuario"
+                                       placeholder="Ingrese Usuario">
                             </div>
 
-                            <div class="form-group text-left">
-                                <label for="clave">Clave</label>
-                                <input type="password" class="form-control" id="clave" value="${User.getClave()}" name="clave" placeholder="Ingrese Clave">
+                            <!-- Grupo: Clave -->
+                            <div class="formulario__grupo" id="grupo__telefono">
+                                <label class="formulario__label" for="clave">Clave</label>
+                                <input type="password" class="form-control" 
+                                       id="clave" 
+                                       value="${User.getClave()}" 
+                                       name="clave"
+                                       placeholder="Ingrese Clave">
                             </div>
 
 
 
-                            <%-- Nuevo Select datalist--%>
-                            <div class="form-group text-left">
-                                <label for="tipoPerfil">Perfil</label>
+                            <!-- Nuevo Select datalist-->
+
+                            <!-- Grupo: Perfil -->
+                              <div class="formulario__grupo" id="grupo__telefono">
+                                <label class="formulario__label" for="tipoPerfil">Perfil</label>
                                 <input list="perfiles" class="form-control" id="tipoPerfil" name="perfil_nombre">
                                 <datalist id="perfiles">
                                     <option value="0">Seleccione perfil</option>
@@ -160,23 +201,31 @@
 
                         </div>
                     </div>
-                    <div class="form-group mt-3 text-center" style="border: none;">
 
-                        <button type="submit" name="accion" value="registrar" class="btn btn-warning">
-                            <i class="fas fa-save "></i> Agregar</button>
-                        <button type="submit" name="accion" value="actualizar" class="btn btn-success">
-                            <i class="bi bi-arrow-repeat"></i> Actualizar</button>
+                    <!-- Grupo: Botones -->
+                    <fieldset class="formulario__grupo-btn-enviar">
+                        <button type="submit" name="accion" value="registrar" class="btn btn-success">
+                            Registrar
+                            <i class="fas fa-save" style="color: #000;"></i>
+                        </button>
+                        <button type="submit" name="accion" value="actualizar" class="btn btn-warning">
+                            Actualizar
+                            <i class="bi bi-arrow-repeat"></i>
+                        </button>
+                        <a href="ControladorUsuarios?accion=listar" class="btn btn-secondary">
+                            Cancelar
+                            <i class="bi bi-x-lg"></i>
+                        </a>
+                    </fieldset>       
 
-                        <button type="submit" name="accion" value="listar" class="btn btn-secondary">
-                            <i class="bi bi-x-lg"></i> Cancelar</button>
 
-                    </div>    
+
+
                 </form>
             </div>   
 
             <div class="col-sm-8 mb-4 mt-5  ">
                 <h4>LISTA USUARIOS</h4> 
-
                 <div class=" table-container ml-3 md-3 table-responsive" >
                     <table id="miTabla" class="table table-striped table-hover sticky-top">
                         <thead >
@@ -207,7 +256,7 @@
 
                                 <td>
                                     <div class="btn-group" role="group" aria-label="Acciones">
-                                        
+
                                         <%--  <a href="ControladorUsuarios?accion=eliminar&id=<%= usuarios.getIdUsuarios()%>"
                                            class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de que deseas eliminar este usuario?')">
                                             <i class="fas fa-trash"></i> <!-- Ícono de papelera -->
@@ -232,12 +281,7 @@
 
             </div>
         </div>   
-        <div class="form-group text-right">
-            <a href="ControladorUsuarios?accion=listar" class="btn btn-primary"> 
-                <i class="fas fa-list"></i> Listar</a>
-            <a href="./index3.jsp" class="btn btn-warning">
-                <i class="bi bi-arrow-left-square-fill text-dark"></i> Inicio</a>
-        </div>
+
         <h1>${mensaje}</h1>
     </div>
 
@@ -266,9 +310,17 @@
 
     <script src="./js/Funsiones2.js" type="text/javascript"></script>
     <script src="./js/Funsiones_Varias.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script><%--lo de las alertas--%>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Alerta Sweet Alert  -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> <!-- For alert-style pop-up messages -->
 
-
-    <!-- Link para estilizar la tablas  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!-- For AJAX functionality -->
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="./js/JS.User.js" type="text/javascript"></script>
 
 
     <script>
@@ -331,6 +383,18 @@
 
         .btn {
             border-radius: 20px; /* Redondear los botones */
+        }
+
+        tbody tr {
+            position: sticky;
+            top: 0;
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            color: #ffffff; /* Cambia esto al color de texto deseado */
+            border-right: 2px solid #99ff99;
+            color: #09f;
+            text-align-last:  center;
+
         }
 
 

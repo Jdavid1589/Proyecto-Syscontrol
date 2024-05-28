@@ -27,20 +27,24 @@
 
 
 
+        <%--title>Tabla con Bootstrap y DataTables</title--%>
         <!-- Bootstrap CSS -->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
         <!-- DataTables CSS -->
         <link href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+
         <!-- DataTables Spanish Language -->
         <script src="https://cdn.datatables.net/plug-ins/1.10.24/i18n/Spanish.json"></script>
+
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
 
         <!-- Incluye los archivos CSS de Bootstrap -->  
         <script src="./js/EliminarProducto.js" type="text/javascript"></script>
-        <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"-->
+        
+
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-...." crossorigin="anonymous" />
-        <!--link href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css" rel="stylesheet"-->
+
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
               integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -48,7 +52,7 @@
         <!-- Etilos CSS -->  
         <link href="Vistas/Estilos_css/estilo4.css" rel="stylesheet" type="text/css"/>
         <link href="Vistas/Estilos_css/css_tablas.css" rel="stylesheet" type="text/css"/>
-        <!-- Estilos para los botones  -->
+        <!-- Estilos para los botones  -->  
         <link href="Vistas/Estilos_css/StyleBotones.css" rel="stylesheet" type="text/css"/>
 
 
@@ -104,84 +108,64 @@
         <br>
         <!--Barra de Navegacion -->
 
-        <style>
-            .campo-invalido {
-                border: 1px solid red; /* Cambia el borde a rojo para resaltar el campo */
-                background-color: #ffcccc; /* Cambia el fondo a un tono rojo claro */
-            }
+         <!-- Styles particular para Lista Seco-->
+            <style>
+                /* CSS personalizado para DataTables */
+                .dataTables_wrapper {
+                    font-family: 'Roboto', sans-serif;
+
+                }
+                .dataTables_info {
+                    margin-top:  25px;
+                    font-weight: 700;
+
+                }
+
+                /* Con la propiedad bottom y letf controlo l aubicacion de la info */
+                .dataTables_paginate {
+                    font-family: 'Roboto', sans-serif;
+                    font-weight: 700;
+                    bottom: 10%;
+                    left:  100%; 
+                    margin-bottom: 5px; /* Ajusta según sea necesario */
+        
+                    color: red;
+                }
+                /* Move the buttons below the table */
+
+                .dataTables_wrapper .dt-buttons {
+                    position: absolute;
+                    bottom: -50px;
+                    left: 50%;
+                    transform: translateX(-60%);
+                    margin-bottom: 20px; /* Ajusta según sea necesario */
+                }
+
+                /* Estilos redondeados para los btn */
+
+                .btn {
+                    border-radius: 25px; /* Redondear los botones */
+                }
+                a #mipapelera{
+                    font-size: 25px;
+                    color: #66ff66;
+                    transition: 0.3s;
+
+                }
+                a #mipapelera:hover{
+
+                    color: #FF0000;
+                    box-shadow: 3px 0px 30px rgba(246, 78, 60, 1.5);
+
+                }
 
 
-            /**** Estilos para Datatable ****/
-            #miTabla {
-                font-family: 'Roboto', sans-serif;
-                table-layout: fixed;
-                width: 100%;
-                color: #8fd19e;
-
-            }
-            #miTabla td {
-                font-family: 'Roboto', sans-serif;
-                font-size:  14px;
-
-            }
-            .dataTables_info {
-                font-family: 'Roboto', sans-serif;
-                font-weight: 700;
-                position: absolute;
-                margin-bottom: 15px; /* Ajusta según sea necesario */
-                color: #09f;
-            }
-
-            /* Con la propiedad bottom y letf controlo la ubicación de la info */
-            .dataTables_paginate {
-                font-family: 'Roboto', sans-serif;
-                color: #09f;
-                bottom: auto;
-                left: auto;
-
-            }
-
-            /* CSS personalizado para DataTables */
-            .dataTables_wrapper {
-                font-family: 'Roboto', sans-serif;
-                float: left;
-                color: #09f;
-                font-weight: 700;
-                padding: 0;
-                bottom: auto;
-                right:  0; /* Cambiado a 0 para que quede pegado al borde izquierdo */
-            }
-
-            /* Cambiar el nombre de la paginación */
-            .dataTables_paginate span a {
-                font-family: 'Roboto', sans-serif;
-                /* Aquí puedes personalizar el texto de la paginación */
-
-            }
-
-            /* Estilos redondeados para los btn */
-            .btn {
-                border-radius: 20px; /* Redondear los botones */
-            }
-
-            /* Alinear botones de paginación a la derecha */
-            /*  .dataTables_paginate ul.pagination {
-                  font-family: 'Roboto', sans-serif;
-                  float:left;
-              }
-              .dataTables_filter {
-                  float: left !important; /* Establece la barra de búsqueda a la izquierda */
-            /*   }
-               .dataTables_info {
-                   float: right !important; /* Establece la información a la izquierda */
-            /*   }*/
-
-        </style>
+            </style>
 
         <div class="col-12"> 
             <br>            
             <div class=" mt-5">
-                <span  class=" btn btn-warning   text-primary ml-3 mb-2 float-start" data-toggle="modal" data-target="#registroReferencia">
+                <span  class="btn btn-primary text-warning ml-5 float-start ml-3 mb-2 " data-toggle="modal" data-target="#registroReferencia">
                     <i class="fas fa-plus"></i> 
                 </span>
 

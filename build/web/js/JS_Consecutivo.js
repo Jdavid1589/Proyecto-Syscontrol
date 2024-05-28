@@ -230,37 +230,6 @@ function canDeleteConsecutivo(id) {
 }
 
 
-/*
- function eliminarConsecutivo2(id) {
- swal({
- title: "¿Estás seguro?",
- text: "Una vez eliminado, no podrás recuperar este reporte.",
- icon: "warning",
- buttons: true,
- dangerMode: true
- }).then((willDelete) => {
- if (willDelete) {
- // Muestra el mensaje de éxito
- Swal.fire({
- position: "center", // Centra el mensaje
- icon: "success",
- title: "Reporte Eliminado con Éxito",
- showConfirmButton: false,
- 
- });
- 
- // Rediriges a la URL de eliminación después de 1.5 segundos (1500 milisegundos)
- setTimeout(() => {
- window.location.href = "ControladorConsecutivo?accion=eliminar2&id=" + id;
- }, 1500);
- } else {
- swal("Operación cancelada.", {
- icon: "error",
- title: "Cancelado"
- });
- }
- });
- }*/
 
 
 

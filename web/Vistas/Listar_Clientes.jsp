@@ -23,7 +23,7 @@
 
         <link href="Vistas/css4/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="Vistas/css4/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <link href="Vistas/css4/bootstrap-grid.min.css" rel="stylesheet" type="text/css"/>
+        <link href="Vistas/css4/bootstrap-grid.min.css" rel="stylesheet" type="text/css"/>  
 
         <link href="Vistas/css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="Vistas/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>  
@@ -105,9 +105,15 @@
                 </div>
             </nav>
             <!--Barra de Navegacion -->
+            <div  style="margin-top:55px; margin-bottom: ">
+                <br>
+                <a title="Agregar Clientes" href="ControladorClientes?accion=add" 
+                   class=" btn btn-primary text-warning ml-5 float-start">           
+                    <i class="fas fa-plus"></i>
+                </a>
+            </div>
 
             <div class="col-sm-12 mb-4 sticky-top" style="margin-top: 60px">
-                <br>
 
                 <div class=" table-container ml-3 md-3 table-responsive" >
                     <table id="miTabla" class="table table-striped table-hover sticky-top">
@@ -143,13 +149,13 @@
                                     <div class="btn-group" role="group" aria-label="Acciones">
 
                                         <a href="ControladorClientes?accion=eliminar&id=<%= clientes.getIdclientes()%>"
-                                           class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de que deseas eliminar este usuario?')">
+                                           class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de que deseas eliminar este Cliente?')">
                                             <i class="fas fa-trash"></i> <!-- Ícono de papelera -->
 
 
-                                            <a href="#" class="btn btn-danger btn-sm" onclick="eliminarCliente(<%= clientes.getIdclientes()%>)">    
+                                            <%-- comment <a href="#" class="btn btn-danger btn-sm" onclick="eliminarCliente(<%= clientes.getIdclientes()%>)">    
                                                 <i class="fas fa-trash"></i> <!-- Ícono de papelera -->
-                                            </a>
+                                            </a> --%>
 
                                             <a href="ControladorClientes?accion=editarclientes&id=<%= clientes.getIdclientes()%>" class="btn btn-primary btn-sm">
                                                 <i class="fas fa-pencil-alt"></i> <!-- Ícono de lápiz -->
@@ -162,12 +168,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="form-group text-center mt-2">
-                    <a href="ControladorClientes?accion=listar" class="btn btn-primary"> 
-                        <i class="fas fa-list"></i> Listar</a>
-                    <a href="./index3.jsp" class="btn "  style="background:  rgb(212, 173, 17)">
-                        <i class="bi bi-arrow-left-square-fill text-dark"></i> Inicio</a>
-                </div>
+              
                 <h1>${mensaje}</h1>
             </div>
 
