@@ -26,6 +26,7 @@
 
 
         <!-- title>Tabla con Bootstrap y DataTables</title -->
+        
         <!-- Bootstrap CSS -->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
         <!-- DataTables CSS -->
@@ -95,7 +96,7 @@
                 <h4>FORMULARIO DE REGISTRO</h4> 
 
                 <!-- Inicio de Formulario -->
-                <form id="miform" action="ControladorConsecutivo" autocomplete="off" method="POST" onsubmit="return validarFormulario();"  class="custom-form">         
+                <form id="miform" action="ControladorConsecutivo"  autocomplete="off" method="POST" onsubmit="return validarFormulario()"  class="custom-form">         
                     <div class="row">
                         <div class="col-md-6 ">
 
@@ -182,7 +183,7 @@
                             Registrar
                             <i class="fas fa-save" style="color: #000;"></i>
                         </button>
-                        <button type="submit" name="accion" value="actualizar" class="btn btn-warning">
+                        <button type="submit" name="accion" value="actualizar"  class="btn btn-warning">
                             Actualizar
                             <i class="bi bi-arrow-repeat"></i>
                         </button>

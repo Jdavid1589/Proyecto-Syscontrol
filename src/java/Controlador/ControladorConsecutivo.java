@@ -60,7 +60,7 @@ public class ControladorConsecutivo extends HttpServlet {
                 buscarConsecutivos(request, response);
                 break;
 
-          /*  case "eliminar":
+            /*  case "eliminar":
                 eliminarConsecutivo(request, response);
                 break;*/
             case "eliminar2":
@@ -115,7 +115,42 @@ public class ControladorConsecutivo extends HttpServlet {
             listarConsecutivos(request, response);
         }
     }
+    //-----------------------------------///
+    /*   Nota: aca manejo el control de actualizar la tabla para que se pueda mostrar el  mensaje de alert*/
+    /*private void registrarConsecutivo(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        try {
+            int idespecificaciones = Integer.parseInt(request.getParameter("idespecificaciones"));
+            String nroRemision = request.getParameter("nroRemision");
+            String fechaCertificado = request.getParameter("fechaCertificado");
+            String fechaProduccion = request.getParameter("fechaProduccion");
+            int cantidadMaterial = Integer.parseInt(request.getParameter("cantidadMaterial"));
+            String lote = request.getParameter("lote");
+            int idUsuarios = Integer.parseInt(request.getParameter("idUsuarios"));
 
+            Consecutivo consecutivo = new Consecutivo();
+            consecutivo.setIdEspecificaciones(idespecificaciones);
+            consecutivo.setNroRemision(nroRemision);
+            consecutivo.setFechaCertificado(fechaCertificado);
+            consecutivo.setFechaProduccion(fechaProduccion);
+            consecutivo.setCantidadMaterial(cantidadMaterial);
+            consecutivo.setIdUsuarios(idUsuarios);
+            consecutivo.setLote(lote);
+
+            boolean registroExitoso = DaoConsecutivo.grabarConsecutivo(consecutivo);
+            if (registroExitoso) {
+                request.setAttribute("mensaje", "Consecutivo fue registrado");
+                response.getWriter().write("true");
+            } else {
+                request.setAttribute("mensaje", "Consecutivo no fue registrado, validar campos ingresados");
+                response.getWriter().write("false");
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            response.getWriter().write("false");
+        }
+    }
+*/
     private void listarConsecutivos(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
@@ -159,7 +194,7 @@ public class ControladorConsecutivo extends HttpServlet {
             // Resto del código para actualizar el Consecutivo
             String nroRemi = request.getParameter("nroRemision");
             int idespecificaciones = Integer.parseInt(request.getParameter("idespecificaciones"));
-        
+
             String fechaCert = request.getParameter("fechaCertificado");
             String fechaProdu = request.getParameter("fechaProduccion");
             int cantidadM = Integer.parseInt(request.getParameter("cantidadMaterial"));
@@ -167,10 +202,10 @@ public class ControladorConsecutivo extends HttpServlet {
             String lote = request.getParameter("lote");
 
             Consecutivo consecutivo = new Consecutivo();
-            
+
             consecutivo.setNroRemision(nroRemi);
             consecutivo.setIdEspecificaciones(idespecificaciones);
-             
+
             consecutivo.setFechaCertificado(fechaCert);
             consecutivo.setFechaProduccion(fechaProdu);
             consecutivo.setCantidadMaterial(cantidadM);
@@ -212,47 +247,47 @@ public class ControladorConsecutivo extends HttpServlet {
 
     private void eliminarConsecutivo2(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    try {
+        try {
+            int idconsecutivo = Integer.parseInt(request.getParameter("id"));
+
+            if (DaoConsecutivo.canDelete(idconsecutivo)) {
+                if (DaoConsecutivo.eliminar(idconsecutivo)) {
+                    request.setAttribute("mensaje", "El Reporte fue Eliminado Correctamente");
+                } else {
+                    request.setAttribute("mensaje", "No se pudo eliminar el Reporte");
+                }
+            } else {
+                request.setAttribute("mensaje", "El Reporte no se puede eliminar porque está en uso");
+            }
+
+            listarConsecutivos(request, response);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            request.setAttribute("mensaje", "Error al eliminar el Consecutivo");
+            listarConsecutivos(request, response);
+        }
+    }
+
+    private void ValidarCanDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Obtener el ID del registro a verificar desde la petición HTTP
         int idconsecutivo = Integer.parseInt(request.getParameter("id"));
 
-        if (DaoConsecutivo.canDelete(idconsecutivo)) {
-            if (DaoConsecutivo.eliminar(idconsecutivo)) {
-              request.setAttribute("mensaje", "El Reporte fue Eliminado Correctamente");
-            } else {
-           request.setAttribute("mensaje", "No se pudo eliminar el Reporte");
-            }
-        } else {
-            request.setAttribute("mensaje", "El Reporte no se puede eliminar porque está en uso");
-        }
+        // Llamar al método canDelete del DAO para verificar si se puede eliminar el registro
+        boolean canDelete = DaoConsecutivo.canDelete(idconsecutivo);
 
-        listarConsecutivos(request, response);
-    } catch (Exception ex) {
-        ex.printStackTrace();
-        request.setAttribute("mensaje", "Error al eliminar el Consecutivo");
-        listarConsecutivos(request, response);
+        // Establecer el tipo de contenido de respuesta en JSON
+        response.setContentType("application/json");
+
+        // Obtener el objeto PrintWriter para enviar la respuesta como un objeto JSON
+        PrintWriter out = response.getWriter();
+
+        // Escribir el valor booleano canDelete como un objeto JSON
+        out.print(canDelete);
+
+        // Asegurarse de que la respuesta se envíe al cliente
+        out.flush();
     }
-}   
-    
-   private void ValidarCanDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    // Obtener el ID del registro a verificar desde la petición HTTP
-    int idconsecutivo = Integer.parseInt(request.getParameter("id"));
 
-    // Llamar al método canDelete del DAO para verificar si se puede eliminar el registro
-    boolean canDelete = DaoConsecutivo.canDelete(idconsecutivo);
-
-    // Establecer el tipo de contenido de respuesta en JSON
-    response.setContentType("application/json");
-
-    // Obtener el objeto PrintWriter para enviar la respuesta como un objeto JSON
-    PrintWriter out = response.getWriter();
-
-    // Escribir el valor booleano canDelete como un objeto JSON
-    out.print(canDelete);
-
-    // Asegurarse de que la respuesta se envíe al cliente
-    out.flush();
-}
-    
     /*
     private void eliminarConsecutivo(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -272,10 +307,6 @@ public class ControladorConsecutivo extends HttpServlet {
             listarConsecutivos(request, response);
         }
     }*/
-    
-   
-    
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

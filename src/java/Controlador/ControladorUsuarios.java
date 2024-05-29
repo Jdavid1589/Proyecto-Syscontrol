@@ -4,6 +4,7 @@ import Modelo.Usuarios;
 import Persistencia.DaoUsuarios;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import java.util.List;
 import javax.servlet.ServletException;
@@ -59,8 +60,14 @@ public class ControladorUsuarios extends HttpServlet {
                 buscarUsuario(request, response);
                 break;
 
-            case "eliminar":
+            /* case "eliminar":
                 eliminarUsuario(request, response);
+                break;*/
+            case "eliminar2":
+                eliminarUsuarios2(request, response);
+                break;
+            case "canDelete":
+                ValidarCanDelete(request, response);
                 break;
 
             default:
@@ -87,16 +94,12 @@ public class ControladorUsuarios extends HttpServlet {
             usuarios.setUsuario(usuario);
             usuarios.setClave(clave);
             usuarios.setPerfil_idperfil(perfilIdperfil); // Aquí establecemos el valor del ID del perfil obtenido
-            
-         
 
             if (DaoUsuarios.grabar(usuarios)) {
                 request.setAttribute("mensaje", "el usuario fue registrado");
             } else {
                 request.setAttribute("mensaje", "el usuario no fue registrado, validar campos ingresados");
             }
-
-            
 
             List<Usuarios> lt = DaoUsuarios.listar();
             request.setAttribute("listaUsuarios", lt);
@@ -199,7 +202,7 @@ public class ControladorUsuarios extends HttpServlet {
         }
     }
 
-    private void eliminarUsuario(HttpServletRequest request, HttpServletResponse response)
+    /*private void eliminarUsuario(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
             int idUsuarios = Integer.parseInt(request.getParameter("id"));
@@ -219,6 +222,48 @@ public class ControladorUsuarios extends HttpServlet {
             request.setAttribute("mensaje", "Error al eliminar el Consecutivo");
             listarUsuarios(request, response);
         }
+    }*/
+    private void eliminarUsuarios2(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        try {
+            int iduser = Integer.parseInt(request.getParameter("id"));
+
+            if (DaoUsuarios.canDelete(iduser)) {
+                if (DaoUsuarios.eliminar(iduser)) {
+                    request.setAttribute("mensaje", "El Reporte fue Eliminado Correctamente");
+                } else {
+                    request.setAttribute("mensaje", "No se pudo eliminar el Reporte");
+                }
+            } else {
+                request.setAttribute("mensaje", "El Reporte no se puede eliminar porque está en uso");
+            }
+
+            listarUsuarios(request, response);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            request.setAttribute("mensaje", "Error al eliminar el Consecutivo");
+            listarUsuarios(request, response);
+        }
+    }
+
+    private void ValidarCanDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Obtener el ID del registro a verificar desde la petición HTTP
+        int iduser = Integer.parseInt(request.getParameter("id"));
+
+        // Llamar al método canDelete del DAO para verificar si se puede eliminar el registro
+        boolean canDelete = DaoUsuarios.canDelete(iduser);
+
+        // Establecer el tipo de contenido de respuesta en JSON
+        response.setContentType("application/json");
+
+        // Obtener el objeto PrintWriter para enviar la respuesta como un objeto JSON
+        PrintWriter out = response.getWriter();
+
+        // Escribir el valor booleano canDelete como un objeto JSON
+        out.print(canDelete);
+
+        // Asegurarse de que la respuesta se envíe al cliente
+        out.flush();
     }
 
     @Override

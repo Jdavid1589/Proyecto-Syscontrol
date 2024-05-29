@@ -41,7 +41,7 @@ function validarFormulario() {
         Swal.fire({
             position: "center", // Centra el mensaje
             icon: "success",
-            title: "Reporte Eliminado con Éxito",
+            title: "Reporte Registrado con Éxito",
             showConfirmButton: false,
             timer: 6000,
             customClass: {
@@ -58,5 +58,62 @@ function validarFormulario() {
         });
         return false;
     }
+}
+
+
+
+function eliminarUsuario(id) {
+
+    // Verificar si el registro se puede eliminar
+    if (!canDeleteUser(id)) {
+        // Mensaje de error si el mensaje esta en uso
+        Swal.fire({
+            position: "center",
+            icon: "error",
+            title: '<span class="id-error"> <strong>' + 'El Registro con ID: ' + id + '</strong></span>' + ' No se puede eliminar,  porque está en uso',
+            showConfirmButton: false,
+            timer: 2500
+        });
+        return;
+    }
+
+    // Si el registro se puede eliminar se realiza Cuadro de dialogo de confirmación
+    swal({
+        title: "¿Estás seguro?",
+        text: "Una vez eliminado, no podrás recuperar este reporte.",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true
+    }).then((willDelete) => {
+        if (willDelete) {
+            // Muestra el mensaje de éxito
+            Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Reporte Eliminado con Éxito",
+                showConfirmButton: false,
+            });
+
+            // Rediriges a la URL de eliminación después de 1.5 segundos (1500 milisegundos)
+            setTimeout(() => {
+                window.location.href = "ControladorUsuarios?accion=eliminar2&id=" + id;
+            }, 1500);
+        } else {
+            swal("Operación cancelada.", {
+                icon: "error",
+                title: "Cancelado"
+            });
+        }
+    });
+}
+
+function canDeleteUser(id) {
+    // Envíe una solicitud AJAX al servidor para verificar si el registro se puede eliminar
+    return $.ajax({
+        url: "ControladorUsuarios?accion=canDelete&id=" + id,
+        type: "GET",
+        async: false
+                // aca se recibe la respuesta del servidor (ControladorConsecutivo?accion=canDelete) y esta se alamacena 
+    }).responseText.trim() === "true";
 }
 

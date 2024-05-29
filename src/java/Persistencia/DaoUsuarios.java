@@ -230,6 +230,44 @@ public class DaoUsuarios {
         }
         return false;
     }
+    
+    
+    
+   public static boolean canDelete(int iduser) {
+    String query = "SELECT COUNT(*) " +
+                   "FROM (" +
+                   "    SELECT idUsuarios FROM controlcalidad WHERE idUsuarios = ? " +
+                   "    UNION " +
+                   "    SELECT idUsuarios FROM consecutivo WHERE idUsuarios = ? " +
+                   ") AS combined";
+    
+    try (Connection con = dao.conectar();
+         PreparedStatement ps = con.prepareStatement(query)) {
+        ps.setInt(1, iduser);
+        ps.setInt(2, iduser);
+        ResultSet rs = ps.executeQuery();
+        if (rs.next()) {
+            return rs.getInt(1) == 0;
+        }
+        return false;
+    } catch (SQLException e) {
+        e.printStackTrace(); // Considera mejorar el manejo de excepciones, por ejemplo, lanzando una excepción personalizada.
+        return false;
+    }
+}
+
+    
+public static boolean eliminar2(int iduser) {
+    try (Connection con = dao.conectar();
+         PreparedStatement ps = con.prepareStatement("DELETE FROM usuarios WHERE idUsuarios=?")) {
+        ps.setInt(1, iduser);
+        return ps.executeUpdate() > 0;
+    } catch (SQLException e) {
+        e.printStackTrace(); // Maneja las excepciones de mejor manera, por ejemplo, lanzando una excepción personalizada.
+        return false;
+    }   
+}
+    
 
     public static String obtenerNombreUsuario(int id) {
         /*Metodo que sirve para obtener el nombre y poderlo listar en las tablas relacionadas

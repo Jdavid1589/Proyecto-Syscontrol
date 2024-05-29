@@ -59,6 +59,8 @@ function validarFormulario() {
     return true;
 }
 
+/*---------------------------------------------*/
+
 // Funsion Modal Calculadora
 function abrirCalculadora() {
     // Limpiar campos al abrir el modal
@@ -154,7 +156,7 @@ function validarFormulario() {
         Swal.fire({
             position: "center", // Centra el mensaje
             icon: "success",
-            title: "Reporte Eliminado con Éxito",
+            title: "Reporte Registrado con Exito",
             showConfirmButton: false,
             timer: 6000,
             customClass: {
@@ -166,13 +168,13 @@ function validarFormulario() {
     } else {
         Swal.fire({
             icon: "error",
-            title: "Error",
+            title: "Error!",
             text: "Por favor, complete todos los campos obligatorios.",
         });
         return false;
     }
 }
-
+/*-----------------------------------------------------------------------------*/
 
 function eliminarConsecutivo(id) {
 

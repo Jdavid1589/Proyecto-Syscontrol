@@ -38,7 +38,7 @@
 
 .input-field {
     color: #09f;
-    
+
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     border: none;
@@ -81,13 +81,27 @@
 #miform{
     background-color: #cccccc; /* Fondo gris claro */
     /* Familia de fuentes para el texto */
-   /* font-family: 'Roboto', sans-serif;*/
-    font-family: 'Roboto', Aptos Narrow;
+    font-family: Arial Narrow;
+    /*font-family: 'Roboto', Aptos Narrow;*/
     font-weight: bold;
+
     /* Color de fondo del cuerpo */
     border-radius: 15px;
-   
 }
+
+/* Estilo para las etiquetas del formulario */
+.formulario__label {
+    /* Mostrar las etiquetas como bloques */
+    display: block;
+    /* Grosor de la fuente de las etiquetas */
+    font-weight: 700;
+    /* Relleno alrededor del texto de la etiqueta */
+    padding: 5px;
+    /* Cursor al pasar sobre la etiqueta */
+    cursor: pointer;
+     text-align:  left;
+}
+
 /* Estilo para las etiquetas (labels) con texto azul */
 label {
     color: blue;
@@ -98,7 +112,7 @@ label {
     background: rgb(25, 55, 86); /*Azul Oscuro */
 
     padding: 15px 20px;
-    
+
 
 }
 
@@ -175,7 +189,7 @@ h2, h3 {
     color: #FF0000;
     text-align: center;
     line-height: 1.5;
-    
+
 }
 
 
@@ -189,7 +203,7 @@ h2, h3 {
     color: #0056b3;
     text-align: center;
     line-height: 1.5;
-   
+
 }
 /* Estilo que el menu de la barra de abra horizontalmente  */
 .horizontal-menu {
@@ -298,11 +312,11 @@ h4{
     margin-top:    5%;
     gap: 20px;
 }
- 
+
 @media (max-width: 768px) {
     span {
         font-size: 14px;
     }
-    }
+}
 
 
